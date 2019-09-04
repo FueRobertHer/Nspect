@@ -1,4 +1,4 @@
-# iNat-clone
+# Nspect
 app Academy full stack project iNaturalist clone
 
 LINK TO LIVE PAGE HERE
