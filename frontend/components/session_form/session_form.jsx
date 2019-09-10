@@ -54,13 +54,15 @@ class SessionForm extends React.Component {
 
   emailInput() {
     return (
-      <input
-        className='input'
-        type="email"
-        onChange={this.update('email')}
-        value={this.state.email}
-        placeholder="Email"
-      />
+      <section className='input-container'>
+        <input
+          className='input'
+          type="email"
+          onChange={this.update('email')}
+          value={this.state.email}
+          placeholder="Email"
+        />
+      </section>
     )
   }
 
@@ -97,6 +99,8 @@ class SessionForm extends React.Component {
           <br />
           {this.props.formType === 'Log in' ? '' : this.emailInput()}
           <br />
+          <section className='input-container'>
+            <img className="icon" src="assets/envelope-solid.svg"/>
             <input
               className='input'
               type="text"
@@ -104,7 +108,9 @@ class SessionForm extends React.Component {
               value={this.state.username}
               placeholder="Username"
             />
+          </section>
           <br />
+          <section className='input-container'>
             <input
               className='input'
               type="password"
@@ -112,12 +118,15 @@ class SessionForm extends React.Component {
               value={this.state.password}
               placeholder="Password"
             />
+          </section>
           <br />
-          <input
-            className='session-form-submit'
-            type="submit"
-            value={this.submitValue()}
-          />
+          <section className='input-container'>
+            <input
+              className='session-form-submit'
+              type="submit"
+              value={this.submitValue()}
+            />
+          </section>
         </form>
         
         {this.switchForm()}

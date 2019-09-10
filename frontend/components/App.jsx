@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
+import { Link } from 'react-router-dom'
 // 
 import SplashContainer from '../components/splash/splash_container';
 import GreetingContainer from '../components/greeting/greeting_container';
@@ -11,7 +12,7 @@ import LoginFormContainer from '../components/session_form/login_form_container'
 const App = () => (
   <div>
     <header className="header">
-      <h1>Nspect</h1>
+      <Link to='/'><h1 className="">Nspect</h1></Link>
       <GreetingContainer />
     </header>
 
