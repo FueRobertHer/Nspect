@@ -1,0 +1,59 @@
+// Place all the styles related to the static_pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.header {
+  padding: 0 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: space-between;
+  background-color: #eee;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.footer {
+  background-color: #eee;
+  padding: 60px 0;
+  font-size: 100%;
+  color: #999;
+  width: 100%;
+  min-width: 980px;
+}
+
+a {
+  font-family: Whitney,"Trebuchet MS",Arial,sans-serif;
+}
+ 
+.session-form-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.input {
+  border: 1px solid #ebebeb;
+  background-color: #f8f8f8;
+  color: #666;
+  border-radius: 7px;
+  padding-left: 41.3px;
+  font-size: 15px;
+  font-weight: 100;
+}
+
+.session-form-submit {
+  background-color: #74ac00;
+  color: white;
+  border-color: #74ac00;
+  width: 100%;
+  font-weight: bold;
+  margin-top: 20px;
+  padding-bottom: 7px;
+  font-size: 20px;
+  border-radius: 100px;
+  text-align: center;
+}
