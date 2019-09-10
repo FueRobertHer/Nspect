@@ -15,6 +15,10 @@
     "webpack": "^4.39.3",
     "webpack-cli": "^3.3.8"
   },
+  "engines": {
+    "node": "10.13.0",
+    "npm": "6.11.2"
+  }
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",
   "main": "index.js",
@@ -24,6 +28,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "webpack",
     "start": "webpack -w --mode=development"
   },
   "repository": {
