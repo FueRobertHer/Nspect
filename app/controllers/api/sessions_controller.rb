@@ -7,8 +7,7 @@ class Api::SessionsController < ApplicationController
     )
     if @user
       login!(@user)
-      render "api/users/show"
-      # render json: @user
+      render 'api/users/show'
     else
       render json: ['bad creds'], status: 401
     end

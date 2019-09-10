@@ -4,13 +4,13 @@ import { login } from '../../actions/session_action';
 import { Link } from 'react-router-dom';
 import SessionForm from './session_form';
 
-const mapSTP = ({errors}, ownProps) => ({
+const mapSTP = ({errors}) => ({
   errors: errors.session,
   formType: 'Log in',
-  otherLink: <Link to='/signup'>Sign Up</Link>
+  otherLink: <Link to='/signup'>Don't have an account? Sign Up</Link>
 });
 
-const mapDTP = (dispatch, ownProps) => ({
+const mapDTP = (dispatch) => ({
   processForm: user => dispatch(login(user)),
 });
 

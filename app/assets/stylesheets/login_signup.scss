@@ -1,0 +1,49 @@
+.session-container-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+}
+
+
+.session-img {
+  width: 50%;
+  height: 100%;
+  background-color: azure;
+}
+ 
+.session-form-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  width: 50%;
+}
+
+.input {
+  border: 1px solid #ebebeb;
+  background-color: #e8f0fe;
+  color: #666;
+  border-radius: 7px;
+  padding-left: 41.3px;
+  font-size: 15px;
+  font-weight: 100;
+}
+
+.session-form-submit {
+  cursor: pointer;
+  background-color: #74ac00;
+  color: white;
+  border: solid #74ac00;
+  width: 100%;
+  font-weight: bold;
+  margin: 20px 0;
+  padding: 5px 0;
+  font-size: 20px;
+  border-radius: 100px;
+  text-align: center;
+}
+
+.session-form-submit:hover {
+  filter: brightness(110%)
+}

@@ -8,7 +8,7 @@ import SessionForm from './session_form';
 const mapSTP = ({ errors }, ownProps) => ({
   errors: errors.session,
   formType: 'signup',
-  otherLink: <Link to='/login'>Log In</Link>
+  otherLink: <Link to='/login'>Already have an account? Log In</Link>
 });
 
 const mapDTP = (dispatch, ownProps) => ({

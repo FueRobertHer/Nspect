@@ -6,8 +6,17 @@ class SessionForm extends React.Component {
     this.state = {
       username: '',
       password: '',
+      email: '',
     }
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentWillUnmount() {
+    this.state = {
+      username: '',
+      password: '',
+      email: '',
+    }
   }
 
   handleSubmit(e) {
@@ -23,14 +32,15 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
+    this.state.errors = this.props.errors
     return (
-      <ul>{
-        this.props.errors.map((error, i) => (
+      <ul>
+        {this.state.errors.map((error, i) => (
           <li key={`error-${i}`}>
             {error}
           </li>
-        ))
-      }</ul>
+        ))}
+      </ul>
     );
   }
 
@@ -70,12 +80,20 @@ class SessionForm extends React.Component {
     )
   }
 
+  img() {
+    return (
+      <div className="session-img">
+        img goes here
+      </div>
+    )
+  }
+
   form() {
     return (
       <div className="session-form-container">
         <form className="session-form" onSubmit={this.handleSubmit}>
           {this.formMessage()}
-          {/* {this.renderErrors()} */}
+          {this.renderErrors()}
           <br />
           {this.props.formType === 'Log in' ? '' : this.emailInput()}
           <br />
@@ -109,7 +127,10 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      this.form()
+      <div className="session-container-container">
+        {this.img()}
+        {this.form()}
+      </div>
     )
   }
 }
