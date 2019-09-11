@@ -42,12 +42,13 @@ class SessionForm extends React.Component {
       ghost(demoUsername, "username")();
       ghost(demoPassword, "password")();
     } else {
-      const demoEmail = "NewDemo@demo.io"
+      this.props.history.push('/home');
+      // const demoEmail = "NewDemo@demo.io"
       const demoUsername = "DemoUser";
       const demoPassword = "password";
-      ghost(demoEmail, "email")();
-      ghost(demoUsername, "username")();
-      ghost(demoPassword, "password")();
+      // ghost(demoEmail, "email")();
+      setTimeout(ghost(demoUsername, "username")(), 200);
+      setTimeout(ghost(demoPassword, "password")(), 200);
     }
     setTimeout(this.login, 1500);
   }
@@ -174,15 +175,13 @@ class SessionForm extends React.Component {
             type="submit"
             value={this.submitValue()}
           />
-          {/* <Link to='/login' > */}
-            <button
-              className='session-form-submit'
-              type="submit"
-              onClick={this.handleDemo}
-            >Demo
-            </button>
-          {/* </Link> */}
         </form>
+        <button
+          className='session-form-submit demo'
+          type="submit"
+          onClick={this.handleDemo}
+        >Demo
+        </button>
         
         {this.switchForm()}
       </div>

@@ -33,7 +33,7 @@ const App = ({ location }) => (
       <Route exact path="/home" component={HomeContainer} />
       <Route exact path="/people" component={UserIndexContainer} />
       {/* <Route exact path='/people/:userId' /> */}
-      <Route path='/' component={NotFound} />
+      {/* <Route path='/' component={NotFound} /> */}
     </Switch>
 
 

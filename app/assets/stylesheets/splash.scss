@@ -1,7 +1,6 @@
 .splash-main {
-  height: 500px;
-  background-color: #b7d876;
-
+  background-color: #eaf3d8;
+  display: block;
 }
 
 
@@ -89,8 +88,4 @@
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
-}
-
-.svg {
-  
 }
