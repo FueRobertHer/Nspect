@@ -2,7 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 500px;
+  height: 100%;
+  text-align: center;
 }
 
 
@@ -17,6 +18,7 @@
   align-items: center;
   flex-direction: column;
   width: 45%;
+  min-width: 557px;
 }
 
 .session-form {
@@ -50,7 +52,7 @@
   border: solid #74ac00;
   width: 100%;
   font-weight: bold;
-  margin: 20px 0;
+  margin: 10px 0;
   padding: 5px 0;
   font-size: 20px;
   border-radius: 100px;
@@ -58,7 +60,8 @@
 }
 
 .session-form-submit:hover {
-  filter: brightness(110%)
+  filter: brightness(110%);
+  outline: none;
 }
 
 .login-message, .signup-message {
@@ -73,4 +76,21 @@
   height: 20px;
   color: #74ac00;
   padding: 5px;
+}
+
+.errors-container {
+  border-radius: 4px;
+  margin-top: 20px;
+
+}
+
+.errors-item {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 15px;  
+  background-color:  #fcf8e3;
+  color: #8a6d3b;
+  padding: 10px 0;
+  width: 100%;
+  border: solid 1px #faebcc;
+  border-radius: inherit;
 }

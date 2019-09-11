@@ -1,4 +1,5 @@
 import React from 'react';
+// import { ReactComponent as EmailIcon } from '../../../app/assets/images/envelope-solid.svg';
 
 class SessionForm extends React.Component {
   constructor(props){
@@ -17,12 +18,19 @@ class SessionForm extends React.Component {
       password: '',
       email: '',
     }
+    this.state.errors = [];
+  }
+
+  handleDemo(e) {
+    this.update('username')
+  
   }
 
   handleSubmit(e) {
     e.preventDefault;
     const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    this.props.processForm(user)
+      .then(() => this.props.history.push('/home'));
   };
 
   update(field) {
@@ -34,9 +42,9 @@ class SessionForm extends React.Component {
   renderErrors() {
     this.state.errors = this.props.errors
     return (
-      <ul>
+      <ul className="errors-container">
         {this.state.errors.map((error, i) => (
-          <li key={`error-${i}`}>
+          <li key={`error-${i}`} className="errors-item">
             {error}
           </li>
         ))}
@@ -56,6 +64,7 @@ class SessionForm extends React.Component {
     return (
       <section className='input-container'>
         <img className="icon" src="assets/envelope-solid.svg" />
+        {/* <EmailIcon /> */}
         <input
           className='input'
           type="email"
@@ -95,8 +104,10 @@ class SessionForm extends React.Component {
     return (
       <div className="session-form-container">
         <form className="session-form" onSubmit={this.handleSubmit}>
-          {this.formMessage()}
           {this.renderErrors()}
+          {this.formMessage()}
+
+
           <br />
           {this.props.formType === 'Log in' ? '' : this.emailInput()}
           <br />
@@ -125,6 +136,11 @@ class SessionForm extends React.Component {
             type="submit"
             value={this.submitValue()}
           />
+          <button
+            className='session-form-submit'
+            type="submit"
+            onClick={this.handleDemo}
+          >Demo</button>
         </form>
         
         {this.switchForm()}

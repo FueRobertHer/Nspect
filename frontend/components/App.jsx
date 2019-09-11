@@ -1,13 +1,15 @@
 import React from 'react';
-import { Route, withRouter } from 'react-router-dom';
+import { Route, withRouter, Switch, Link, Redirect } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
-import { Link } from 'react-router-dom'
 // 
 import SplashContainer from '../components/splash/splash_container';
 import GreetingContainer from '../components/greeting/greeting_container';
+import FooterContainer from '../components/footer/footer_container';
 import SignupFormContainer from '../components/session_form/signup_form_container';
 import LoginFormContainer from '../components/session_form/login_form_container';
-import FooterContainer from '../components/footer/footer_container';
+import HomeContainer from '../components/home/home_container';
+import UserIndexContainer from '../components/users/user_index_container';
+import NotFound from '../components/not_found';
 // import SearchContainer from './search_container';
 
 const exclusionArray = [
@@ -27,6 +29,14 @@ const App = ({ location }) => (
     <AuthRoute exact path="/" component={SplashContainer} />
     {/* <Route exact path="/" component={SearchContainer} /> */}
     
+    <Switch>
+      <Route exact path="/home" component={HomeContainer} />
+      <Route exact path="/people" component={UserIndexContainer} />
+      {/* <Route exact path='/people/:userId' /> */}
+      <Route path='/' component={NotFound} />
+    </Switch>
+
+
     {exclusionArray.indexOf(location.pathname) < 0 && <FooterContainer />}
   </div>
 );

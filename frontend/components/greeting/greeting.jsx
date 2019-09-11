@@ -16,11 +16,17 @@ const Greeting = ({currentUser, logout}) => {
   )
  
   const links = () => (
-    <ul className="navtabs">
+    <ul className="navtabs login-signup">
       <Link to='/login'>Log In</Link> or <Link to='/signup'>Sign Up</Link>
     </ul>
   )
   
+    const sponsers = () => (
+      <ul className="navtabs sponsers">
+        
+      </ul>
+    )
+
   return currentUser ? greet() : links()
   
 };
