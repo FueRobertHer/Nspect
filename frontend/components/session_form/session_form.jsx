@@ -55,6 +55,7 @@ class SessionForm extends React.Component {
   emailInput() {
     return (
       <section className='input-container'>
+        <img className="icon" src="assets/envelope-solid.svg" />
         <input
           className='input'
           type="email"
@@ -100,7 +101,6 @@ class SessionForm extends React.Component {
           {this.props.formType === 'Log in' ? '' : this.emailInput()}
           <br />
           <section className='input-container'>
-            <img className="icon" src="assets/envelope-solid.svg"/>
             <input
               className='input'
               type="text"
@@ -120,13 +120,11 @@ class SessionForm extends React.Component {
             />
           </section>
           <br />
-          <section className='input-container'>
-            <input
-              className='session-form-submit'
-              type="submit"
-              value={this.submitValue()}
-            />
-          </section>
+          <input
+            className='session-form-submit'
+            type="submit"
+            value={this.submitValue()}
+          />
         </form>
         
         {this.switchForm()}

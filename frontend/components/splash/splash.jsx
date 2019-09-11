@@ -18,13 +18,14 @@ class Splash extends React.Component {
         </section>
         <div className="slideshow-container">
 
-          <div className="mySlides slide1 fade">
+          <div className="mySlides slide1">
+            <img className="slide-img" src="assets/red-panda.jpg" alt=""/>
             <div className="numbertext">1 / 3</div>
    
             <div className="text">Caption Text</div>
           </div>
 
-          <div className="mySlides slide2 fade">
+          {/* <div className="mySlides slide2 fade">
             <div className="numbertext">2 / 3</div>
 
             <div className="text">Caption Two</div>
@@ -34,7 +35,7 @@ class Splash extends React.Component {
             <div className="numbertext">3 / 3</div>
          
             <div className="text">Caption Three</div>
-          </div>
+          </div> */}
 
           <a className="prev" onClick="plusSlides(-1)">&#10094;</a>
           <a className="next" onClick="plusSlides(1)">&#10095;</a>
