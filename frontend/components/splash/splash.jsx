@@ -1,4 +1,5 @@
 import React from 'react';
+import * as SVGUtil from '../../util/svg/img_svg';
 
 class Splash extends React.Component {
 
@@ -40,6 +41,36 @@ class Splash extends React.Component {
           <a className="prev" onClick="plusSlides(-1)">&#10094;</a>
           <a className="next" onClick="plusSlides(1)">&#10095;</a>
         </div>
+        <section className='sponsers'>
+          <div className='svg'>
+            <SVGUtil.Bee /> 
+          </div>
+        </section>
+        <section>
+          <h2>How It Works</h2>
+        </section>
+        <section>
+          <section>
+            <h2>Contribute to Science</h2>
+            <p>Every observation can contribute to biodiversity science, from the rarest butterfly to the most common backyard weed. We share your findings with scientific data repositories like the Global Biodiversity Information Facility to help scientists find and use your data. All you have to do is observe.</p>
+          </section>
+          <section>
+            img here
+          </section>
+        </section>
+        <section>
+          <h2>Nature At Your Fingertips</h2>
+        </section>
+        <section>
+          <h2>Who Uses Nsepect?</h2>
+          <div>
+            slide show here
+          </div>
+        </section>
+        <section>
+          <h2>What are you waiting for?</h2>
+          <button>JOIN TODAY</button>
+        </section>
       </div>
     )
   }

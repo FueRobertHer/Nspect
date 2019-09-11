@@ -1,4 +1,6 @@
 import React from 'react';
+import * as SVGIcon from '../../util/svg/icon_svg';
+import { Link } from 'react-router-dom';
 // import { ReactComponent as EmailIcon } from '../../../app/assets/images/envelope-solid.svg';
 
 class SessionForm extends React.Component {
@@ -10,6 +12,12 @@ class SessionForm extends React.Component {
       email: '',
     }
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
+    this.login = this.login.bind(this);
+  }
+
+  loginForm() {
+    return (this.props.formType === 'Log in')
   }
 
   componentWillUnmount() {
@@ -22,8 +30,30 @@ class SessionForm extends React.Component {
   }
 
   handleDemo(e) {
-    this.update('username')
-  
+    const ghost = (string, type) => () => {
+      if (string.length > 0) {
+        this.setState({ [type]: this.state[type] + string[0] });
+        setTimeout(ghost(string.slice(1), type), 100);
+      }
+    }
+    if (this.loginForm()) {
+      const demoUsername = "DemoUser"; 
+      const demoPassword = "password";
+      ghost(demoUsername, "username")();
+      ghost(demoPassword, "password")();
+    } else {
+      const demoEmail = "NewDemo@demo.io"
+      const demoUsername = "DemoUser";
+      const demoPassword = "password";
+      ghost(demoEmail, "email")();
+      ghost(demoUsername, "username")();
+      ghost(demoPassword, "password")();
+    }
+    setTimeout(this.login, 1500);
+  }
+
+  login() {
+    this.props.processForm(this.state);
   }
 
   handleSubmit(e) {
@@ -54,7 +84,7 @@ class SessionForm extends React.Component {
 
   formMessage() {
     return (
-      this.props.formType === 'Log in'
+      this.loginForm()
       ? <h1 className='login-message'>Welcome back!</h1>
       : <h1 className='signup-message'>Join the largest group of naturalists in the world!</h1 >
     )
@@ -63,8 +93,9 @@ class SessionForm extends React.Component {
   emailInput() {
     return (
       <section className='input-container'>
-        <img className="icon" src="assets/envelope-solid.svg" />
-        {/* <EmailIcon /> */}
+        <div className="icon">
+          <SVGIcon.Mail />
+        </div>
         <input
           className='input'
           type="email"
@@ -78,7 +109,7 @@ class SessionForm extends React.Component {
 
   submitValue() {
     return (
-      this.props.formType === 'Log in'
+      this.loginForm()
       ? 'Log in'
       : 'Create an Account'
     )
@@ -86,7 +117,7 @@ class SessionForm extends React.Component {
 
   switchForm() {
     return (
-      this.props.formType === 'Log in'
+      this.loginForm()
       ? <span>{this.props.otherLink}</span>
       : <span>{this.props.otherLink}</span>
     )
@@ -101,6 +132,7 @@ class SessionForm extends React.Component {
   }
 
   form() {
+
     return (
       <div className="session-form-container">
         <form className="session-form" onSubmit={this.handleSubmit}>
@@ -109,9 +141,12 @@ class SessionForm extends React.Component {
 
 
           <br />
-          {this.props.formType === 'Log in' ? '' : this.emailInput()}
+          {this.loginForm() ? '' : this.emailInput()}
           <br />
           <section className='input-container'>
+            <div className="icon">
+              <SVGIcon.User />
+            </div>
             <input
               className='input'
               type="text"
@@ -122,6 +157,9 @@ class SessionForm extends React.Component {
           </section>
           <br />
           <section className='input-container'>
+            <div className="icon">
+              <SVGIcon.Lock />
+            </div>
             <input
               className='input'
               type="password"
@@ -136,11 +174,14 @@ class SessionForm extends React.Component {
             type="submit"
             value={this.submitValue()}
           />
-          <button
-            className='session-form-submit'
-            type="submit"
-            onClick={this.handleDemo}
-          >Demo</button>
+          {/* <Link to='/login' > */}
+            <button
+              className='session-form-submit'
+              type="submit"
+              onClick={this.handleDemo}
+            >Demo
+            </button>
+          {/* </Link> */}
         </form>
         
         {this.switchForm()}
