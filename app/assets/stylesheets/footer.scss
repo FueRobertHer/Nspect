@@ -1,9 +1,19 @@
-.footer {
+.footer-main{
   background-color: #eee;
   padding: 60px 0;
   font-size: 100%;
   color: #999;
   width: 100%;
-  min-width: 980px;
-  display: block;
+  display: flex;
+  justify-content: space-around;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.NatGeoCAS {
+  width: 35%;
 }

@@ -68,7 +68,7 @@ export const Owl = props => (
 
 // SVG National Geographics and California Academy of Science logos ----------
 export const NatGeoCAS = props => (
-  <svg width="200" {...props}>
+  <svg viewBox="0 0 850 160" {...props}>
     <title>{'logos-CAS-NatGeo-About'}</title>
     <defs>
       <path id="prefix__a" d="M0 .021h79.258v112.923H0z" />

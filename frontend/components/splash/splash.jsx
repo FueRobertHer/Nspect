@@ -14,12 +14,13 @@ class Splash extends React.Component {
   render() {
     return (
       <div className='splash-main'>
-        <section className='splash-main-credit'>
-
-        </section>
+        
         <div className="slideshow-container">
 
           <div className="mySlides slide1">
+            <section className='splash-main-credit'>
+            </section>
+
             <img className="slide-img" src="assets/red-panda.jpg" alt=""/>
             {/* <div className="numbertext">1 / 3</div> */}
    
@@ -53,7 +54,7 @@ class Splash extends React.Component {
           </div>
         </section>
         
-        <section className='section '>
+        <section className='section white'>
           <section className="how-it-works section section-row">
             <h2>How It Works</h2>
             <section className='section space-around'>
@@ -61,10 +62,21 @@ class Splash extends React.Component {
               <SVGImg.Share />
               <SVGImg.Discuse />
             </section>
-            <section className='section space-around'>
-              <p>Record your observation</p>
-              <p>Share with fellow naturalists</p>
-              <p>Discuss your findings</p>
+            <section className='section space-around steps-container'>
+              <div className="bar"></div>
+              <div className="steps">
+                <label className="number">1</label>
+                <p>Record your observation</p>
+              </div>
+              <div className="steps">
+                <label className="number">2</label>
+                <p>Share with fellow naturalists</p>
+              </div>
+              <div className="steps">
+                <label className="number">3</label>
+                <p>Discuss your findings</p>
+              </div>
+              
             </section>
           </section>
         </section>
@@ -121,9 +133,9 @@ class Splash extends React.Component {
           </section>
         </section>
         
-        <section className="who-uses">
+        <section className="section section-row who-uses">
           <h2>Who Uses Nsepect?</h2>
-          <div>
+          <div className="slideshow-container">
             slide show here
           </div>
         </section>
