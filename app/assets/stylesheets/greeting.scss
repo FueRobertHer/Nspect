@@ -1,7 +1,9 @@
 .header {
-  padding: 10px 20px;
+  height: 40px;
+  padding: 10px 30px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: #eee;
   border-bottom: 1px solid #ddd;
   position: relative;
@@ -12,3 +14,12 @@
   font-family: Whitney,"Trebuchet MS",Arial,sans-serif;
 }
 
+.logo {
+  width: 25%;
+  padding-top: 7px;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: bold;
+}

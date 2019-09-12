@@ -3,7 +3,9 @@ import { Route, withRouter, Switch, Link, Redirect } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
 // 
 import SplashContainer from '../components/splash/splash_container';
+import MainNavContainer from '../components/main_nav/main_nav_container';
 import GreetingContainer from '../components/greeting/greeting_container';
+import Logo from '../components/greeting/logo';
 import FooterContainer from '../components/footer/footer_container';
 import SignupFormContainer from '../components/session_form/signup_form_container';
 import LoginFormContainer from '../components/session_form/login_form_container';
@@ -20,8 +22,13 @@ const exclusionArray = [
 const App = ({ location }) => (
   <div>
     <header className="header">
-      <Link to='/'><h1 className="logo">Nspect</h1></Link>
-      <GreetingContainer />
+      <MainNavContainer />
+      <Switch>
+        <Route exact path="/signup" component={Logo} />
+        <Route exact path="/login" component={Logo} />
+        <Route path="/" component={GreetingContainer} />
+
+      </Switch>
     </header>
 
     <AuthRoute exact path="/login" component={LoginFormContainer} />

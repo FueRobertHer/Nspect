@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 const Greeting = ({currentUser, logout}) => {
   const greet = () => (
     <nav className="navtabs">
-      {/* <h2 className="header-welcome">Welcome {currentUser.username}</h2> */}
       <ul className="header-nav">
         <li>
           <button>
@@ -32,15 +31,9 @@ const Greeting = ({currentUser, logout}) => {
  
   const links = () => (
     <ul className="navtabs login-signup">
-      <Link to='/login'>Log In</Link> or <Link to='/signup'>Sign Up</Link>
+      <b><Link to='/login'>Log In</Link></b> or <b><Link to='/signup'>Sign Up</Link></b>
     </ul>
   )
-  
-    const sponsers = () => (
-      <ul className="navtabs sponsers">
-        
-      </ul>
-    )
 
   return currentUser ? greet() : links()
   

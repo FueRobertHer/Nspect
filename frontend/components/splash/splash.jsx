@@ -1,5 +1,6 @@
 import React from 'react';
 import * as SVGImg from '../../util/svg/img_svg';
+import { Link } from 'react-router-dom';
 
 class Splash extends React.Component {
 
@@ -142,7 +143,7 @@ class Splash extends React.Component {
 
         <section className="section waiting space-around">
           <h2>What are you waiting for?</h2>
-          <button className="join-button">JOIN TODAY</button>
+          <Link className="join-button" to='/signup'>JOIN TODAY</Link>
         </section>
       </div>
     )

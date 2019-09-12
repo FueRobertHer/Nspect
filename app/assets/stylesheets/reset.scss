@@ -27,6 +27,10 @@ table, caption, tbody, tfoot, thead, tr, th, td, nav, a {
 	list-style: none;
 }
 
+html {
+	overflow-x:hidden
+}
+
 a:hover {
 	filter: brightness(200%);
 }
