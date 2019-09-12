@@ -1,7 +1,6 @@
 import React from 'react';
 import * as SVGIcon from '../../util/svg/icon_svg';
 import { Link } from 'react-router-dom';
-// import { ReactComponent as EmailIcon } from '../../../app/assets/images/envelope-solid.svg';
 
 class SessionForm extends React.Component {
   constructor(props){
@@ -21,13 +20,9 @@ class SessionForm extends React.Component {
   }
 
   componentWillUnmount() {
-    this.state = {
-      username: '',
-      password: '',
-      email: '',
-    }
-    this.state.errors = [];
+    this.props.clearErrors();
   }
+
 
   handleDemo(e) {
     const ghost = (string, field) => () => {
@@ -116,14 +111,6 @@ class SessionForm extends React.Component {
     )
   }
 
-  switchForm() {
-    return (
-      this.loginForm()
-      ? <span>{this.props.otherLink}</span>
-      : <span>{this.props.otherLink}</span>
-    )
-  }
-
   img() {
     return (
       <div className="session-img">
@@ -183,7 +170,7 @@ class SessionForm extends React.Component {
         >Demo
         </button>
         
-        {this.switchForm()}
+        <span>{this.props.otherLink}</span>
       </div>
     )
   }
