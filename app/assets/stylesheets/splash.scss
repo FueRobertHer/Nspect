@@ -94,9 +94,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  h2 {font-size: 36px;}
-  h3 {font-size: 22px;}
+  h2 {font-size: 36px; margin-bottom: 30px; font-weight: bold;}
+  h3 {font-size: 22px; font-weight: bold;}
 }
 
 .section-sponsers {
@@ -115,8 +116,14 @@
 
 .how-it-works {
   background-color: #FFFFFF;
+  padding: 20px 0;
+  text-align: center;
   h2 {font-size: 36px;}
-  
+  p {font-size: 24px;}
+}
+
+.space-around {
+  justify-content: space-around;
 }
 
 .section-row {
@@ -126,9 +133,57 @@
 .contribute, .waiting {
   background-color: #000000;
   color: white;
+  flex-direction: row;
+  padding: 40px 0;
   * {color: white;}
+}
+
+.contribute-text {
+  padding: 20px;
+  text-align: center;
+}
+
+.half {
+  width: 50%;
 }
 
 .who-uses {
   background-color: #EEEEEE;
+}
+
+.nature {
+  padding: 40px 20px;
+  h3 {padding-bottom: 10px;}
+}
+
+.nature-text {
+  max-width: 30%;
+}
+
+.svg-img {
+  max-width: 100px;
+  max-height: 80px;
+  padding: 40px 20px;
+}
+
+.join-button {
+  cursor: pointer;
+  background-color: #74ac00;
+  color: white;
+  border: solid #74ac00;
+  font-weight: bold;
+  margin: 10px 0;
+  padding: 10px 30px;
+  font-size: 20px;
+  border-radius: 100px;
+  text-align: center;
+}
+
+.join-button:hover {
+  filter: brightness(110%);
+  outline: none;
+}
+
+.waiting {
+  h2 {margin: 0;}
 }

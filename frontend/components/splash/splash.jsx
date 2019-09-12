@@ -56,79 +56,81 @@ class Splash extends React.Component {
         <section className='section '>
           <section className="how-it-works section section-row">
             <h2>How It Works</h2>
-            <section className='section'>
+            <section className='section space-around'>
               <SVGImg.Record />
               <SVGImg.Share />
               <SVGImg.Discuse />
             </section>
-            <section className='section'>
+            <section className='section space-around'>
               <p>Record your observation</p>
               <p>Share with fellow naturalists</p>
               <p>Discuss your findings</p>
             </section>
           </section>
         </section>
-        <section className="contribute">
-          <section className='section'>
+
+        <section className="section contribute">
+          <section className='section section-row half contribute-text'>
             <h2>Contribute to Science</h2>
             <p>Every observation can contribute to biodiversity science, from the rarest butterfly to the most common backyard weed. We share your findings with scientific data repositories like the Global Biodiversity Information Facility to help scientists find and use your data. All you have to do is observe.</p>
           </section>
-          <section>
+          <section className="half">
             img here
           </section>
         </section>
-        <section className='section section-row'>
+
+        <section className='section section-row nature'>
           <h2>Nature At Your Fingertips</h2>
-          <section className='section '>
-            <section >
-              <SVGImg.KeepTrack />
-              <section>
-                <h3>Keep Track</h3>
-                <p>Record your encounters with other orgamisms and maintain life lists, all in the cloud.</p>
-              </section>
-              <SVGImg.Bee />
-              <section>
-                <h3>Create Useful Data</h3>
-                <p>Help scientists and resource managers understand when and where orgaanisms occur.</p>
-              </section>
+          <section className="section">
+            <span className="svg-img"><SVGImg.KeepTrack /></span>
+            <section className="nature-text">
+              <h3>Keep Track</h3>
+              <p>Record your encounters with other orgamisms and maintain life lists, all in the cloud.</p>
             </section>
-
-            <section>
-              <SVGImg.Crowd />
-              <section>
-                <h3>Crowdsource Identifications</h3>
-                <p>Connect with experts who can identify the organisms you observe.</p>
-              </section>
-              <SVGImg.NerdCowboy />
-              <section>
-                <h3>Become a Citizen Scientist</h3>
-                <p>Find a project with a mission that intestets you, or start your own.</p>
-              </section>
+            <span className="svg-img"><SVGImg.Bee /></span>
+            <section className="nature-text">
+              <h3>Create Useful Data</h3>
+              <p>Help scientists and resource managers understand when and where orgaanisms occur.</p>
             </section>
+          </section>
 
-            <section>
-              <SVGImg.Owl />
-              <section>
-                <h3>Learn About Nature</h3>
-                <p>Build your knowledge by talking with other naturalists and helping others.</p>
-              </section>
-              <SVGImg.Megaphone />
-              <section>
-                <h3>Run a Bioblitz</h3>
-                <p>Hold an event where people try to find as many species as possible.</p>
-              </section>
+          <section className="section">
+            <span className="svg-img"><SVGImg.Crowd /></span>
+            <section className="nature-text">
+              <h3>Crowdsource Identifications</h3>
+              <p>Connect with experts who can identify the organisms you observe.</p>
+            </section>
+            <span className="svg-img"><SVGImg.NerdCowboy /></span>
+            <section className="nature-text">
+              <h3>Become a Citizen Scientist</h3>
+              <p>Find a project with a mission that intestets you, or start your own.</p>
+            </section>
+          </section>
+
+          <section className="section">
+            <span className="svg-img"><SVGImg.Owl /></span>
+            <section className="nature-text">
+              <h3>Learn About Nature</h3>
+              <p>Build your knowledge by talking with other naturalists and helping others.</p>
+            </section>
+            <span className="svg-img"><SVGImg.Megaphone /></span>
+            <section className="nature-text">
+              <h3>Run a Bioblitz</h3>
+              <p>Hold an event where people try to find as many species as possible.</p>
             </section>
           </section>
         </section>
+        
         <section className="who-uses">
           <h2>Who Uses Nsepect?</h2>
           <div>
             slide show here
           </div>
         </section>
-        <section className="waiting">
+
+        <section className="section waiting space-around">
           <h2>What are you waiting for?</h2>
-          <button>JOIN TODAY</button>
+          <button className="join-button">JOIN TODAY</button>
         </section>
       </div>
     )
