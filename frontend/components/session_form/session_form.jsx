@@ -30,10 +30,10 @@ class SessionForm extends React.Component {
   }
 
   handleDemo(e) {
-    const ghost = (string, type) => () => {
+    const ghost = (string, field) => () => {
       if (string.length > 0) {
-        this.setState({ [type]: this.state[type] + string[0] });
-        setTimeout(ghost(string.slice(1), type), 100);
+        this.setState({ [field]: this.state[field] + string[0] });
+        setTimeout(ghost(string.slice(1), field), 90);
       }
     }
     if (this.loginForm()) {
@@ -43,14 +43,14 @@ class SessionForm extends React.Component {
       ghost(demoPassword, "password")();
     } else {
       this.props.history.push('/home');
-      // const demoEmail = "NewDemo@demo.io"
+      // const demoEmail = "New@demo.io"
       const demoUsername = "DemoUser";
       const demoPassword = "password";
       // ghost(demoEmail, "email")();
       setTimeout(ghost(demoUsername, "username")(), 200);
       setTimeout(ghost(demoPassword, "password")(), 200);
     }
-    setTimeout(this.login, 1500);
+    setTimeout(this.login, 1200);
   }
 
   login() {

@@ -11,7 +11,7 @@
   max-width: 100%;
   position: relative;
   margin: auto;
-  clip: rect(0px,60px,200px,0px)
+  box-sizing: border-box;
 }
 
 /* Hide the images by default */
@@ -88,4 +88,47 @@
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  h2 {font-size: 36px;}
+  h3 {font-size: 22px;}
+}
+
+.section-sponsers {
+  background-color: #74AC00;
+}
+
+.sponsers {
+  width: 80%;
+  margin: auto;
+  p {
+    padding: 20px 60px;
+    color: white;
+    font-size: 14px;
+  }
+}
+
+.how-it-works {
+  background-color: #FFFFFF;
+  h2 {font-size: 36px;}
+  
+}
+
+.section-row {
+  flex-direction: column;
+}
+
+.contribute, .waiting {
+  background-color: #000000;
+  color: white;
+  * {color: white;}
+}
+
+.who-uses {
+  background-color: #EEEEEE;
 }

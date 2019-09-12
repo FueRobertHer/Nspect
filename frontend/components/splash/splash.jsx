@@ -43,26 +43,33 @@ class Splash extends React.Component {
           <a className="prev" >&#10094;</a>
           <a className="next" >&#10095;</a>
         </div>
-        <section className='sponsers'>
-          <div className='svg'>
-     
+
+        <section className='section section-sponsers'>
+          <div className="section sponsers">
+            <div>
+              <SVGImg.NatGeoCASWhite />
+            </div>
+            <p>Nspect is a solo project of Fue Robert Her to clone iNaturalist.org, a joint initiative of the California Academy of Sciences and the National Geographic Society. </p>
           </div>
         </section>
-        <section>
-          <h2>How It Works</h2>
-          <section>
-            <SVGImg.Record />
-            <SVGImg.Share />
-            <SVGImg.Discuse />
-          </section>
-          <section>
-            <p>Record your observation</p>
-            <p>Share with fellow naturalists</p>
-            <p>Discuss your findings</p>
+        
+        <section className='section '>
+          <section className="how-it-works section section-row">
+            <h2>How It Works</h2>
+            <section className='section'>
+              <SVGImg.Record />
+              <SVGImg.Share />
+              <SVGImg.Discuse />
+            </section>
+            <section className='section'>
+              <p>Record your observation</p>
+              <p>Share with fellow naturalists</p>
+              <p>Discuss your findings</p>
+            </section>
           </section>
         </section>
-        <section>
-          <section>
+        <section className="contribute">
+          <section className='section'>
             <h2>Contribute to Science</h2>
             <p>Every observation can contribute to biodiversity science, from the rarest butterfly to the most common backyard weed. We share your findings with scientific data repositories like the Global Biodiversity Information Facility to help scientists find and use your data. All you have to do is observe.</p>
           </section>
@@ -70,54 +77,56 @@ class Splash extends React.Component {
             img here
           </section>
         </section>
-        <section>
+        <section className='section section-row'>
           <h2>Nature At Your Fingertips</h2>
-          <section>
-            <section>
+          <section className='section '>
+            <section >
               <SVGImg.KeepTrack />
               <section>
-                <h2>Keep Track</h2>
+                <h3>Keep Track</h3>
                 <p>Record your encounters with other orgamisms and maintain life lists, all in the cloud.</p>
               </section>
               <SVGImg.Bee />
               <section>
-                <h2>Create Useful Data</h2>
+                <h3>Create Useful Data</h3>
                 <p>Help scientists and resource managers understand when and where orgaanisms occur.</p>
               </section>
             </section>
+
             <section>
               <SVGImg.Crowd />
               <section>
-                <h2>Crowdsource Identifications</h2>
+                <h3>Crowdsource Identifications</h3>
                 <p>Connect with experts who can identify the organisms you observe.</p>
               </section>
               <SVGImg.NerdCowboy />
               <section>
-                <h2>Become a Citizen Scientist</h2>
+                <h3>Become a Citizen Scientist</h3>
                 <p>Find a project with a mission that intestets you, or start your own.</p>
               </section>
             </section>
+
             <section>
               <SVGImg.Owl />
               <section>
-                <h2>Learn About Nature</h2>
+                <h3>Learn About Nature</h3>
                 <p>Build your knowledge by talking with other naturalists and helping others.</p>
               </section>
               <SVGImg.Megaphone />
               <section>
-                <h2>Run a Bioblitz</h2>
+                <h3>Run a Bioblitz</h3>
                 <p>Hold an event where people try to find as many species as possible.</p>
               </section>
             </section>
           </section>
         </section>
-        <section>
+        <section className="who-uses">
           <h2>Who Uses Nsepect?</h2>
           <div>
             slide show here
           </div>
         </section>
-        <section>
+        <section className="waiting">
           <h2>What are you waiting for?</h2>
           <button>JOIN TODAY</button>
         </section>
