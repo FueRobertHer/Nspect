@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, withRouter, Switch, Link, Redirect } from 'react-router-dom';
-import { AuthRoute } from '../util/route_util';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 // 
 import SplashContainer from '../components/splash/splash_container';
 import MainNavContainer from '../components/main_nav/main_nav_container';
@@ -37,7 +37,7 @@ const App = ({ location }) => (
     {/* <Route exact path="/" component={SearchContainer} /> */}
     
     <Switch>
-      <Route exact path="/home" component={HomeContainer} />
+      <ProtectedRoute exact path="/home" component={HomeContainer} />
       <Route exact path="/people" component={UserIndexContainer} />
       {/* <Route exact path='/people/:userId' /> */}
       {/* <Route path='/' component={NotFound} /> */}

@@ -12,7 +12,7 @@ class MainNav extends React.Component {
       <nav className="main-nav">
         <Link to='/'><h1 className="title">Nspect</h1></Link>
 
-        <form className="search-container">
+        <form className="search-container" >
           <input 
           className="search-input"
           type="text"
