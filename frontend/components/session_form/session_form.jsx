@@ -114,7 +114,7 @@ class SessionForm extends React.Component {
   img() {
     return (
       <div className="session-img">
-        img goes here
+         
       </div>
     )
   }

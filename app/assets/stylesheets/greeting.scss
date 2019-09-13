@@ -33,10 +33,11 @@
 }
 
 .user-nav-item {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 10px;
+  margin: 10px 10px;
 }
 
 .upload-button {
@@ -58,6 +59,10 @@
   filter: brightness(55%);
 }
 
-.up-arrow {
+.user-nav-icon {
   margin-right: 5px;
+}
+
+.user-nav-num {
+  margin-left: 5px;
 }

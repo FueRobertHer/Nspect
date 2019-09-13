@@ -1,7 +1,6 @@
 .session-container-container {
   display: flex;
   justify-content: center;
-  align-items: center;
   height: 100%;
   text-align: center;
 }
@@ -9,8 +8,11 @@
 
 .session-img {
   width: 55%;
-  height: 100%;
-  background-color: azure;
+  height: 93.5vh;
+  background-color: rgb(161, 238, 90);
+  display: block;
+  background-image: url('https://static.inaturalist.org/photos/47930640/large.jpeg?1565595867');
+  background-repeat: round;
 }
  
 .session-form-container {

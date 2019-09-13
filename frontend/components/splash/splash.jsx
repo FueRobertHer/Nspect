@@ -135,8 +135,9 @@ class Splash extends React.Component {
         </section>
         
         <section className="section section-row who-uses">
-          <h2>Who Uses Nsepect?</h2>
+          <h2>Who Uses Nspect?</h2>
           <div className="slideshow-container">
+            <div className=""></div>
             slide show here
           </div>
         </section>

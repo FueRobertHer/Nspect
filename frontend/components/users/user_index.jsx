@@ -12,9 +12,8 @@ class UserIndex extends React.Component {
   };
  
   render() {
-    console.log(this.props.users)
     const usersList = this.props.users.map( user =>
-      <ul className="users-list">
+      <ul className="user-list">
         <UserIndexItem key={user.id} user={user} />
       </ul>
     )
@@ -22,7 +21,7 @@ class UserIndex extends React.Component {
       <div className="user-index">
         <section className="space-between">
           <h2 className="title">The People of Nspect</h2>
-          
+
         </section>
 
         <div className="user-index ">

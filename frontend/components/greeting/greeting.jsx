@@ -7,17 +7,19 @@ const Greeting = ({currentUser, logout}) => {
     <nav className="user-nav">
       <Link to='/observations/upload'>
         <button className="upload-button">
-          <UpArrow className="up-arrow" />
+          <UpArrow className="user-nav-icon"/>
           Upload
         </button>
       </Link>
       <ul className="user-nav user-nav-list">
         <li className="user-nav-item">
           <MailBlack />
+          <p className="user-nav-num">0</p>
         </li>
 
         <li className="user-nav-item">
           <Comment />
+          <p className="user-nav-num">0</p>
         </li>
 
         <li className="user-nav-item">
