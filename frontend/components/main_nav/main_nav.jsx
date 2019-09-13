@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Search } from '../../util/svg/icon_svg';
+import { Search } from '../svg/icon_svg';
 
 class MainNav extends React.Component {
   constructor(props) {

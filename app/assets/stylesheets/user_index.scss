@@ -1,0 +1,29 @@
+.user-index {
+  width: 80vw;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+}
+
+.user-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.user-list-item {
+  min-height: 200px;
+  min-width: 200px;
+  margin: 10px;
+  display: block;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between
+}

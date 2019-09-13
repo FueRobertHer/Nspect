@@ -1,5 +1,5 @@
 import React from 'react';
-import { NatGeoCAS } from '../../util/svg/img_svg'; 
+import { NatGeoCAS } from '../svg/img_svg';
 
 const Footer = ({ location }) => (
   <footer className="footer-main">

@@ -28,15 +28,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 20px;
+
 }
 
 .user-nav-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 10px;
 }
 
 .upload-button {
   cursor: pointer;
+  height: 30px;
+  width: 80px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   background-color: #74AC00;
   border: solid #74ac00;
@@ -44,4 +52,12 @@
   border-radius: 100px;
   text-align: center;
   outline: none;
+}
+
+.upload-button:hover {
+  filter: brightness(55%);
+}
+
+.up-arrow {
+  margin-right: 5px;
 }

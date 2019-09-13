@@ -22,6 +22,16 @@ const Protected = ({ component: Component, path, loggedIn, exact }) => (
   />
 )
 
+const Home = ({ component: Component, path, loggedIn, exact }) => (
+  <Route
+    path={path}
+    exact={exact}
+    render={props =>
+      !loggedIn ? <Component {...props} /> : <Redirect to="/home" />
+    }
+  />
+)
+
 const mapSTP = state => (
   {loggedIn: Boolean(state.session.id)}
 );
@@ -39,4 +49,11 @@ export const ProtectedRoute = withRouter(
     mapSTP,
     null,
   )(Protected)
+);
+
+export const HomeRoute = withRouter(
+  connect(
+    mapSTP,
+    null,
+  )(Home)
 );

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { logout } from '../../actions/session_action';
+import { logout } from '../../actions/session_actions';
 import MainNav from './main_nav';
 
 const mapSTP = ({ session, entities: { users } }) => ({

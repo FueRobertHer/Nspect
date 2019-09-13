@@ -1,17 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { login } from '../../actions/session_action';
+import { fetchUsers } from '../../actions/users_actions';
 import { Link } from 'react-router-dom';
 
 import UserIndex from './user_index';
 
-const mapSTP = state => ({
-
+const mapSTP = ({ entities: {users} }) => ({
+  users: Object.values(users),
 })
 
 
 const mapDTP = dispatch => ({
-
+  fetchUsers: () => dispatch(fetchUsers()),
 })
 
 export default connect(

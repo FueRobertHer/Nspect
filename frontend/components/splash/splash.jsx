@@ -1,5 +1,5 @@
 import React from 'react';
-import * as SVGImg from '../../util/svg/img_svg';
+import * as SVGImg from '../svg/img_svg';
 import { Link } from 'react-router-dom';
 
 class Splash extends React.Component {
@@ -46,8 +46,8 @@ class Splash extends React.Component {
           <a className="next" >&#10095;</a>
         </div>
 
-        <section className='section section-sponsers'>
-          <div className="section sponsers">
+        <section className='section width'>
+          <div className="section section-sponsers sponsers">
             <div>
               <SVGImg.NatGeoCASWhite />
             </div>

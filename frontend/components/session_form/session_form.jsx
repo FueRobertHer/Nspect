@@ -1,5 +1,5 @@
 import React from 'react';
-import * as SVGIcon from '../../util/svg/icon_svg';
+import * as SVGIcon from '../svg/icon_svg';
 import { Link } from 'react-router-dom';
 
 class SessionForm extends React.Component {
@@ -37,13 +37,13 @@ class SessionForm extends React.Component {
       ghost(demoUsername, "username")();
       ghost(demoPassword, "password")();
     } else {
-      this.props.history.push('/home');
       // const demoEmail = "New@demo.io"
       const demoUsername = "DemoUser";
       const demoPassword = "password";
       // ghost(demoEmail, "email")();
-      setTimeout(ghost(demoUsername, "username")(), 200);
-      setTimeout(ghost(demoPassword, "password")(), 200);
+      setTimeout(ghost(demoUsername, "username")(), 500);
+      setTimeout(ghost(demoPassword, "password")(), 500);
+      this.props.history.push('/home');
     }
     setTimeout(this.login, 1200);
   }

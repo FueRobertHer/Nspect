@@ -1,21 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { UpArrow } from '../../util/svg/icon_svg';
+import { UpArrow, Comment, MailBlack } from '../svg/icon_svg';
 
 const Greeting = ({currentUser, logout}) => {
   const greet = () => (
     <nav className="user-nav">
-      <button className="upload-button">
-        <UpArrow />
-        upload
-      </button>
+      <Link to='/observations/upload'>
+        <button className="upload-button">
+          <UpArrow className="up-arrow" />
+          Upload
+        </button>
+      </Link>
       <ul className="user-nav user-nav-list">
         <li className="user-nav-item">
-          messages
+          <MailBlack />
         </li>
 
         <li className="user-nav-item">
-          comments
+          <Comment />
         </li>
 
         <li className="user-nav-item">
