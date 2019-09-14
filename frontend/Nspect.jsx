@@ -4,7 +4,7 @@ import configureStore from './store/store';
 import Root from './components/Root';
 
 import { fetchUsers, fetchUser } from './actions/users_actions';
-
+import { fetchObservations, fetchObservation } from './actions/observations_actions';
  
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.dispatch = store.dispatch;
   
   window.fetchUser = fetchUser;
-  window.fetchUsers = fetchUsers;
+  window.fetchObservations = fetchObservations;
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root)

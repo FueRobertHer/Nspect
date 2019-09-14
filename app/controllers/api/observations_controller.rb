@@ -1,7 +1,7 @@
 class Api::ObservationsController < ApplicationController
 
   def index
-    @observations = Observations.all
+    @observations = Observation.all
     render :index
   end
 

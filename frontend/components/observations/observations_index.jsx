@@ -12,6 +12,8 @@ class ObservationsIndex extends React.Component {
   };
 
   render() {
+    console.log(this.props.observations);
+    
     const observationsList = this.props.observations.map(observation =>
       <ul className="observation-list">
         <ObservationsIndexItem key={observation.id} observation={observation} />
@@ -26,7 +28,7 @@ class ObservationsIndex extends React.Component {
 
         <div className="observation-index ">
           hi
-          {/* {observationsList} */}
+          {observationsList}
         </div>
 
         <div>
