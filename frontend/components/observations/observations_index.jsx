@@ -8,15 +8,15 @@ class ObservationsIndex extends React.Component {
   }
 
   componentDidMount() {
-    // this.props.fetchObservations()
+    this.props.fetchObservations()
   };
 
   render() {
-    // const observationsList = this.props.observations.map(observation =>
-    //   <ul className="observation-list">
-    //     <ObservationsIndexItem key={observation.id} observation={observation} />
-    //   </ul>
-    // )
+    const observationsList = this.props.observations.map(observation =>
+      <ul className="observation-list">
+        <ObservationsIndexItem key={observation.id} observation={observation} />
+      </ul>
+    )
     return (
       <div className="observation-index">
         <section className="space-between">

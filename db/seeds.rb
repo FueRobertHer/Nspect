@@ -25,42 +25,42 @@ User.create!(
 
 Observation.create!(
   observer_id: 1,
-  lat: '',
-  lng: '',
+  lat: 1.1,
+  lng: 1.1,
   description: "test observation"
 )
 
 Observation.create!(
   observer_id: 1,
-  lat: '',
-  lng: '',
+  lat: 1.1,
+  lng: 1.1,
   description: "test observation"
 )
 
 Observation.create!(
   observer_id: 1,
-  lat: '',
-  lng: '',
+  lat: 1.1,
+  lng: 1.1,
   description: "test observation"
 )
 
 Observation.create!(
   observer_id: 2,
-  lat: '',
-  lng: '',
+  lat: 1.1,
+  lng: 1.1,
   description: "test observation 2"
 )
 
 Observation.create!(
   observer_id: 2,
-  lat: '',
-  lng: '',
+  lat: 1.1,
+  lng: 1.1,
   description: "test observation 2"
 )
 
 Observation.create!(
   observer_id: 2,
-  lat: '',
-  lng: '',
+  lat: 1.1,
+  lng: 1.1,
   description: "test observation 2"
 )
