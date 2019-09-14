@@ -21,6 +21,8 @@ User.create!(
   password: 'tester'
 )
 
+
+
 Observation.create!(
   observer_id: 1,
   lat: '',

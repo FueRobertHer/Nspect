@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchObservations } from '../../actions/users_actions';
+import { fetchObservations } from '../../actions/observations_actions';
 import { Link } from 'react-router-dom';
 
 import ObservationsIndex from './observations_index';
 
-const mapSTP = ({ entities: { users } }) => ({
-  users: Object.values(users),
+const mapSTP = ({ entities: { observations } }) => ({
+  observations: Object.values(observations),
 })
 
 

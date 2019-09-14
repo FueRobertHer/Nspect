@@ -28,7 +28,7 @@ export const updateObservation = observation => (
   })
 )
 
-export const destroyObservation = id => (
+export const deleteObservation = id => (
   $.ajax({
     method: 'delete',
     url: `/api/observations/${id}`
@@ -43,7 +43,7 @@ export const addIdentification = identification => (
   })
 )
 
-export const destroyIdentification = id => (
+export const deleteIdentification = id => (
   $.ajax({
     method: 'delete',
     url: `/api/identification/${id}`,
