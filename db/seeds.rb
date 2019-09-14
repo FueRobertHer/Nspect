@@ -9,13 +9,13 @@
 Observation.delete_all
 User.delete_all
 
-User.create!(
+user1 = User.create!(
   username: 'DemoUser',
   email: 'demo@user.io',
   password: 'password'
 )
 
-User.create!(
+user2 = User.create!(
   username: 'tester',
   email: 'tester@test.io',
   password: 'tester'
@@ -24,42 +24,42 @@ User.create!(
 
 
 Observation.create!(
-  observer_id: 1,
+  observer_id: user1.id,
   lat: 1.1,
   lng: 1.1,
   description: "test observation"
 )
 
 Observation.create!(
-  observer_id: 1,
+  observer_id: user1.id,
   lat: 1.1,
   lng: 1.1,
   description: "test observation"
 )
 
 Observation.create!(
-  observer_id: 1,
+  observer_id: user1.id,
   lat: 1.1,
   lng: 1.1,
   description: "test observation"
 )
 
 Observation.create!(
-  observer_id: 2,
+  observer_id: user2.id,
   lat: 1.1,
   lng: 1.1,
   description: "test observation 2"
 )
 
 Observation.create!(
-  observer_id: 2,
+  observer_id: user2.id,
   lat: 1.1,
   lng: 1.1,
   description: "test observation 2"
 )
 
 Observation.create!(
-  observer_id: 2,
+  observer_id: user2.id,
   lat: 1.1,
   lng: 1.1,
   description: "test observation 2"
