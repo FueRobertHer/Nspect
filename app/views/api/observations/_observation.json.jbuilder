@@ -1,0 +1,1 @@
+json.extract! observation, :id, :lat, :lng, :description, :created_at, :updated_at

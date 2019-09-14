@@ -1,0 +1,1 @@
+json.partial! 'api/observations/observation', observation: @observation
