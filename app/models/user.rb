@@ -31,6 +31,8 @@ class User < ApplicationRecord
     user.is_password?(pass) ? user : nil
   end
 
+  has_one_attached :profile_pic
+
   has_many :observations,
     foreign_key: :observer_id,
     class_name: :Observation
