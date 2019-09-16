@@ -44,7 +44,7 @@ class AddObservationForm extends React.Component {
             placeholder="Date"
           /> */}
 
-          <Datetime onChange={this.update('datetime')} inputProps={{ placeholder: ' Date', }} />
+          <Datetime inputProps={{ placeholder: ' Date' }} />
       
           <input 
             type="text" 
