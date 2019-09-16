@@ -11,7 +11,7 @@ const Greeting = ({currentUser, logout}) => {
   const greet = () => (
     <nav className="user-nav">
       <Link to='/observations/upload'>
-        <button className="upload-button" onCLick={handleUpload}>
+        <button className="upload-button" onClick={handleUpload}>
           <UpArrow className="user-nav-icon"/>
           Upload
         </button>
