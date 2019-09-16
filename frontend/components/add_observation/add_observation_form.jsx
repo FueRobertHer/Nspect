@@ -14,3 +14,5 @@ class AddObservationForm extends React.Component {
     )
   }
 }
+
+export default AddObservationForm;

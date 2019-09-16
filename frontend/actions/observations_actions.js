@@ -3,6 +3,8 @@ import * as APIObs from '../util/observations_api_util';
 export const RECEIVE_OBSERVATIONS = "RECEIVE OBSERVATIONS";
 export const RECEIVE_OBSERVATION = "RECEIVE_OBSERVATION";
 export const REMOVE_OBSERVATION = "REMOVE_OBSERVATION";
+export const RECEIVE_OBS_ERRORS = "REVEIVE_OBS_ERRORS";
+
 
 export const receiveObservations = observations => ({
   type: RECEIVE_OBSERVATIONS,
@@ -17,6 +19,15 @@ export const receiveObservation = observation => ({
 export const removeObservation = id => ({
   type: REMOVE_OBSERVATION,
 })
+
+export const receiveObsErrors = errors => ({
+  type: RECEIVE_OBS_ERRORS,
+  errors
+})
+
+export const addObservation = () => dispatch => APIObs.addObservation(observation)
+  .then( observation => dispatch(receiveObservation(observation)))
+  .fail(errors => dispatch(receiveErrors(errors.responseJSON)));
 
 export const fetchObservations = () => dispatch => APIObs.fetchObservations()
   .then( observations => dispatch(receiveObservations(observations)))
