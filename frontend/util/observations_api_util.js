@@ -1,4 +1,4 @@
-export const addObservation = observation => (
+  export const addObservation = observation => (
   $.ajax({
     method: 'post',
     url: '/api/observations',

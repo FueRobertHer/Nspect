@@ -2,16 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { UpArrow, Comment, MailBlack } from '../svg/icon_svg';
 
-const handleUpload = e => {
-  e.preventDefault();
-  this.props.history.push('/observation/upload')
-}
-
 const Greeting = ({currentUser, logout}) => {
   const greet = () => (
     <nav className="user-nav">
       <Link to='/observations/upload'>
-        <button className="upload-button" onClick={handleUpload}>
+        <button className="upload-button">
           <UpArrow className="user-nav-icon"/>
           Upload
         </button>

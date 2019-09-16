@@ -177,7 +177,7 @@ function factory(ReactComponent, isValidElement, ReactNoopUpdateQueue) {
      *
      * @optional
      */
-    componentWillMount: 'DEFINE_MANY',
+    UNSAFE_componentWillMount: 'DEFINE_MANY',
 
     /**
      * Invoked when the component has been mounted and has a DOM representation.
@@ -210,7 +210,7 @@ function factory(ReactComponent, isValidElement, ReactNoopUpdateQueue) {
      * @param {object} nextProps
      * @optional
      */
-    componentWillReceiveProps: 'DEFINE_MANY',
+    UNSAFE_componentWillReceiveProps: 'DEFINE_MANY',
 
     /**
      * Invoked while deciding if the component should be updated as a result of
@@ -249,7 +249,7 @@ function factory(ReactComponent, isValidElement, ReactNoopUpdateQueue) {
      * @param {ReactReconcileTransaction} transaction
      * @optional
      */
-    componentWillUpdate: 'DEFINE_MANY',
+    UNSAFE_componentWillUpdate: 'DEFINE_MANY',
 
     /**
      * Invoked when the component's DOM representation has been updated.
@@ -1343,7 +1343,7 @@ var Datetime = createClass({
 		return formats;
 	},
 
-	componentWillReceiveProps: function( nextProps ) {
+	UNSAFE_componentWillReceiveProps: function( nextProps ) {
 		var formats = this.getFormats( nextProps ),
 			updatedState = {}
 		;
@@ -2207,7 +2207,7 @@ var DateTimePickerTime = createClass({
 		);
 	},
 
-	componentWillMount: function() {
+	UNSAFE_componentWillMount: function() {
 		var me = this;
 		me.timeConstraints = {
 			hours: {
@@ -2237,7 +2237,7 @@ var DateTimePickerTime = createClass({
 		this.setState( this.calculateState( this.props ) );
 	},
 
-	componentWillReceiveProps: function( nextProps ) {
+	UNSAFE_componentWillReceiveProps: function( nextProps ) {
 		this.setState( this.calculateState( nextProps ) );
 	},
 

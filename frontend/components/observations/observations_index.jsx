@@ -1,5 +1,6 @@
 import React from 'react';
 import ObservationsIndexItem from './observations_index_item';
+import { fetchObservations, fetchObservation } from '../../util/observations_api_util';
 
 class ObservationsIndex extends React.Component {
   constructor(props) {
@@ -8,7 +9,9 @@ class ObservationsIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchObservations()
+    this.props.fetchObservations();
+    fetchObservations(this.props.observations)
+      .then( observations => this.setState({observations: observations}))
   };
 
   render() {    

@@ -25,9 +25,9 @@ export const receiveObsErrors = errors => ({
   errors
 })
 
-export const addObservation = () => dispatch => APIObs.addObservation(observation)
+export const addObservation = observation => dispatch => APIObs.addObservation(observation)
   .then( observation => dispatch(receiveObservation(observation)))
-  .fail(errors => dispatch(receiveErrors(errors.responseJSON)));
+  // .fail(errors => dispatch(receiveErrors(errors.responseJSON)));
 
 export const fetchObservations = () => dispatch => APIObs.fetchObservations()
   .then( observations => dispatch(receiveObservations(observations)))

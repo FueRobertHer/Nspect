@@ -44,7 +44,7 @@ const App = ({ location }) => (
       <ProtectedRoute exact path="/home" component={HomeContainer} />
       <Route exact path="/people/:userId" component={UserShowContainer} />
       <Route exact path="/people" component={UserIndexContainer} />
-      <Route exact path="/observations/upload" component={AddObservationContainer} />
+      <ProtectedRoute exact path="/observations/upload" component={AddObservationContainer} />
       <Route exact path="/observations/:observationId" component={ObservationShowContainer} />
       <Route exact path="/observations" component={ObservationsIndexContainer} />
       <Route path="/" component={NotFound} />

@@ -5,9 +5,11 @@ import { Link } from 'react-router-dom';
 
 import AddObservationForm from './add_observation_form';
 
-const mapSTP = (state) => ({
-  // state
-})
+const mapSTP = ({ session, entities: { users } }) => {
+  return ({
+    currentUser: users[session.id]
+  })
+};
 
 
 const mapDTP = dispatch => ({

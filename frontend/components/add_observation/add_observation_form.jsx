@@ -1,12 +1,10 @@
 import React from 'react';
-import * as Datetime from 'react-datetime';
-
-var date = new Date();
 
 class AddObservationForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      observer_id: this.props.currentUser.id,
       lat: null,
       lng: null,
       datetime: new Date(),
@@ -16,36 +14,34 @@ class AddObservationForm extends React.Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault;
+    e.preventDefault();
     const observation = Object.assign({}, this.state);
     this.props.addObservation(observation)
-      .then(() => this.props.history.push('/observations/'));
+      .then(() => this.props.history.push('/home'));
   };
 
   update(field) {
     return e => this.setState({
       [field]: e.target.value
-    });
+    });                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
   }
 
-  render() {
-    console.log(this.state);
-    
+  render() {    
     return (
       <div className="add-obs-form-container">
-        <form className="add-obs-form">
+        <form 
+          onSubmit={this.handleSubmit}
+          className="add-obs-form">
+
           <input 
             type="text" 
             placeholder="Species name"
           />
-          {/* <input 
+          <input 
             onChange={this.update('datetime')}
             type="datetime-local" 
             placeholder="Date"
-          /> */}
-
-          <Datetime inputProps={{ placeholder: ' Date' }} />
-      
+          />
           <input 
             type="text" 
             placeholder="Location" 
@@ -57,7 +53,7 @@ class AddObservationForm extends React.Component {
             placeholder="Description" 
           />
 
-          <button >submit observation</button>
+          <button>submit observation</button>
         </form>
       </div>
     )
