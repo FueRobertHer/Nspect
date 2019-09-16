@@ -9,6 +9,8 @@ class Home extends React.Component {
     return (
       <div>
         Home page
+
+        
       </div>
     )
   }
