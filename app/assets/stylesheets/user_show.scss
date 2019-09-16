@@ -1,10 +1,67 @@
 .user-show-container {
-  width: 60vw;
+  width: 70vw;
   margin: auto;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
 
 }
 
 .user-section {
   margin: 20px;
+}
+
+.user-profile-sidebar {
+  width: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.user-profile-picture {
+  width: 100%;
+  min-height: 200px;
+  border: 1px solid;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-profile-button {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.user-sidebar-nav {
+
+}
+
+.user-sidebar-nav-item {
+  width: 360px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid;
+  margin-top: -1px;
+  p { margin: 0 10px;}
+}
+
+.profile-name-header {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.profile-joined-date {
+  font-size: 14px;
+}
+
+.user-description {
+  font-size: 21px;
+  margin: 10px 0;
+}
+
+.user-following-header {
+  font-size: 24px;
+  margin: 15px 0;
+  border-bottom: 1px solid;
 }

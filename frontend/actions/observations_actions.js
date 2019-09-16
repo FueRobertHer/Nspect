@@ -9,9 +9,9 @@ export const receiveObservations = observations => ({
   observations
 })
 
-export const receiveObservation = observationId => ({
+export const receiveObservation = observation => ({
   type: RECEIVE_OBSERVATION,
-  observationId
+  observation
 })
 
 export const removeObservation = id => ({

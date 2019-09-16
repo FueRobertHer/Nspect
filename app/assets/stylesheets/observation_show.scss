@@ -1,0 +1,33 @@
+.obs-show-main {
+  width: 70vw;
+  margin: auto;
+}
+
+.obs-show-title {
+  margin: 20px 0;
+  font-size: 32px;
+
+}
+
+.obs-pic-map {
+  display: grid;
+  grid-template-columns: 5fr 4fr;
+}
+
+.obs-pic {
+  width: 100%;
+  height: 420px;
+  border: 1px solid;
+}
+
+.border {
+  border: 1px solid #DDDDDD;
+}
+
+.obs-h3 {
+  font-size: 20px;
+}
+
+.obs-desc {
+  font-size: 14px;
+}

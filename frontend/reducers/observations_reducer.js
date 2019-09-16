@@ -7,7 +7,7 @@ const observationsReducer = (state = {}, action) => {
     case RECEIVE_OBSERVATIONS:
       return action.observations;
     case RECEIVE_OBSERVATION:
-      return Object.assign({}, state, action.observations);
+      return {observation: action.observations}
     default:
       return state;
   }
