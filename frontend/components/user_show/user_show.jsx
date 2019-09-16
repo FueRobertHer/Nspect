@@ -6,12 +6,30 @@ class UserShow extends React.Component {
 
   }
 
+  componentDidMount() {    
+    this.props.fetchUser(this.props.match.params.userId)
+    
+  }
+
   render() {
-    return (
-      <div>
-        user show page
-      </div>
-    )
+    const user = this.props.user;
+
+    if (user === undefined) {
+      return (
+        <div></div>
+      )
+    } else {
+      return (
+        <div>
+         <h1>{user.username}</h1>
+          <section>
+            <h2>{user.created_at}</h2>
+          </section>
+
+        </div>
+      )
+    }
+
   }
 }
 

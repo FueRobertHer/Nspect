@@ -6,6 +6,6 @@ class Observation < ApplicationRecord
 
   has_many_attached :images
 
-  has_many_attached :sounds
+  # has_many_attached :sounds
 
 end

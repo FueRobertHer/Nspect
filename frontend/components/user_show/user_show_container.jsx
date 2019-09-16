@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 
 import UserShow from './user_show';
 
-const mapSTP = ({ entities: { users } }) => ({
-  user: Object.values(users),
+const mapSTP = ({ entities: { users: {user} } }) => ({
+  user
 })
 
 

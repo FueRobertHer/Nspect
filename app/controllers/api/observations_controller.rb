@@ -57,7 +57,7 @@ class Api::ObservationsController < ApplicationController
   private
 
   def obs_params
-    params.require(:observation).permit(:lat, :lng, :description, images: [], sounds: [])
+    params.require(:observation).permit(:lat, :lng, :description)
   end
 
 end
