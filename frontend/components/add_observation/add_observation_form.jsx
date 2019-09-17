@@ -28,33 +28,35 @@ class AddObservationForm extends React.Component {
 
   render() {    
     return (
-      <div className="add-obs-form-container">
-        <form 
-          onSubmit={this.handleSubmit}
-          className="add-obs-form">
+      <div className="add-obs-modal">
+        <div className="add-obs-form-container">
+          <form 
+            onSubmit={this.handleSubmit}
+            className="add-obs-form">
 
-          <input 
-            type="text" 
-            placeholder="Species name"
-          />
-          <input 
-            onChange={this.update('datetime')}
-            type="datetime-local" 
-            placeholder="Date"
-          />
-          <input 
-            type="text" 
-            placeholder="Location" 
-          />
-          <textarea 
-            onChange={this.update('description')}
-            cols="30" 
-            rows="10" 
-            placeholder="Description" 
-          />
+            <input 
+              type="text" 
+              placeholder="Species name"
+            />
+            <input 
+              onChange={this.update('datetime')}
+              type="datetime-local" 
+              placeholder="Date"
+            />
+            <input 
+              type="text" 
+              placeholder="Location" 
+            />
+            <textarea 
+              onChange={this.update('description')}
+              cols="30" 
+              rows="10" 
+              placeholder="Description" 
+            />
 
-          <button>submit observation</button>
-        </form>
+            <button>submit observation</button>
+          </form>
+        </div>
       </div>
     )
   }

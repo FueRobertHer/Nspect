@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { UpArrow, Comment, MailBlack } from '../svg/icon_svg';
+import AddObservationContainer from '../add_observation/add_observation_container';
 
 const Greeting = ({currentUser, logout}) => {
   const greet = () => (
@@ -10,6 +11,7 @@ const Greeting = ({currentUser, logout}) => {
           <UpArrow className="user-nav-icon"/>
           Upload
         </button>
+        {/* <AddObservationContainer /> */}
       </Link>
       <ul className="user-nav user-nav-list">
         <li className="user-nav-item">

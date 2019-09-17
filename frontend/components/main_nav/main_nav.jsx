@@ -25,8 +25,8 @@ class MainNav extends React.Component {
           </button>
         </form>
 
-        <Link to="/observations" className="main-nav-link explore"><b>Explore</b></Link>
-        <Link to="/people" className="main-nav-link"><b>Community</b></Link>
+        <Link to="/observations" className="main-nav-link explore"><div className="nav-link"><b>Explore</b></div></Link>
+        <Link to="/people" className="main-nav-link"><div><b>Community</b></div></Link>
       </nav>
     )
   }
