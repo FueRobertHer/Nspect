@@ -6,8 +6,8 @@ const mapSTP = ({ session, entities: { users } }) => ({
   currentUser: users[session.id]
 });
 
-const mapDTP = dispatch => ({
-  logout: () => dispatch(logout()),
+const mapDTP = (dispatch, ownProps ) => ({
+  logout: () => dispatch(logout()).then( () => ownProps.history.push('/')),
 });
 
 export default connect(
