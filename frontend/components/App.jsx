@@ -12,6 +12,7 @@ import LoginFormContainer from '../components/session_form/login_form_container'
 import HomeContainer from '../components/home/home_container';
 import UserIndexContainer from '../components/users/user_index_container';
 import UserShowContainer from './user_show/user_show_container';
+import SearchContainer from './search_container';
 import ObservationsIndexContainer from '../components/observations/observations_index_container';
 import ObservationShowContainer from '../components/observation_show/observation_show_container';
 import AddObservationContainer from '../components/add_observation/add_observation_container';
@@ -38,15 +39,13 @@ const App = ({ location }) => (
     <Switch>
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
-      <HomeRoute exact path="/" component={SplashContainer} />
-      {/* <Route exact path="/" component={SearchContainer} /> */}
-    
       <ProtectedRoute exact path="/home" component={HomeContainer} />
       <Route exact path="/people/:userId" component={UserShowContainer} />
       <Route exact path="/people" component={UserIndexContainer} />
       <ProtectedRoute exact path="/observations/upload" component={AddObservationContainer} />
       <Route exact path="/observations/:observationId" component={ObservationShowContainer} />
-      <Route exact path="/observations" component={ObservationsIndexContainer} />
+      <Route exact path="/observations" component={SearchContainer} />
+      <HomeRoute exact path="/" component={SplashContainer} />    
       <Route path="/" component={NotFound} />
     </Switch>
 

@@ -1,11 +1,11 @@
 import React from 'react';
-// import BenchMap from './bench_map';
-// import BenchIndex from './bench_index';
+import ObservationMap from './observation_map/observation_map';
+import ObservationIndex from './observations/observations_index'
 
-const Search = ({ benches, fetchBenches }) => (
+const Search = ({ observations, fetchObservations }) => (
   <div>
-    {/* <BenchMap benches={benches} />
-    <BenchIndex benches={benches} fetchBenches={fetchBenches}/> */}
+    <ObservationMap observations={observations} />
+    <ObservationIndex observations={observations} fetchObservations={fetchObservations}/>
   </div>
 )
 

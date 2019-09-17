@@ -1,16 +1,16 @@
 import { connect } from 'react-redux'
 import Search from './search';
-// import { fetchBenches } from '../actions/bench_actions';
+import { fetchObservations } from '../actions/observations_actions';
 
-const mapStateToProps = ({ entities: {benches} }) => ({
-  benches: Object.values(benches),
+const mapSTP = ({ entities: {observations} }) => ({
+  observations: Object.values(observations),
 })
 
-const mapDispatchtoProps = dispatch => ({
-  fetchBenches: () => dispatch(fetchBenches()),
+const mapDTP = dispatch => ({
+  fetchObservations: () => dispatch(fetchObservations()),
 })
 
 export default connect(
-  mapStateToProps,
-  mapDispatchtoProps,
+  mapSTP,
+  mapDTP,
 )(Search);
