@@ -1,7 +1,9 @@
 class Api::ObservationsController < ApplicationController
 
   def index
-    @observations = Observation.all
+    observations = bounds ? Observation.in_bounds(bounds) : Observation.all
+
+    @observations = observations
     render :index
   end
 
@@ -57,7 +59,10 @@ class Api::ObservationsController < ApplicationController
   private
 
   def obs_params
-    params.require(:observation).permit(:observer_id, :lat, :lng, :description, :datetime)
+    params.require(:observation).permit(:observer_id, :lat, :lng, :description, :datetime, :images)
   end
 
+  def bounds
+    params[:bounds]
+  end
 end

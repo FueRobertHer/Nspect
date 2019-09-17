@@ -6,10 +6,11 @@
   })
 )
 
-export const fetchObservations = () => (
+export const fetchObservations = data => (
   $.ajax({
     method: 'get',
-    url: '/api/observations'
+    url: '/api/observations',
+    data
   })
 )
 

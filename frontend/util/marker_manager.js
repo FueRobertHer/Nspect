@@ -1,36 +1,25 @@
 export default class MarkerManager {
-  constructor(map) {
+  constructor(map, handleClick) {
     this.map = map;
+    this.handleClick = handleClick;
     this.markers = {};
   }
 
   updateMarkers(observations) {
-    // for (let i = 0; i < observations.length; i++) {
-    //   let obs = observations[i];
-    //   this.markers[obs.id]
-    //     ? undefined
-    //     : this.createMarkerFromObs(obs)
-    // }
-
     const observationsObj ={};
     observations.forEach(obs => observationsObj[obs.id] = obs);
 
     observations
       .filter(obs => !this.markers[obs.id])
-      .forEach(newObs => this.createMarkerFromObs(newObs))
+      .forEach(newObs => this.createMarkerFromObs(newObs, this.handleClick))
 
     Object.keys(this.markers)
       .filter(obsId => !observationsObj[obsId])
-      .forEach((odsId) => this.removeMarker(this.markers[obsId]))
+      .forEach((obsId) => this.removeMarker(this.markers[obsId]))
   }
 
   createMarkerFromObs(obs) {
-    
-    // const obsLatLng = new google.maps.LatLng(obs.lat, obs.lng);
-    const obsLatLng = {lat: obs.lat, lng: obs.lng}
-
-    console.log(obsLatLng);
-
+    const obsLatLng = new google.maps.LatLng(obs.lat, obs.lng);
     const obsMarker = new google.maps.Marker({
       position: obsLatLng,
       map: this.map,
@@ -38,7 +27,7 @@ export default class MarkerManager {
       title: obs.description //this needs to show the top identification
     })
 
-    // this.markers.addListener('click', () => this.handleClick(obs));
+    obsMarker.addListener('click', () => this.handleClick(obs));
     this.markers[obsMarker.observationId] = obsMarker;
   }
 
