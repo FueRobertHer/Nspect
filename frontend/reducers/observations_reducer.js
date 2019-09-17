@@ -13,4 +13,5 @@ const observationsReducer = (state = {}, action) => {
   }
 }
 
+
 export default observationsReducer;

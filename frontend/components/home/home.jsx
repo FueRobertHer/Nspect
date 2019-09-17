@@ -1,21 +1,28 @@
 import React from 'react';
+import ObservationIndexItem from '../observations/observations_index_item';
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
   }
 
+  componentDidMount() {
+    this.props.fetchObservations()
+  }
+
   render() {
+    // console.log(this.props);
+    const currentUserObs = this.props.observations.map( obs => (
+      <ObservationIndexItem key={obs.id} observation={obs} />
+    ))
+    
     return (
       <div className="home-main">
         Home page
 
         <section className="home-feed-container">
           <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
+            {currentUserObs}
           </ul>
         </section>
         
