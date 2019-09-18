@@ -9,9 +9,9 @@ class ObservationsIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchObservations();
-    fetchObservations(this.props.observations)
-      .then( observations => this.setState({observations: observations}))
+    // this.props.fetchObservations();
+    // fetchObservations(this.props.observations)
+    //   .then( observations => this.setState({observations: observations}))
   };
 
   render() {    

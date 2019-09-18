@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 
 import AddObservationForm from './add_observation_form';
 
-const mapSTP = ({ session, entities: { users } }) => {
+const mapSTP = ({ session, entities: { users } }, { location }) => {
   return ({
-    currentUser: users[session.id]
+    currentUser: users[session.id],
   })
 };
 

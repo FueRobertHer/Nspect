@@ -4,7 +4,7 @@ class Observation < ApplicationRecord
     foreign_key: :observer_id,
     class_name: :User
 
-  has_many_attached :images
+  has_one_attached :image
 
   # has_many_attached :sounds
 

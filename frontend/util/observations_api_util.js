@@ -2,7 +2,9 @@
   $.ajax({
     method: 'post',
     url: '/api/observations',
-    data: { observation }
+    data: observation,
+    contentType: false,
+    processData: false,
   })
 )
 

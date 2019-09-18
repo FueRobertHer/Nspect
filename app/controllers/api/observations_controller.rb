@@ -59,7 +59,7 @@ class Api::ObservationsController < ApplicationController
   private
 
   def obs_params
-    params.require(:observation).permit(:observer_id, :lat, :lng, :description, :datetime, :images)
+    params.require(:observation).permit(:observer_id, :lat, :lng, :description, :datetime, :image)
   end
 
   def bounds
