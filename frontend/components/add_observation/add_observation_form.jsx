@@ -1,13 +1,23 @@
 import React from 'react';
+// import ObservationMap from '../observation_map/observation_map';
+import LocationMap from './add_location_map';
+
 import { withRouter } from 'react-router';
 
-// lat: new URLSearchParams(location.search).get('lat'),
-// lng: new URLSearchParams(location.search).get('lng')
+// const lat = new URLSearchParams(location.search).get('lat');
+// const lng = new URLSearchParams(location.search).get('lng')
+
+const mapOptions = {
+  center: { lat: 37.7758, lng: -122.435 }, // this is SF
+  zoom: 3
+};
+
+
 
 class AddObservationForm extends React.Component {
   constructor(props) {
     super(props);
-    this.coords = { lat: props.lat, lng: props.lng };
+    // this.coords = { lat: props.lat, lng: props.lng };
     this.state = {
       observer_id: this.props.currentUser.id,
       lat: null,
@@ -19,6 +29,7 @@ class AddObservationForm extends React.Component {
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFile = this.handleFile.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleSubmit(e) {
@@ -55,9 +66,13 @@ class AddObservationForm extends React.Component {
     }
   }
 
+  handleClick(coords) {
+    this.setState({lat:coords.lat, lng:coords.lng})
+  }
+
   render() {   
     console.log(this.state);
-    
+
     const preview = this.state.imageURL 
       ? <img height="70%" width="95%" src={this.state.imageURL} /> 
       : <img height="70%" width="95%" />;
@@ -107,8 +122,12 @@ class AddObservationForm extends React.Component {
           </form>
         </div>
         <div className="map-modal">
-          <div className="map">
-            map here
+          <div className="map-size-limit">
+            <LocationMap 
+              mapOptions={mapOptions}
+              handleClick={this.handleClick}
+            />
+            {/* <ObservationMap mapOptions={mapOptions} /> */}
           </div> 
         </div>
       </div>
