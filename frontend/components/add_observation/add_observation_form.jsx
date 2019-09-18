@@ -38,8 +38,8 @@ class AddObservationForm extends React.Component {
     obs.append('observation[observer_id]', this.state.observer_id);
     obs.append('observation[description]', this.state.description);
     obs.append('observation[datetime]', this.state.datetime);
-    obs.append('observation[lat]', this.coords['lat']);
-    obs.append('observation[lng]', this.coords['lng']);
+    obs.append('observation[lat]', this.state.lat);
+    obs.append('observation[lng]', this.state.lng);
 
     if (this.state.image) {
       obs.append('observation[image]', this.state.image);
@@ -68,6 +68,15 @@ class AddObservationForm extends React.Component {
 
   handleClick(coords) {
     this.setState({lat:coords.lat, lng:coords.lng})
+    const loc1 = document.getElementById('map-location1');
+    const loc2 = document.getElementById('map-location2');
+    loc1.value = `${coords.lat.toString().slice(0, 10)}  ${coords.lng.toString().slice(0, 10)}`;
+    loc2.value = `${coords.lat.toString().slice(0, 10)}  ${coords.lng.toString().slice(0, 10)}`;
+  }
+
+  toggleModal() {
+    const modal = document.getElementById('map-modal');
+    modal.classList.toggle("hidden")
   }
 
   render() {   
@@ -88,9 +97,14 @@ class AddObservationForm extends React.Component {
             <div className="preview-img-container">
               {preview}
               <section className="add-img-form">
-                <h3 className="button-holder">Add an Image</h3>
-                <input type="file" className="new-obs-pic-button"
-                  onChange={this.handleFile.bind(this)} />
+                <input 
+                  type="file" 
+                  className="new-obs-pic-button"
+                  onChange={this.handleFile.bind(this)} 
+                  name="file" 
+                  id="file"
+                />
+                <label for="file" className="add-img-button center">Add an Image</label>
               </section>
             </div>
 
@@ -98,6 +112,7 @@ class AddObservationForm extends React.Component {
               type="text" 
               placeholder="Species name"
               className="obs-field"
+              disabled
             />
             <input 
               onChange={this.update('datetime')}
@@ -107,10 +122,11 @@ class AddObservationForm extends React.Component {
               className="obs-field"
             />
             <input 
-              // onClick={}
+              onClick={this.toggleModal}
               type="text" 
               placeholder="Location"
               className="obs-field"
+              id="map-location1"
             />
             <textarea 
               onChange={this.update('description')}
@@ -121,13 +137,20 @@ class AddObservationForm extends React.Component {
             <button className="submit-obs-button">submit observation</button>
           </form>
         </div>
-        <div className="map-modal">
-          <div className="map-size-limit">
+        <div id="map-modal" className="center hidden" >
+          <div className="map-size-limit center" >
             <LocationMap 
               mapOptions={mapOptions}
               handleClick={this.handleClick}
             />
-            {/* <ObservationMap mapOptions={mapOptions} /> */}
+            <input
+              type="text"
+              placeholder="Location"
+              disabled
+              className="obs-field"
+              id="map-location2"
+            />
+            <span className="close" onClick={this.toggleModal}>close</span>
           </div> 
         </div>
       </div>

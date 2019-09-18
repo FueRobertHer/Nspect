@@ -48,14 +48,30 @@
 }
 
 .new-obs-pic-button {
-  align-self: center;
-  text-align: center;
-  width: fit-content;
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.add-img-button {
+  cursor: pointer;
+  margin-top: 5px;
+  padding: 0 15px;
+  background-color: #5DB85C;
+  border: 1px solid #5DB85C;
+  border-radius: 4px;
+  color: white;
+  height: 30px;
+  outline: none;
+  
 }
 
 .obs-field {
   height: 20px;
-  padding: 8px 10px;
+  padding: 5px 10px;
   border-radius: 3px;
   border: 1px solid #CCCCCC;
   outline: none;
@@ -76,10 +92,48 @@
   border: 1px solid #5DB85C;
   border-radius: 4px;
   color: white;
-  height: 30px;
+  height: 40px;
   margin-bottom: 40px;
+  outline: none;
+  padding: 8px 10px;
+  font-size: 18px;
 }
 
 .submit-obs-button:hover {
   filter: brightness(80%);
+}
+
+#map-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.map-size-limit {
+  width: 80vw;
+  height: 600px;
+  position: relative;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hidden {
+  display: none
+}
+
+.close {
+  cursor: pointer;
+  background-color: rgb(43, 180, 41); 
+  color: white;
+  border-radius: 50px;
+  padding: 7px 20px;
+  z-index: 10;
 }
