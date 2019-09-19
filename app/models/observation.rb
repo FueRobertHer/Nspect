@@ -1,6 +1,6 @@
 class Observation < ApplicationRecord
 
-  belongs_to :user,
+  belongs_to :observer,
     foreign_key: :observer_id,
     class_name: :User
 

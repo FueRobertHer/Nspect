@@ -11,11 +11,13 @@ const mapOptions = {
 const Search = ({ observations, fetchObservations, updateFilter }) => (
   <div>
     <h1>Observations</h1>
-    <ObservationMap 
-      observations={observations} 
-      updateFilter={updateFilter} 
-      mapOptions={mapOptions}
-    />
+    <div className="search-map">
+      <ObservationMap 
+        observations={observations} 
+        updateFilter={updateFilter} 
+        mapOptions={mapOptions}
+      />
+    </div>
     
     <ObservationIndex 
       observations={observations} 

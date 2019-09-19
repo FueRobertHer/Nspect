@@ -31,10 +31,6 @@ class ObservationsIndex extends React.Component {
             {observationsList}
           </ul>
         </div>
-
-        {/* <div className="observation-keymap">
-          map goes here
-        </div> */}
       </div>
     )
   }

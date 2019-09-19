@@ -3,12 +3,10 @@ import React from 'react';
 class UserShow extends React.Component {
   constructor(props) {
     super(props);
-
   }
 
   componentDidMount() {    
     this.props.fetchUser(this.props.match.params.userId)
-    
   }
 
   render() {

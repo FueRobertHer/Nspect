@@ -80,8 +80,6 @@ class AddObservationForm extends React.Component {
   }
 
   render() {   
-    console.log(this.state);
-
     const preview = this.state.imageURL 
       ? <img height="70%" width="95%" src={this.state.imageURL} /> 
       : <img height="70%" width="95%" />;
@@ -104,7 +102,7 @@ class AddObservationForm extends React.Component {
                   name="file" 
                   id="file"
                 />
-                <label for="file" className="add-img-button center">Add an Image</label>
+                <label htmlFor="file" className="add-img-button center">Add an Image</label>
               </section>
             </div>
 
