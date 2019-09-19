@@ -7,25 +7,46 @@ import ObservationMap from '../observation_map/observation_map';
 class ObservationShow extends React.Component {
   constructor(props) {
     super(props);
+    this.handleDelete = this.handleDelete.bind(this)
   }
 
   componentDidMount() {
     this.props.fetchObservation(this.props.match.params.observationId)
   }
 
+  handleDelete() {
+    this.props.deleteObservation(this.props.match.params.observationId)
+    this.props.history.push('/')
+  }
+
   render() {
     const obs = this.props.observation;
+
+    const editLinks = (
+          <div>
+            <span 
+              className="edit-button">
+              Edit
+            </span>
+
+            <span 
+              onClick={this.handleDelete}
+              className="delete-button">
+                Delete
+            </span>
+          </div>
+    )
 
     if (obs === undefined) {
       return ( <div></div> )
     } else {
-      const lat = obs.lat;
-      const lng = obs.lng;
       const mapOptions = {
-        center: { lat: lat, lng: lng },
-        zoom: 18,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
+        center: { lat: obs.lat, lng: obs.lng },
+        zoom: 15,
       };
+
+      const createdAt = obs.created_at ? obs.created_at.split("T")[0] + " at " + obs.created_at.split("T")[1].split(".")[0] : "some time in the past"
+      const observedAt = obs.datetime ? obs.datetime.split("T")[0] + " at " + obs.datetime.split("T")[1].split(".")[0] : "some time in the past"
       return (
         <div className="obs-show-main">
 
@@ -43,9 +64,15 @@ class ObservationShow extends React.Component {
                 <Link className="observer-link" to={`/people/${obs.observer_id}`} >
                   {obs.username}
                 </Link>
+                {(obs.observer_id === this.props.currentUser) ? editLinks : <span></span> }
               </div>
 
               <div className="obs-map border center">
+                <div className="obs-detail">
+                  <p>{createdAt}</p>
+                  <p>{observedAt}</p>
+                </div>
+
                 <div className="map-container border">
                   <ObservationMap 
                     singleObs={true}
