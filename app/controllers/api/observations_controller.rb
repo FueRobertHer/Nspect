@@ -36,7 +36,6 @@ class Api::ObservationsController < ApplicationController
   # end
 
   def update
-    debugger
     @observation = Observation.find(params[:observation][:id])
     if @observation.observer_id == current_user.id
       if @observation.update(obs_params)
