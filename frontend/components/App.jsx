@@ -16,6 +16,7 @@ import SearchContainer from './search_container';
 import ObservationsIndexContainer from '../components/observations/observations_index_container';
 import ObservationShowContainer from '../components/observation_show/observation_show_container';
 import AddObservationContainer from '../components/add_observation/add_observation_container';
+import EditObservationContainer from '../components/edit_observation/edit_observation_container';
 import NotFound from '../components/not_found';
 // import SearchContainer from './search_container';
 
@@ -43,6 +44,7 @@ const App = ({ location }) => (
       <Route exact path="/people/:userId" component={UserShowContainer} />
       <Route exact path="/people" component={UserIndexContainer} />
       <ProtectedRoute exact path="/observations/upload" component={AddObservationContainer} />
+      <ProtectedRoute exact path="/observations/:observationId/edit" component={EditObservationContainer} />
       <Route exact path="/observations/:observationId" component={ObservationShowContainer} />
       <Route exact path="/observations" component={SearchContainer} />
       <HomeRoute exact path="/" component={SplashContainer} />    

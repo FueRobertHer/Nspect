@@ -27,7 +27,9 @@ export const updateObservation = observation => (
   $.ajax({
     method: 'patch',
     url: `/api/observations/${observation.id}`,
-    data: { observation }
+    data: observation,
+    processData: false,
+    contentType: false,
   })
 )
 

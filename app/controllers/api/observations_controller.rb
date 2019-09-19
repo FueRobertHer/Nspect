@@ -36,7 +36,8 @@ class Api::ObservationsController < ApplicationController
   # end
 
   def update
-    @observation = Observation.find(params[:id])
+    debugger
+    @observation = Observation.find(params[:observation][:id])
     if @observation.observer_id == current_user.id
       if @observation.update(obs_params)
         render :show
@@ -59,7 +60,7 @@ class Api::ObservationsController < ApplicationController
   private
 
   def obs_params
-    params.require(:observation).permit(:observer_id, :lat, :lng, :description, :datetime, :image)
+    params.require(:observation).permit(:id, :observer_id, :lat, :lng, :description, :datetime, :image)
   end
 
   def bounds

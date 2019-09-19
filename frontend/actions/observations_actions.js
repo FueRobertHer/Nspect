@@ -35,5 +35,8 @@ export const fetchObservations = () => dispatch => APIObs.fetchObservations()
 export const fetchObservation = observationId => dispatch => APIObs.fetchObservation(observationId)
   .then( observation => dispatch(receiveObservation(observation)))
 
+export const updateObservation = observation => dispatch => APIObs.updateObservation(observation)
+  .then( observation => dispatch(receiveObservation(observation)))
+
 export const deleteObservation = observationId => dispatch => APIObs.deleteObservation(observationId)
   .then( observation => dispatch(removeObservation(observationId)))

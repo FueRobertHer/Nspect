@@ -22,20 +22,7 @@ class ObservationShow extends React.Component {
   render() {
     const obs = this.props.observation;
 
-    const editLinks = (
-          <div>
-            <span 
-              className="edit-button">
-              Edit
-            </span>
-
-            <span 
-              onClick={this.handleDelete}
-              className="delete-button">
-                Delete
-            </span>
-          </div>
-    )
+    
 
     if (obs === undefined) {
       return ( <div></div> )
@@ -45,8 +32,26 @@ class ObservationShow extends React.Component {
         zoom: 15,
       };
 
+      const editLinks = (
+        <div>
+          <Link to={`/observations/${obs.id}/edit`} >
+            <span
+              className="edit-button">
+              Edit
+              </span>
+          </Link>
+
+          <span
+            onClick={this.handleDelete}
+            className="delete-button">
+            Delete
+            </span>
+        </div>
+      )
+
       const createdAt = obs.created_at ? obs.created_at.split("T")[0] + " at " + obs.created_at.split("T")[1].split(".")[0] : "some time in the past"
       const observedAt = obs.datetime ? obs.datetime.split("T")[0] + " at " + obs.datetime.split("T")[1].split(".")[0] : "some time in the past"
+      
       return (
         <div className="obs-show-main">
 
@@ -69,8 +74,13 @@ class ObservationShow extends React.Component {
 
               <div className="obs-map border center">
                 <div className="obs-detail">
-                  <p>{createdAt}</p>
-                  <p>{observedAt}</p>
+                  <div>
+                    <p>{observedAt}</p>
+                  </div>
+
+                  <div>
+                    <p>{createdAt}</p>
+                  </div>
                 </div>
 
                 <div className="map-container border">
