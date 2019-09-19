@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Search } from '../svg/icon_svg';
+import { Search, Nspect } from '../svg/icon_svg';
 
 class MainNav extends React.Component {
   constructor(props) {
@@ -11,7 +11,10 @@ class MainNav extends React.Component {
   render() {
     return (
       <nav className="main-nav">
-        <Link to='/'><h1 className="title">Nspect</h1></Link>
+        <Link className="home-link" to='/'>
+          <Nspect className="nspect-icon" />
+          <h1 className="title">Nspect</h1>
+        </Link>
 
         <form className="search-container" >
           <input 

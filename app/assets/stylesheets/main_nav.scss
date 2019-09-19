@@ -4,6 +4,16 @@
   align-items: center;
 }
 
+.home-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nspect-icon:hover {
+  filter: brightness(60%)
+}
+
 .search-container {
   padding: 20px;
   display: flex;
