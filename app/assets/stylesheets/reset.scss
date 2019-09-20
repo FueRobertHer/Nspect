@@ -27,12 +27,14 @@ table, caption, tbody, tfoot, thead, tr, th, td, nav, a {
 	list-style: none;
 }
 
+b { color: inherit}
+
 html, body, main {
 	width: 100%;
 }
 
 a:hover {
-	filter: brightness(200%);
+	filter: brightness(120%);
 }
 
 body { line-height: 1.5; background: #fff; margin:1.5em 0; }

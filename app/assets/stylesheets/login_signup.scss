@@ -1,18 +1,34 @@
 .session-container-container {
-  display: flex;
-  justify-content: center;
-  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  // height: 100%;
   text-align: center;
 }
 
 
-.session-img {
-  width: 55%;
-  height: 93.5vh;
-  background-color: rgb(161, 238, 90);
+.session-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   display: block;
-  background-image: url('https://static.inaturalist.org/photos/47930640/large.jpeg?1565595867');
-  background-repeat: round;
+  overflow: hidden;
+}
+
+.session-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex: 1;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
+
+  // flex: 1;
+  // background-size: cover;
+  // background-position: center;
+  min-height: 500px;
+  width: 100%;
+  position: relative;
 }
  
 .session-form-container {
@@ -20,6 +36,7 @@
   align-items: center;
   flex-direction: column;
   width: 45%;
+  height: 92vh;
   min-width: 557px;
 }
 
@@ -67,7 +84,7 @@
 }
 
 .session-form-submit:hover {
-  filter: brightness(110%);
+  filter: brightness(130%);
   outline: none;
 }
 

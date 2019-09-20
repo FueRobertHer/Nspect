@@ -23,9 +23,9 @@ class MainNav extends React.Component {
           placeholder= "Search"
           />
 
-          <button className="search-button">
+          <span className="search-button">
             <Search className="search-icon" />
-          </button>
+          </span>
         </form>
 
         <Link to="/observations" className="main-nav-link explore"><div className="nav-link"><b>Explore</b></div></Link>

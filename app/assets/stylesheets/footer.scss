@@ -1,6 +1,6 @@
 .footer-main{
   background-color: #eee;
-  padding: 60px 0;
+  padding: 50px 0;
   font-size: 100%;
   color: #999;
   width: 100%;
@@ -8,12 +8,56 @@
   justify-content: space-around;
 }
 
-.links {
+.ul-links {
   display: flex;
   align-items: center;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin: 0px 10px;
+}
+
+.footer-links {
+  margin: 20px;
+}
+
+.footer-icon {
+  width: 35px;
+}
+
+.inat-social {
+  display: flex;
+  justify-content: space-around;
 }
 
 .NatGeoCAS {
   width: 35%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0px 10px;
+}
+
+.cas, .nat-geo {
+  margin: 0px 20px;
+}
+
+.cas:hover, .nat-geo:hover {
+  filter: brightness(90%)
+}
+
+.support-button {
+  cursor: pointer;
+  background-color: #74ac00;
+  color: white;
+  border: solid #74ac00;
+  font-weight: bold;
+  margin: 10px 0;
+  padding: 8px 15px;
+  font-size: 15px;
+  border-radius: 100px;
+  text-align: center;
+}
+
+.support-button:hover {
+  filter: brightness(110%);
+  outline: none;
 }
