@@ -138,7 +138,7 @@ class Splash extends React.Component {
           <h2>Who Uses Nspect?</h2>
           <div className="slideshow-container">
             <div className=""></div>
-            slide show here
+            <p className="you">It can be you!</p> 
           </div>
         </section>
 
