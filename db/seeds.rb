@@ -24,8 +24,8 @@ user2 = User.create!(
   name: 'Fue Robert Her',
   description: "I'm the developer of this iNaturalist clone! More functions are to come!",
 )
-pic3 = open('https://nspect-pro.s3-us-west-1.amazonaws.com/seed_profile_pics/charles_darwin.jpg')
-user3.profile_pic.attach(io: pic3, filename: 'charles_darwin.jpg')
+pic2 = open('')
+user2.profile_pic.attach(io: pic2, filename: '')
 
 user3 = User.create!(
   username: 'Gas',
@@ -45,7 +45,7 @@ user4 = User.create!(
   description: "Binomial nomenclature. Life can be categorized",
 )
 pic4 = open('https://nspect-pro.s3-us-west-1.amazonaws.com/seed_profile_pics/carl_linnaeus.jpg')
-user3.profile_pic.attach(io: pic4, filename: 'carl_linnaeus.jpg')
+user4.profile_pic.attach(io: pic4, filename: 'carl_linnaeus.jpg')
 
 user5 = User.create!(
   username: 'Carrie',
@@ -55,7 +55,7 @@ user5 = User.create!(
   description: 'First female United State Forestry Service employee',
 )
 pic5 = open('https://nspect-pro.s3-us-west-1.amazonaws.com/seed_profile_pics/caroline_dormon.jpg')
-user3.profile_pic.attach(io: pic5, filename: 'caroline_dormon.jpg')
+user5.profile_pic.attach(io: pic5, filename: 'caroline_dormon.jpg')
 
 user6 = User.create!(
   username: 'mills',
@@ -65,7 +65,7 @@ user6 = User.create!(
   description: '',
 )
 pic6 = open('https://nspect-pro.s3-us-west-1.amazonaws.com/seed_profile_pics/enos_mills.jpg')
-user3.profile_pic.attach(io: pic6, filename: 'enos_mills.jpg')
+user6.profile_pic.attach(io: pic6, filename: 'enos_mills.jpg')
 
 user7 = User.create!(
   username: 'florence',
@@ -75,7 +75,7 @@ user7 = User.create!(
   description: 'Protection for the birds',
 )
 pic7 = open('https://nspect-pro.s3-us-west-1.amazonaws.com/seed_profile_pics/florence_merriam.jpg')
-user3.profile_pic.attach(io: pic7, filename: 'florence_merriam.jpg')
+user7.profile_pic.attach(io: pic7, filename: 'florence_merriam.jpg')
 
 user8 = User.create!(
   username: 'heritage',
@@ -85,7 +85,7 @@ user8 = User.create!(
   description: 'National Park service and interp',
 )
 pic8 = open('https://nspect-pro.s3-us-west-1.amazonaws.com/seed_profile_pics/freeman_tilden.jpg')
-user3.profile_pic.attach(io: pic8, filename: 'freeman_tilden.jpg')
+user8.profile_pic.attach(io: pic8, filename: 'freeman_tilden.jpg')
 
 user9 = User.create!(
   username: 'audubon',
@@ -95,7 +95,7 @@ user9 = User.create!(
   description: 'Birds of America',
 )
 pic9 = open('https://nspect-pro.s3-us-west-1.amazonaws.com/seed_profile_pics/john-james-audubon.jpg')
-user3.profile_pic.attach(io: pic9, filename: 'john_james_audubon.jpg')
+user9.profile_pic.attach(io: pic9, filename: 'john_james_audubon.jpg')
 
 user10 = User.create!(
   username: 'MountainJohn',
@@ -105,7 +105,7 @@ user10 = User.create!(
   description: 'Yosemite',
 )
 pic10 = open('https://nspect-pro.s3-us-west-1.amazonaws.com/seed_profile_pics/john-muir.jpg')
-user3.profile_pic.attach(io: pic10, filename: 'john_muir.jpg')
+user10.profile_pic.attach(io: pic10, filename: 'john_muir.jpg')
 
 user11 = User.create!(
   username: 'JohnnyAppleseed',
@@ -115,7 +115,7 @@ user11 = User.create!(
   description: 'Apples for all!',
 )
 pic11 = open('https://nspect-pro.s3-us-west-1.amazonaws.com/seed_profile_pics/john_chapman.jpg')
-user3.profile_pic.attach(io: pic11, filename: 'john_chapman.jpg')
+user11.profile_pic.attach(io: pic11, filename: 'john_chapman.jpg')
 
 user12 = User.create!(
   username: 'SilentSpring',
@@ -125,7 +125,7 @@ user12 = User.create!(
   description: 'Marine bio and silent spring. DDT is bad.',
 )
 pic12 = open('https://nspect-pro.s3-us-west-1.amazonaws.com/seed_profile_pics/rachel_carson.jpg')
-user3.profile_pic.attach(io: pic12, filename: 'rachel_carson.jpg')
+user12.profile_pic.attach(io: pic12, filename: 'rachel_carson.jpg')
 
 user13 = User.create!(
   username: 'CrocHunter',
@@ -135,7 +135,7 @@ user13 = User.create!(
   description: 'The one and only Crocodile Hunter!',
 )
 pic13 = open('https://nspect-pro.s3-us-west-1.amazonaws.com/seed_profile_pics/steve_irwin.jpg')
-user3.profile_pic.attach(io: pic13, filename: 'steve_irwin.jpg')
+user13.profile_pic.attach(io: pic13, filename: 'steve_irwin.jpg')
 
 user14 = User.create!(
   username: 'humboldt',
@@ -145,7 +145,7 @@ user14 = User.create!(
   description: 'Plant travels to South America',
 )
 pic14 = open('https://nspect-pro.s3-us-west-1.amazonaws.com/seed_profile_pics/alexander_von_humboldt.jpg')
-user3.profile_pic.attach(io: pic14, filename: 'alexander_von_humboldt.jpg')
+user14.profile_pic.attach(io: pic14, filename: 'alexander_von_humboldt.jpg')
 
 user15 = User.create!(
   username: 'slime',
@@ -155,31 +155,35 @@ user15 = User.create!(
   description: 'Slime molds are awesome!',
 )
 pic15 = open('https://nspect-pro.s3-us-west-1.amazonaws.com/seed_profile_pics/minakata_kumagusu.jpg')
-user3.profile_pic.attach(io: pic15, filename: 'minakata_kumagusu.jpg')
+user15.profile_pic.attach(io: pic15, filename: 'minakata_kumagusu.jpg')
 
-
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------------------------------
 
 
 Observation.create!(
   observer_id: user1.id,
   lat: 1.1,
   lng: 1.1,
-  description: "test observation"
+  description: "test observation 1"
 )
 
 Observation.create!(
   observer_id: user1.id,
   lat: 2.2,
   lng: 2.2,
-  description: "test observation"
+  description: "test observation 2"
 )
 
 Observation.create!(
   observer_id: user1.id,
   lat: 3.3,
   lng: 3.3,
-  description: "test observation"
+  description: "test observation 3"
 )
+
+
 
 Observation.create!(
   observer_id: user2.id,
