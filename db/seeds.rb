@@ -24,8 +24,8 @@ user2 = User.create!(
   name: 'Fue Robert Her',
   description: "I'm the developer of this iNaturalist clone! More functions are to come!",
 )
-pic2 = open('')
-user2.profile_pic.attach(io: pic2, filename: '')
+pic2 = open('https://nspect-pro.s3-us-west-1.amazonaws.com/seed_profile_pics/fue_her.png')
+user2.profile_pic.attach(io: pic2, filename: 'fue_her.png')
 
 user3 = User.create!(
   username: 'Gas',
@@ -34,7 +34,7 @@ user3 = User.create!(
   name: 'Charles Darwin',
   description: "I developed the theory of evolution by natural selection. Pidgeons are amazing!",
 )
-pic3 = open('')
+pic3 = open('https://nspect-pro.s3-us-west-1.amazonaws.com/seed_profile_pics/charles_darwin.jpg')
 user3.profile_pic.attach(io: pic3, filename: 'charles_darwin.jpg')
 
 user4 = User.create!(

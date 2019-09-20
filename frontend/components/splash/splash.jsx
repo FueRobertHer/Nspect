@@ -22,7 +22,7 @@ class Splash extends React.Component {
             <section className='splash-main-credit'>
             </section>
 
-            <img className="slide-img" src="assets/red-panda.jpg" alt=""/>
+            <img className="slide-img" src="https://nspect-pro.s3-us-west-1.amazonaws.com/Arctic_Fox.jpg" alt=""/>
             {/* <div className="numbertext">1 / 3</div> */}
    
             {/* <div className="text">Caption Text</div> */}
@@ -88,7 +88,7 @@ class Splash extends React.Component {
             <p>Every observation can contribute to biodiversity science, from the rarest butterfly to the most common backyard weed. We share your findings with scientific data repositories like the Global Biodiversity Information Facility to help scientists find and use your data. All you have to do is observe.</p>
           </section>
           <section className="half">
-            img here
+            <img className=" static" src="https://nspect-pro.s3-us-west-1.amazonaws.com/caterpillar.jpg" alt=""/>
           </section>
         </section>
 
