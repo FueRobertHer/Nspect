@@ -8,7 +8,6 @@ class ObservationsIndexItem extends React.Component {
 
   render() {
     const observation = this.props.observation;
-    console.log(this.props);
     
     return (
       <li className="observation-list-item">

@@ -23,15 +23,43 @@ Things you may want to cover:
 
 * ...
 
+Discussion of technologies used
+Delve deep into ~2 features that show off your technical abilities. Discuss both the challenges faced and your brilliant solutions.
+Code snippets to highlight your best code (markdown code snippets, NOT screenshots)
 
 # Nspect
 app Academy full stack project iNaturalist clone
 
-LINK TO LIVE PAGE HERE
+[Nspect](https://n-spect.herokuapp.com/#/)
 
-Nspect is social media and citizen science website where users can upload, view, and interact with each other's observations of plants, animals or any other living organism, through comments and a agree disagree system. It was built utlizing a Rails backend with a React/Redux frontend.
+
+## Overview
+Nspect is social media and citizen science website where users can upload, view, and interact with each other's observations of plants, animals or any other living organism through comments and a agree disagree system. It was built utlizing a Rails backend with a React/Redux frontend.
 
 This project will be created within an approximately 10 day timeframe, but will have additional features added in the future.
+
+## Features
+- Rails 5.2 session-based user-authentication / Demo login
+- Seach map that filters observations to the current boundaries of the map
+- Form page to only allow users to add or edit observations
+  - Form has a modal containing a map that will allow the user to select location based on where you click
+  - Form allows you to upload images from your local drive and previews the image before submiting
+- 
+
+## Backend Technologies
+- PostgresSQL
+- AWS
+- Rails
+- JBuilder
+- Heroku
+
+
+## Frontend Technologies
+- React
+- Redux
+- CSS (and eventually Sass)
+- Webpack
+- Node Package Manager
 
 ## Upcomming Features
 - BCrypt encrypted user authentication from frontend to backend
