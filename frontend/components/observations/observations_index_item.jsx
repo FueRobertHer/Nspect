@@ -8,12 +8,17 @@ class ObservationsIndexItem extends React.Component {
 
   render() {
     const observation = this.props.observation;
+    console.log(this.props);
+    
     return (
       <li className="observation-list-item">
         <Link to={`/observations/${observation.id}`} >
-          <b>{observation.description}</b>
-          <br />
-
+          <div className="item-container">
+            <div object-fit="cover" className="item-img-container">
+              <img className="item-img" src={this.props.observation.imageURL} alt=""/>
+            </div>
+            <b className="item-title">{observation.description}</b>
+          </div>
         </Link>
 
       </li>

@@ -75,8 +75,8 @@ class AddObservationForm extends React.Component {
 
   render() {   
     const preview = this.state.imageURL 
-      ? <img height="70%" width="95%" src={this.state.imageURL} /> 
-      : <img height="70%" width="95%" />;
+      ? <img className="preview-img" src={this.state.imageURL} /> 
+      : <img className="preview-no-img" />;
     
     return (
       <div className="add-obs-modal">

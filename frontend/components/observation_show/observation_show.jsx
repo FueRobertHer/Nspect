@@ -22,8 +22,6 @@ class ObservationShow extends React.Component {
   render() {
     const obs = this.props.observation;
 
-    
-
     if (obs === undefined) {
       return ( <div></div> )
     } else {

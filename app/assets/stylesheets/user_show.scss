@@ -3,7 +3,11 @@
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 2fr;
+}
 
+.top-margin {
+  margin-top: 70px;
+  margin-bottom: 80px;
 }
 
 .user-section {
@@ -19,13 +23,30 @@
 }
 
 .user-profile-picture {
-  width: 100%;
-  min-height: 200px;
+  width: 300px;
+  height: 300px;
   border: 1px solid;
   border-radius: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 1000px;
+  overflow: hidden;
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+.pic-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -7px;
+}
+
+.profile-pic {
+  width: 100%;
+  height: auto;
+  
 }
 
 .edit-profile-button {

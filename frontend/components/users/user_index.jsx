@@ -4,15 +4,25 @@ import UserIndexItem from './user_index_item';
 class UserIndex extends React.Component {
   constructor(props) {
     super(props);
-    
   }
 
   componentDidMount() {
     this.props.fetchUsers()
   };
+
+  shuffle(arr) {
+    let j, x, i;
+    for (i = arr.length - 1; i > 0; i--) {
+      j = Math.floor(Math.random() * (i + 1));
+      x = arr[i];
+      arr[i] = arr[j];
+      arr[j] = x;
+    }
+    return arr;
+  }
  
   render() {
-    const usersList = this.props.users.map( user =>
+    const usersList = this.shuffle(this.props.users).map( user =>
         <UserIndexItem key={user.id} user={user} />
     )
 

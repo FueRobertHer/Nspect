@@ -17,10 +17,17 @@ class UserShow extends React.Component {
         <div></div>
       )
     } else {
+
+      console.log(this.props);
+      
       return (
-        <div className="user-show-container">
+        <div className="user-show-container top-margin">
           <section className="user-section user-profile-sidebar">
-            <div className="user-profile-picture">profile picture here</div>
+            <div className="user-profile-picture">
+              <section className="pic-container">
+                <img className="profile-pic" src={user.profilePicURL} alt="" />
+              </section>
+            </div>
 
             <button className="edit-profile-button">Edit profile</button>
 

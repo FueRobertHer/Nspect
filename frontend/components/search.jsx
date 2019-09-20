@@ -10,7 +10,7 @@ const mapOptions = {
 
 const Search = ({ observations, fetchObservations, updateFilter }) => (
   <div>
-    <h1>Observations</h1>
+    <h1 className="">Observations of the World</h1>
     <div className="search-map">
       <ObservationMap 
         observations={observations} 
@@ -19,11 +19,11 @@ const Search = ({ observations, fetchObservations, updateFilter }) => (
       />
     </div>
     
-    <ObservationIndex 
+    {/* <ObservationIndex 
       observations={observations} 
       fetchObservations={fetchObservations} 
       updateFilter={updateFilter}
-    />
+    /> */}
   </div>
 )
 

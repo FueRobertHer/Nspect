@@ -34,10 +34,23 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 200px;
+  height: 300px;
   width: 100%;
   border: 1px solid #cccccc;
   border-radius: 4px;
+}
+
+.preview-img {
+  height: 85%;
+  width: 96%;
+  object-fit: contain;
+}
+
+.preview-no-img {
+  height: 85%;
+  width: 96%;
+  background-color: #ddedf1fa;
+  object-fit: contain;
 }
 
 .add-img-form {

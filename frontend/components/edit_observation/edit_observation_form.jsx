@@ -141,7 +141,7 @@ class EditObservationForm extends React.Component {
                 defaultValue={obs.description}
               />
 
-              <button className="submit-obs-button">submit observation</button>
+              <button className="submit-obs-button">submit edits</button>
             </form>
           </div>
           <div id="map-modal" className="center hidden" >

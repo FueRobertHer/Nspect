@@ -16,9 +16,8 @@ class Home extends React.Component {
     ))
     
     return (
-      <div className="home-main">
-        Home page
-
+      <div className="home-main main-margins">
+        
         <section className="home-feed-container">
           <ul>
             {currentUserObs}
