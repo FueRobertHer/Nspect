@@ -54,7 +54,7 @@ class ObservationShow extends React.Component {
         <div className="obs-show-main">
 
           <section className="obs-show-title">
-            <span className="obs-title">highest rated identification here</span>
+            {/* <span className="obs-title">highest rated identification here</span> */}
           </section>
 
           <section className="obs-pic-map">
@@ -72,11 +72,13 @@ class ObservationShow extends React.Component {
 
               <div className="obs-map border center">
                 <div className="obs-detail">
-                  <div>
+                  <div className="datetime-container">
+                    <p className="datetime-label">Observed at:</p>
                     <p>{observedAt}</p>
                   </div>
 
-                  <div>
+                  <div className="datetime-container">
+                    <p className="datetime-label">Created at:</p>
                     <p>{createdAt}</p>
                   </div>
                 </div>

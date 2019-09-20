@@ -53,12 +53,32 @@
   justify-content: space-between;
 }
 
+.obs-detail {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.datetime-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: 10px 30px;
+  margin-bottom: 0;
+}
+
+.datetime-label {
+  font-size: 12px;
+  font-weight: bold;
+}
+
 .observer-link {
   margin: 5px 10px;
 }
 
 .obs-desc {
   font-size: 14px;
+  margin-left: 20px;
 }
 
 .edit-button, .delete-button {
