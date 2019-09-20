@@ -18,8 +18,9 @@ class UserShow extends React.Component {
       )
     } else {
 
-      console.log(this.props);
-      
+      const description = user.description.includes(" is a Nspector")
+        ? <p className="user-description">{user.username} {user.description}</p>
+        : <p className="user-description">{user.description}</p>
       return (
         <div className="user-show-container top-margin">
           <section className="user-section user-profile-sidebar">
@@ -29,20 +30,20 @@ class UserShow extends React.Component {
               </section>
             </div>
 
-            <button className="edit-profile-button">Edit profile</button>
+            <span className="edit-profile-button">Edit profile</span>
 
             <ul className="user-sidebar-nav">
               <li className="user-sidebar-nav-item">
                 <p>observations</p>
-                <p>num</p>
+                <p>{user.observations.length}</p>
               </li>
               <li className="user-sidebar-nav-item">
                 <p>identification</p>
-                <p>num</p>
+                <p>26</p>
               </li>
               <li className="user-sidebar-nav-item">
                 <p>followers</p>
-                <p>num</p>
+                <p>2819461</p>
               </li>
             </ul>
           </section>
@@ -51,7 +52,7 @@ class UserShow extends React.Component {
             <section>
               <h1 className="profile-name-header">{user.username}</h1>
               <p className="profile-joined-date">Joined: {user.created_at.split("T")[0]}</p>
-              <p className="user-description">{user.username} {user.description}</p>
+              {description}
             </section>
 
             <section>
