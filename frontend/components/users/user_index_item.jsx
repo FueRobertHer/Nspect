@@ -12,7 +12,7 @@ class UserIndexItem extends React.Component {
       <li className="user-list-item">
         <Link className="user-item-link" to={`/people/${user.id}`} >
           <div className="user-pic-container">
-            <img className="item-img" src={user.profilePicURL} alt=""/>
+            <img className="user-picture" src={user.profilePicURL} alt=""/>
           </div>
 
           <div className="item-username-container">

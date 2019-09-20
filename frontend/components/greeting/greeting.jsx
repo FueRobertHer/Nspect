@@ -26,7 +26,7 @@ const Greeting = ({currentUser, logout}) => {
 
         <li className="user-nav-item">
           <div className="dropdown">
-            <button onClick={logout} className="header-button">Sign Out</button>
+            <span onClick={logout} className="header-button">Sign Out</span>
           </div>
         </li>
       </ul>

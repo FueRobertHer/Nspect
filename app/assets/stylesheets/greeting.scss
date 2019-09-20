@@ -66,3 +66,21 @@
 .user-nav-num {
   margin-left: 5px;
 }
+
+.header-button {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(172, 77, 0);
+  border: solid rgb(172, 77, 0);
+  color: white;
+  border-radius: 100px;
+  text-align: center;
+  outline: none;
+  padding: 2px 5px;
+}
+
+.header-button:hover {
+  filter: brightness(120%)
+}
