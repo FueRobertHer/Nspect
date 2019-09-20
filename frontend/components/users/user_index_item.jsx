@@ -10,10 +10,14 @@ class UserIndexItem extends React.Component {
     const user = this.props.user;
     return (
       <li className="user-list-item">
-        <Link to={`/people/${user.id}`} >
-          <b>{user.username}</b>
-          <br/>
-          
+        <Link className="user-item-link" to={`/people/${user.id}`} >
+          <div className="user-pic-container">
+            <img className="item-img" src={user.profilePicURL} alt=""/>
+          </div>
+
+          <div className="item-username-container">
+            <b className="item-username">{user.username}</b>
+          </div>
         </Link>
 
       </li>
