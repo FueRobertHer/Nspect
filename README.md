@@ -1,50 +1,18 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 
 Discussion of technologies used
 Delve deep into ~2 features that show off your technical abilities. Discuss both the challenges faced and your brilliant solutions.
 Code snippets to highlight your best code (markdown code snippets, NOT screenshots)
 
-# Nspect
-app Academy full stack project iNaturalist clone
 
-[Nspect](https://n-spect.herokuapp.com/#/)
+# [Nspect](https://n-spect.herokuapp.com/#/)
+app Academy full stack project iNaturalist clone
 
 
 ## Overview
 Nspect is social media and citizen science website where users can upload, view, and interact with each other's observations of plants, animals or any other living organism through comments and a agree disagree system. It was built utlizing a Rails backend with a React/Redux frontend.
 
-This project will be created within an approximately 10 day timeframe, but will have additional features added in the future.
-
-## Features
-- Rails 5.2 session-based user-authentication / Demo login
-- Seach map that filters observations to the current boundaries of the map
-- Form page to only allow users to add or edit observations
-  - Form has a modal containing a map that will allow the user to select location based on where you click
-  - Form allows you to upload images from your local drive and previews the image before submiting
-- 
+This project was created within an approximately 10 day timeframe, but will have additional features added in the future.
 
 ## Backend Technologies
 - PostgresSQL
@@ -53,7 +21,6 @@ This project will be created within an approximately 10 day timeframe, but will 
 - JBuilder
 - Heroku
 
-
 ## Frontend Technologies
 - React
 - Redux
@@ -61,12 +28,35 @@ This project will be created within an approximately 10 day timeframe, but will 
 - Webpack
 - Node Package Manager
 
-## Upcomming Features
+## Features
 - BCrypt encrypted user authentication from frontend to backend
-- Logged in users can post observations and their taxa hypothesis with additional information such as a description, gps location, media (images or audio) files as supporting evidence.
-  - Once posted, users can edit their taxa hypothesis, description, location, and/or media files of the observation.
-- Logged in users can agree or disagree with the observation once.
-  - Each observation's display taxa is the highest agreed taxa or the most common denominator taxa if no leading taxa.
-- Logged in users can also comment on a video.
+  - Demo login
+- Logged in users can upload observations with an attached photo and associated data about that observation.
+  - Once uploaded, users can edit all the information of their observations, or delete the observations entirely.
+- Account holders have their own profile page.
+  - User's profile page will display information about that user (e.g. number of observations made)
+- Navigation of the app can be done through a nav bar or through links on each pages
+- A search map is availble that has all the observations marked with clickable markers using Google Maps API.
+  - Clicked markers will send the user to that observation's page.
+- Observation's page has individual map that is zoomed to the local area of the observation's location.
+- Users can view all observations or account holder's profile through an index page (no account needed).
+
+### Observation Upload/Edit
+Once logged in, users can click on the upload button in the header/nav bar that will take them the the upload form
+
+add img of the form here
+
+Users can select image files from their local machine to upload by clicking on the 'add image' button. If the the user does not specify a datetime for when the observation occured the form will auto fill the date time with the datetime when the form was opened on submition. Clicking on the location field will open up a modal that contains a map. Clicking anywhere on the map will take the coordinates of that location and populate the location field with the latitude and longitude of that clicked location. The user also has the option to add a description to the observation before submitting it. After submitting thier observation they will be sent to the home page which holds all of their observations.
+
+If a user goes their their own observation's page they will have access to an edit and delete button. Pressing the delete button will delete that observation and send the user back to their home page. Pressing the edit button will take the user to a similar form as pressing the upload button however the form will have the data slots prefilled with it's previous information.
+
+
+
+## Upcomming Features
+- Users can add an identification to each observation (including their own). Users may make more than one identification per observation but only the latest observation counts (one valid identification per user).
+  - Identifications can include a text body explaining their identification.
+- Logged in users can agree or disagree with identifications (Agreeing to an indentification submits the same identification to that observation. Submitting a different identification is disagreeing).
+  - Each observation's displayed identification is the highest agreed identification.
+- Logged in users can also comment on observations.
 - Users can use the search bar at the top of the screen to filter all the observations by location, username, or taxa
-- Users have access to a nav bar that can assist them in navigating to key locations of the site.
+- Users will have access to edit their information through their profile page (including profile picture, username, name, description, and more).
