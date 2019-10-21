@@ -3,13 +3,55 @@ import * as SVGImg from '../svg/img_svg';
 import { Link } from 'react-router-dom';
 
 class Splash extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      img: ''
+    }
+
+    this.imgSrcs = [
+      'https://nspect-pro.s3-us-west-1.amazonaws.com/Arctic_Fox.jpg',
+      'https://static.inaturalist.org/photos/2378794/original.jpg?1442169418'
+    ];
+
+    this.imgPos = 0;
+    this.setPicture = this.setPicture.bind(this);
+    this.nextSlide = this.nextSlide.bind(this);
+    this.prevSlide = this.prevSlide.bind(this);
+    this.autoNext = this.autoNext.bind(this);
+  }
+
+  componentDidMount() {
+    this.setPicture();
+    this.autoNext();
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.next);
+  }
 
   nextSlide() {
-    
+    this.imgPos++
+    if (this.imgPos === this.imgSrcs.length) this.imgPos = 0;
+    this.setPicture();  
+    // console.log(this.imgPos);
   }
 
   prevSlide() {
+    this.imgPos--
+    if (this.imgPos < 0) this.imgPos = this.imgSrcs.length - 1;
+    this.setPicture();
+  }
 
+  autoNext() {
+    this.next = setInterval( ()=> {this.nextSlide()}, 5000)
+  }
+
+  setPicture() {
+    this.setState({
+      img: this.imgSrcs[this.imgPos]
+    })
   }
 
   render() {
@@ -22,7 +64,7 @@ class Splash extends React.Component {
             <section className='splash-main-credit'>
             </section>
 
-            <img className="slide-img" src="https://nspect-pro.s3-us-west-1.amazonaws.com/Arctic_Fox.jpg" alt=""/>
+            <img className="slide-img" src={this.state.img} alt=""/>
             {/* <div className="numbertext">1 / 3</div> */}
    
             {/* <div className="text">Caption Text</div> */}
@@ -42,8 +84,8 @@ class Splash extends React.Component {
 
 
               {/* onClick="plusSlides(1)" */}
-          <a className="prev" >&#10094;</a>
-          <a className="next" >&#10095;</a>
+          <span onClick={this.prevSlide} className="prev" >&#10094;</span>
+          <span onClick={this.nextSlide} className="next" >&#10095;</span>
         </div>
 
         <section className='section width'>
@@ -51,7 +93,7 @@ class Splash extends React.Component {
             <div>
               <SVGImg.NatGeoCASWhite />
             </div>
-            <p>Nspect is a solo project of Fue Robert Her to clone iNaturalist.org, a joint initiative of the California Academy of Sciences and the National Geographic Society. </p>
+            <p>Nspect is a solo project developed by Fue Her to clone iNaturalist.org, a joint initiative of the California Academy of Sciences and the National Geographic Society. </p>
           </div>
         </section>
         

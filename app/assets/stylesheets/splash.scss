@@ -19,6 +19,12 @@
 /* Hide the images by default */
 .mySlides {
   position: relative;
+  
+}
+
+@keyframes slide {
+  0% {width: 20%;}
+  100% {width: 100%;}
 }
 
 .slide-img {
@@ -31,6 +37,10 @@
   flex-basis: 0%;
   min-height: 500px;
   position: relative;
+  display: block;
+  margin: auto;
+  animation-name: slide;
+  animation-duration: 1;
 }
 
 .static {
@@ -39,6 +49,7 @@
   flex-basis: 0%;
 }
 
+
 .slide1 {
 }
 
@@ -46,15 +57,18 @@
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: 0;
   width: auto;
-  margin-top: -40px;
+  height: 90%;
+  // margin-top: -40px;
   padding: 16px;
   color: white;
   font-weight: bold;
   font-size: 22px;
   transition: 0.3s ease;
   user-select: none;
+  display: flex; 
+  align-items: center;
 }
 
 /* Position the "next button" to the right */
