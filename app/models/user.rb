@@ -37,4 +37,7 @@ class User < ApplicationRecord
     foreign_key: :observer_id,
     class_name: :Observation
 
+  has_many :identifications,
+    foreign_key: :identifier_id,
+    class_name: :Identification
 end
