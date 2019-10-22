@@ -8,6 +8,15 @@ class Observation < ApplicationRecord
 
   # has_many_attached :sounds
 
+  has_many :comments
+    foreign_key: :observation_id,
+    class_name: :Comment
+
+  has_many :identifications
+    foreign_key: :observation_id,
+    class_name: :Identification
+
+
   def self.in_bounds(bounds)
     self.where("lat < ?", bounds[:northEast][:lat])
       .where("lat > ?", bounds[:southWest][:lat])

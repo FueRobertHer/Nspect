@@ -5,9 +5,9 @@ class Identification < ApplicationRecord
     foreign_key: :identifier_id,
     class_name: :User
 
-  has_one :observation,
+  belongs_to :observation,
     foreign_key: :observation_id,
     class_name: :Observation
 
-    
+
 end

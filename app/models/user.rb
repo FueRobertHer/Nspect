@@ -40,4 +40,15 @@ class User < ApplicationRecord
   has_many :identifications,
     foreign_key: :identifier_id,
     class_name: :Identification
+
+  has_many :comments,
+    foreign_key: :commenter_id,
+    class_name: :Comment
+
+  has_many :favorites,
+
+  has_many :subscriptions,
+
+  has_many :subscribers,
+
 end
