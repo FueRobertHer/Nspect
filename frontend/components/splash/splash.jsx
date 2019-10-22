@@ -12,7 +12,8 @@ class Splash extends React.Component {
 
     this.imgSrcs = [
       'https://nspect-pro.s3-us-west-1.amazonaws.com/Arctic_Fox.jpg',
-      'https://static.inaturalist.org/photos/2378794/original.jpg?1442169418'
+      'https://static.inaturalist.org/photos/2378794/original.jpg?1442169418',
+      'https://static.inaturalist.org/photos/2415216/original.jpg?1442888472'
     ];
 
     this.imgPos = 0;
@@ -64,7 +65,7 @@ class Splash extends React.Component {
             <section className='splash-main-credit'>
             </section>
 
-            <img className="slide-img" src={this.state.img} alt=""/>
+            <img className="slide-img fade" src={this.state.img} alt=""/>
             {/* <div className="numbertext">1 / 3</div> */}
    
             {/* <div className="text">Caption Text</div> */}
@@ -176,13 +177,13 @@ class Splash extends React.Component {
           </section>
         </section>
         
-        <section className="section section-row who-uses">
+        {/* <section className="section section-row who-uses">
           <h2>Who Uses Nspect?</h2>
-          <div className="slideshow-container">
+          <div className="">
             <div className=""></div>
             <p className="you">It can be you!</p> 
           </div>
-        </section>
+        </section> */}
 
         <section className="section waiting space-around">
           <h2>What are you waiting for?</h2>

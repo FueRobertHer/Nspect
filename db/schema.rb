@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_16_202638) do
+ActiveRecord::Schema.define(version: 2019_10_22_172547) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,34 @@ ActiveRecord::Schema.define(version: 2019_09_16_202638) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "comments", force: :cascade do |t|
+    t.integer "observation_id", null: false
+    t.integer "commenter_id", null: false
+    t.string "body", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["commenter_id"], name: "index_comments_on_commenter_id"
+    t.index ["observation_id"], name: "index_comments_on_observation_id"
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "observation_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "observation_id"], name: "index_favorites_on_user_id_and_observation_id", unique: true
+  end
+
+  create_table "identifications", force: :cascade do |t|
+    t.integer "observation_id", null: false
+    t.integer "identifier_id", null: false
+    t.string "guess", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["identifier_id"], name: "index_identifications_on_identifier_id"
+    t.index ["observation_id"], name: "index_identifications_on_observation_id"
+  end
+
   create_table "observations", force: :cascade do |t|
     t.integer "observer_id", null: false
     t.float "lat"
@@ -45,6 +73,14 @@ ActiveRecord::Schema.define(version: 2019_09_16_202638) do
     t.datetime "updated_at", null: false
     t.datetime "datetime"
     t.index ["observer_id"], name: "index_observations_on_observer_id"
+  end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.integer "subscriber_id", null: false
+    t.integer "other_user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subscriber_id", "other_user_id"], name: "index_subscriptions_on_subscriber_id_and_other_user_id", unique: true
   end
 
   create_table "users", force: :cascade do |t|

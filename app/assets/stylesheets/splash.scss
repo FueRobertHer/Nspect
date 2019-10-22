@@ -12,8 +12,10 @@
   height: 450px;
   position: relative;
   margin: auto;
-  box-sizing: border-box;
+  // box-sizing: border-box;
   overflow: hidden;
+  display: flex;
+  background-color: #E6EAF6;
 }
 
 /* Hide the images by default */
@@ -22,10 +24,6 @@
   
 }
 
-@keyframes slide {
-  0% {width: 20%;}
-  100% {width: 100%;}
-}
 
 .slide-img {
   width: 100%;
@@ -39,8 +37,6 @@
   position: relative;
   display: block;
   margin: auto;
-  animation-name: slide;
-  animation-duration: 1;
 }
 
 .static {
@@ -106,7 +102,8 @@
   -webkit-animation-name: fade;
   -webkit-animation-duration: 1.5s;
   animation-name: fade;
-  animation-duration: 1.5s;
+  animation-duration: 1s;
+  animation-iteration-count: unset;
 }
 
 @-webkit-keyframes fade {
