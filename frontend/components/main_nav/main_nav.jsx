@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Search, Nspect } from '../svg/icon_svg';
 
 class MainNav extends React.Component {
@@ -11,10 +11,10 @@ class MainNav extends React.Component {
   render() {
     return (
       <nav className="main-nav">
-        <Link className="home-link" to='/'>
+        <NavLink className="home-link" to='/'>
           <Nspect className="nspect-icon" />
           <h1 className="title">Nspect</h1>
-        </Link>
+        </NavLink>
 
         <form className="search-container" >
           <input 
@@ -28,8 +28,8 @@ class MainNav extends React.Component {
           </span>
         </form>
 
-        <Link to="/observations" className="main-nav-link explore"><div className="nav-link"><b>Explore</b></div></Link>
-        <Link to="/people" className="main-nav-link"><div><b>Community</b></div></Link>
+        <NavLink to="/observations" className="main-nav-link explore" activeClassName="active-nav"><div className="nav-link"><b>Explore</b></div></NavLink>
+        <NavLink to="/people" className="main-nav-link" activeClassName="active-nav"><div><b>Community</b></div></NavLink>
       </nav>
     )
   }

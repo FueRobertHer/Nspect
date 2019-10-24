@@ -50,9 +50,15 @@
 }
 
 .main-nav-link {
-  padding: 0 10px;
+  padding: 0 15px;
 }
 
 .explore {
   margin-left: 30px;
+}
+
+.active-nav {
+  font-size: large;
+  padding: 18px 0;
+  border-bottom: 3px solid #74AC00;
 }

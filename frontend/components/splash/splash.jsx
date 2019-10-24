@@ -25,11 +25,10 @@ class Splash extends React.Component {
 
   componentDidMount() {
     this.setPicture();
-    this.autoNext();
   }
 
   componentWillUnmount() {
-    clearInterval(this.next);
+    clearTimeout(this.next);
   }
 
   nextSlide() {
@@ -46,13 +45,15 @@ class Splash extends React.Component {
   }
 
   autoNext() {
-    this.next = setInterval( ()=> {this.nextSlide()}, 5000)
+    this.next = setTimeout( ()=> {this.nextSlide()}, 5000)
   }
 
   setPicture() {
+    clearTimeout(this.next);    
     this.setState({
       img: this.imgSrcs[this.imgPos]
     })
+    this.autoNext();
   }
 
   render() {

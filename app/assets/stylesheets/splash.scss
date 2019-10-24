@@ -24,7 +24,6 @@
   
 }
 
-
 .slide-img {
   width: 100%;
   height: 100%;
@@ -37,6 +36,9 @@
   position: relative;
   display: block;
   margin: auto;
+  // opacity: 0;
+  // transition: opacity;
+  // transition-duration: 2s;
 }
 
 .static {
@@ -222,6 +224,9 @@
 .contribute-text {
   padding: 20px;
   text-align: center;
+  p {
+    max-width:  500px;
+  }
 }
 
 .half {

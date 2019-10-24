@@ -36,7 +36,7 @@
   align-items: center;
   flex-direction: column;
   width: 45%;
-  height: 92vh;
+  height: calc(100vh - 61px);
   min-width: 557px;
 }
 
