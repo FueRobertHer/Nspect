@@ -8,13 +8,29 @@ class Observation < ApplicationRecord
 
   # has_many_attached :sounds
 
-  has_many :comments
+  has_many :comments,
     foreign_key: :observation_id,
     class_name: :Comment
 
-  has_many :identifications
+  has_many :commenters,
+    through: :comments,
+    source: :commenter
+
+  has_many :identifications,
     foreign_key: :observation_id,
     class_name: :Identification
+
+  has_many :iders,
+    through: :identifications,
+    source: :identifier
+
+  has_many :favorites,
+    foreign_key: :observation_id,
+    class_name: :Favorite
+
+  has_many :favorited_users,
+    through: :favorites,
+    source: :user
 
 
   def self.in_bounds(bounds)

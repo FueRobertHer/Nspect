@@ -22,7 +22,7 @@ user2 = User.create!(
   email: 'fue@testmail.io',
   password: 'password',
   name: 'Fue Robert Her',
-  description: "I'm the developer of this iNaturalist clone! More functions are to come!",
+  description: "I'm the developer of this iNaturalist clone! More functions to come!",
 )
 pic2 = open('https://nspect-pro.s3-us-west-1.amazonaws.com/seed_profile_pics/fue_her.png')
 user2.profile_pic.attach(io: pic2, filename: 'fue_her.png')

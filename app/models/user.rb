@@ -41,14 +41,40 @@ class User < ApplicationRecord
     foreign_key: :identifier_id,
     class_name: :Identification
 
+  has_many :obs_ided,
+    through: :identifications,
+    source: :observation
+
   has_many :comments,
     foreign_key: :commenter_id,
     class_name: :Comment
 
+  has_many :obs_commented_on,
+    through: :comments,
+    source: :observation
+
   has_many :favorites,
+    foreign_key: :user_id,
+    class_name: :Favorite
+
+  has_many :favorited_obs,
+    through: :favorites,
+    source: :observation
 
   has_many :subscriptions,
+    foreign_key: :subscriber_id,
+    class_name: :Subscription
+
+  has_many :subscribed_to,
+    through: :subscriptions,
+    source: :user
 
   has_many :subscribers,
+    foreign_key: :other_user_id,
+    class_name: :Subscription
+
+  has_many :followers,
+    through: :subscribers,
+    source: :subscriber
 
 end
