@@ -1,5 +1,5 @@
 class Identification < ApplicationRecord
-  validates :observation_id, :identifier_id, :guess, presence: true
+  validates :observation_id, :identifier_id, :guess, :body, presence: true
 
   belongs_to :identifier,
     foreign_key: :identifier_id,

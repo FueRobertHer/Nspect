@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_22_172547) do
+ActiveRecord::Schema.define(version: 2019_10_25_212027) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2019_10_22_172547) do
     t.string "guess", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "body"
     t.index ["identifier_id"], name: "index_identifications_on_identifier_id"
     t.index ["observation_id"], name: "index_identifications_on_observation_id"
   end
