@@ -1,0 +1,1 @@
+json.partial! 'api/identifications/identification', identification: @identification

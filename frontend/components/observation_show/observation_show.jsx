@@ -11,7 +11,8 @@ class ObservationShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchObservation(this.props.match.params.observationId)
+    this.props.fetchObservation(this.props.match.params.observationId);
+    this.props.fetchIdentifications();
   }
 
   handleDelete() {
@@ -109,11 +110,11 @@ class ObservationShow extends React.Component {
 
             <section className="obs-activity">
               comments and identification in a list here
-          </section>
+            </section>
 
             <section className="com-id-form">
               add comment or id form here
-          </section>
+            </section>
           </section>
         </div>
       )

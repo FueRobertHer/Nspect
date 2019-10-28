@@ -1,4 +1,4 @@
-  export const addObservation = observation => (
+export const addObservation = observation => (
   $.ajax({
     method: 'post',
     url: '/api/observations',
@@ -37,21 +37,6 @@ export const deleteObservation = id => (
   $.ajax({
     method: 'delete',
     url: `/api/observations/${id}`
-  })
-)
-
-export const addIdentification = identification => (
-  $.ajax({
-    method: 'post',
-    url: '/api/identification',
-    data : { identification },
-  })
-)
-
-export const deleteIdentification = id => (
-  $.ajax({
-    method: 'delete',
-    url: `/api/identification/${id}`,
   })
 )
 
