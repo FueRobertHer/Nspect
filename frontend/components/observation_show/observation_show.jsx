@@ -20,6 +20,8 @@ class ObservationShow extends React.Component {
   }
 
   render() {
+    console.log(this.props);
+    
     const obs = this.props.observation;
 
     if (obs === undefined) {

@@ -39,11 +39,11 @@ class UserShow extends React.Component {
               </li>
               <li className="user-sidebar-nav-item">
                 <p>identification</p>
-                <p>26</p>
+                <p>{user.identifications.length}</p>
               </li>
               <li className="user-sidebar-nav-item">
                 <p>followers</p>
-                <p>2819461</p>
+                <p>{user.followers.length}</p>
               </li>
             </ul>
           </section>
@@ -56,7 +56,7 @@ class UserShow extends React.Component {
             </section>
 
             <section>
-              <h2 className="user-following-header">Following People</h2>
+              <h2 className="user-following-header">Following {user.following.length} People</h2>
               <section>
                 following users index here
               </section>

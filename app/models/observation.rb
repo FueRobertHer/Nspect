@@ -28,7 +28,7 @@ class Observation < ApplicationRecord
     foreign_key: :observation_id,
     class_name: :Favorite
 
-  has_many :favorited_users,
+  has_many :favorited_by,
     through: :favorites,
     source: :user
 

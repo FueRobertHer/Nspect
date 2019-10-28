@@ -6,3 +6,13 @@ else
 end
 
 json.observations user.observations.pluck(:id)
+
+json.comments user.comments.pluck(:id)
+
+json.identifications user.identifications.pluck(:id)
+
+json.favorites user.favorited_obs.pluck(:id)
+
+json.following user.subscribed_to.pluck(:id)
+
+json.followers user.followers.pluck(:id)
