@@ -52,6 +52,26 @@ class ObservationShow extends React.Component {
 
       const createdAt = obs.created_at ? obs.created_at.split("T")[0] + " at " + obs.created_at.split("T")[1].split(".")[0] : "some time in the past"
       const observedAt = obs.datetime ? obs.datetime.split("T")[0] + " at " + obs.datetime.split("T")[1].split(".")[0] : "some time in the past"
+
+      const activityList = this.props.identifications.map(identification =>
+        // <UserIndexItem key={identification.id} identification={identification} />
+        <div className="activity-container">
+          <div className="activity-left">
+            <img className="profile-icon" src={identification.profilePicURL} alt="" />
+            <div className="vert-line"></div>
+          </div>
+  
+          <div className="activity-right">
+            <div className="activity-right-header">
+              <b>{identification.username}</b> suggested an ID
+            </div>
+            
+            <div className="activity-right-body">
+              <p>{identification.guess}</p>
+            </div>
+          </div>
+        </div>
+      )
       
       return (
         <div className="obs-show-main">
@@ -109,7 +129,7 @@ class ObservationShow extends React.Component {
             <h3 className="obs-h3">Activity</h3>
 
             <section className="obs-activity">
-              comments and identification in a list here
+              {activityList}
             </section>
 
             <section className="com-id-form">

@@ -110,3 +110,34 @@
   width: 90%;
   margin: 10px;
 }
+
+.activity-container {
+  display: flex;
+  position: relative;
+  padding: 20px;
+}
+
+.vert-line {
+  width: 3px;
+  height: 100%;
+  background-color: rbg(221,221,221);
+}
+
+.activity-right {
+  display: flex;
+  flex-direction: column;
+  padding-left: 40px;
+}
+
+.activity-right-header {
+  background-color: rgba(116, 173, 0, 0.05);
+  
+}
+
+.profile-icon {
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
