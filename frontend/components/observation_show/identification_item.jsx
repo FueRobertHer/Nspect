@@ -15,9 +15,11 @@ class IdentificationItem extends React.Component {
         </div>
 
         <div className="activity-right">
-          <div className="activity-right-header border">
-            <b>{identification.username}</b> suggested an ID
-                  </div>
+          <div className="activity-header-container">
+            <div className="activity-right-header border">
+              <b>{identification.username}</b> suggested an ID
+            </div>
+          </div>
 
           <div className="activity-right-body border">
             <p className="guess">{identification.guess}</p>

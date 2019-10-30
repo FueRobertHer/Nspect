@@ -10,7 +10,7 @@ import ObservationShow from './observation_show';
 const mapSTP = ({session, entities: {observations: {observation}, identifications, comments} }) => ({
   observation,
   currentUser: session.id,
-  identifications: Object.values(identifications) //.filter(identification => identification.observation_id === observation.id),
+  identifications: Object.values(identifications).filter(identification => identification.observation_id === observation.id),
   // comments: Object.values(comments).filter(comment => comment.observation_id === observation.id)
 })
 

@@ -33,10 +33,12 @@ class AddActivityForm extends React.Component {
         </div>
 
         <div className="activity-right">
-          <div className="activity-right-header border">
-            <span className="activity-select" onClick={this.toggleActive} >Comment</span>
-            <span className="activity-select" onClick={this.toggleActive} >Suggest an Identification</span>
-          </div>
+          {/* <div className="activity-header-container"> */}
+            <div className="activity-right-header border">
+              <span className="activity-select" onClick={this.toggleActive} >Comment</span>
+              <span className="activity-select tab-header" onClick={this.toggleActive} >Suggest an Identification</span>
+            </div>
+          {/* </div> */}
 
           <div className="activity-right-body border">
             <form className="form-style">
@@ -58,7 +60,7 @@ class AddActivityForm extends React.Component {
 
         <div className="activity-right">
           <div className="activity-right-header border">
-            <span className="activity-select" onClick={this.toggleActive} >Comment</span>
+            <span className="activity-select tab-header" onClick={this.toggleActive} >Comment</span>
             <span className="activity-select" onClick={this.toggleActive} >Suggest an Identification</span>
           </div>
 
