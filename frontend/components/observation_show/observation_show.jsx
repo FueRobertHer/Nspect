@@ -118,7 +118,7 @@ class ObservationShow extends React.Component {
             </section>
 
             <section className="com-id-form">
-              <AddActivityForm />
+              <AddActivityForm currentUser={this.props.currentUser}/>
             </section>
           </section>
         </div>

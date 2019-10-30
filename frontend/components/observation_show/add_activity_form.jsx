@@ -6,10 +6,13 @@ class AddActivityForm extends React.Component {
   }
 
   render() {
+    const currentUser = this.props.currentUser || { profilePicURL: 'https://nspect-pro.s3-us-west-1.amazonaws.com/default_pic.png'};
+    const pic = currentUser.profilePicURL
+
     return (
       <div className="activity-container">
         <div className="activity-left">
-          <img className="profile-icon" src="" alt="" />
+          <img className="profile-icon" src={pic} alt="" />
         </div>
 
         <div className="activity-right">
