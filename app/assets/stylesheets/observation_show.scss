@@ -164,10 +164,33 @@
   border-top-right-radius: 3px;
 }
 
+.activity-select {
+  // margin: 20px 0;
+  padding: 5px 20px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom: #ffffff;
+  margin-left: -1px;
+}
+
+.active-activity {
+  background-color: #ffffff;
+  border: 1px solid #DDDDDD;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
 .activity-right-body {
   margin-top: -1px;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
+
+}
+
+.form-style {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .activity-body {
@@ -176,4 +199,32 @@
 
 .guess {
   font-size: 24px;
+}
+
+.form-input {
+  width: 98%;
+  max-width: 98%;
+  height: 98%;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 3px;
+  border: 1px solid #DDDDDD;
+}
+
+.form-input:focus {
+  border: solid #66afe9;
+  border-radius: 3px;
+  outline: 0;
+}
+
+.textarea {
+  min-height: 100px;
+  background-color: #f7f7f7;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075)
+}
+
+.textarea:focus {
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+  0 0 8px rgba(102, 175, 233, 0.6);
+  border-radius: 4px;
 }
