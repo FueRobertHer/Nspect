@@ -33,20 +33,16 @@ class AddActivityForm extends React.Component {
         </div>
 
         <div className="activity-right">
-          {/* <div className="activity-header-container"> */}
-            <div className="activity-right-header border">
-              <span className="activity-select" onClick={this.toggleActive} >Comment</span>
-              <span className="activity-select tab-header" onClick={this.toggleActive} >Suggest an Identification</span>
-            </div>
-          {/* </div> */}
+          <div className="activity-right-header border">
+            <span className="activity-select" onClick={this.toggleActive} >Comment</span>
+            <span className="activity-select tab-header" onClick={this.toggleActive} >Suggest an Identification</span>
+          </div>
 
           <div className="activity-right-body border">
             <form className="form-style">
               <input type="text" placeholder="Species name" className="form-input" />
               <textarea placeholder="Tell us why..." className="form-input textarea"></textarea>
             </form>
-            {/* <p className="guess">{identification.guess}</p>
-            <p className="activity-body">{identification.body}</p> */}
           </div>
         </div>
       </div>
@@ -66,7 +62,7 @@ class AddActivityForm extends React.Component {
 
           <div className="activity-right-body border">
             <form className="form-style">
-              <textarea placeholder="Leave a comment" className="form-input textarea"></textarea>
+              <textarea placeholder="Leave a comment" className="form-input textarea comment"></textarea>
             </form>
             {/* <p className="guess">{identification.guess}</p>
             <p className="activity-body">{identification.body}</p> */}
