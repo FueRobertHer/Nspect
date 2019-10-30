@@ -91,7 +91,7 @@ export const CAS = props => (
 )
 
 export const NatGeo = props => (
-  <svg width={194} height={58} viewBox="0 0 194 58" {...props}>
+  <svg width={props.width || 194} height={props.height || 58} viewBox="0 0 194 58" {...props}>
     <title>{'Page 1'}</title>
     <defs>
       <path id="prefix__a" d="M144.892 47.905V.394H.483v47.51z" />

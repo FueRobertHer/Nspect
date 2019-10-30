@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import ObservationMap from '../observation_map/observation_map';
-
+import IdentificationItem from './identification_item';
+import AddActivityForm from './add_activity_form';
 
 class ObservationShow extends React.Component {
   constructor(props) {
@@ -54,23 +55,7 @@ class ObservationShow extends React.Component {
       const observedAt = obs.datetime ? obs.datetime.split("T")[0] + " at " + obs.datetime.split("T")[1].split(".")[0] : "some time in the past"
 
       const activityList = this.props.identifications.map(identification =>
-        // <UserIndexItem key={identification.id} identification={identification} />
-        <div className="activity-container">
-          <div className="activity-left">
-            <img className="profile-icon" src={identification.profilePicURL} alt="" />
-            <div className="vert-line"></div>
-          </div>
-  
-          <div className="activity-right">
-            <div className="activity-right-header">
-              <b>{identification.username}</b> suggested an ID
-            </div>
-            
-            <div className="activity-right-body">
-              <p>{identification.guess}</p>
-            </div>
-          </div>
-        </div>
+        <IdentificationItem key={identification.id} identification={identification} />
       )
       
       return (
@@ -133,7 +118,7 @@ class ObservationShow extends React.Component {
             </section>
 
             <section className="com-id-form">
-              add comment or id form here
+              <AddActivityForm />
             </section>
           </section>
         </div>

@@ -32,7 +32,7 @@ const Footer = ({ location }) => (
       
       <a href="https://www.nationalgeographic.org/" target="_blank">
         <div className="nat-geo">
-        <NatGeo />
+        <NatGeo width="180" height="45"/>
       </div>
       </a>
     </section>
