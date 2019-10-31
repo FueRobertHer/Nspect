@@ -70,9 +70,20 @@ class ObservationShow extends React.Component {
           <ActivityItem key={activity.id + 'id'} activity={activity} itemType="id"/>
       )
 
-      const activityList = filteredIds.concat(filteredComments).sort((a, b) => a.props.activity.created_at > b.props.activity.created_at)
+      const activityList = filteredIds.concat(filteredComments).sort(function(a, b) { 
+        const actA = a.props.activity.created_at;
+        const actB = b.props.activity.created_at;
+        if (actA < actB) {
+          return -1;
+        } else if (actA > actB) {
+          return 1;
+        } else {
+          return 0;
+        }
+      })
 
-      console.log('ids', activityList);
+      console.log('act', activityList);
+      // debugger
       
       return (
         <div className="obs-show-main">
