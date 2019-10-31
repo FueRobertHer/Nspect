@@ -18,8 +18,10 @@ const mapSTP = ({session, entities: {observations: {observation}, identification
 const mapDTP = dispatch => ({
   fetchObservation: id => dispatch(fetchObservation(id)),
   deleteObservation: id => dispatch(deleteObservation(id)),
+  addIdentification: data => dispatch(addIdentification(data)),
   fetchIdentifications: () => dispatch(fetchIdentifications()),
   deleteIdentification: id => dispatch(deleteIdentification(id)),
+  addComment: data => dispatch(addComment(data)),
   fetchComments: () => dispatch(fetchComments()),
   deleteComment: id => dispatch(deleteComment(id))
 })

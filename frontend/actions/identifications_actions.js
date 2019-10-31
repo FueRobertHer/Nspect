@@ -10,10 +10,10 @@ export const receiveIdentifications = identifications => ({
   identifications
 })
 
-// export const receiveIdentification = identification => ({
-//   type: RECEIVE_IDENTIFICATION,
-//   identification
-// })
+export const receiveIdentification = identification => ({
+  type: RECEIVE_IDENTIFICATION,
+  identification
+})
 
 export const removeIdentification = id => ({
   type: REMOVE_IDENTIFICATION,

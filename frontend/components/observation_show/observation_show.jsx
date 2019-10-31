@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import ObservationMap from '../observation_map/observation_map';
-import IdentificationItem from './identification_item';
+import ActivityItem from './activity_item';
 import AddActivityForm from './add_activity_form';
 
 class ObservationShow extends React.Component {
@@ -10,8 +10,6 @@ class ObservationShow extends React.Component {
     super(props);
     this.handleDelete = this.handleDelete.bind(this)
 
-    console.log(this.props);
-    
   }
 
   componentDidMount() {
@@ -61,11 +59,20 @@ class ObservationShow extends React.Component {
 
       const createdAt = obs.created_at ? obs.created_at.split("T")[0] + " at " + obs.created_at.split("T")[1].split(".")[0] : "some time in the past"
       const observedAt = obs.datetime ? obs.datetime.split("T")[0] + " at " + obs.datetime.split("T")[1].split(".")[0] : "some time in the past"
-
-      const activityList = ids.filter(identification => identification.observation_id === obs.id)
-        .map(identification => 
-          <IdentificationItem key={identification.id} identification={identification} />
+      
+      const filteredComments = coms.filter(activity => activity.observation_id === obs.id)
+        .map(activity =>
+          <ActivityItem key={activity.id + 'com'} activity={activity} itemType="com" />
+        )
+      
+      const filteredIds = ids.filter(activity => activity.observation_id === obs.id)
+        .map(activity => 
+          <ActivityItem key={activity.id + 'id'} activity={activity} itemType="id"/>
       )
+
+      const activityList = filteredIds.concat(filteredComments).sort((a, b) => a.props.activity.created_at > b.props.activity.created_at)
+
+      console.log('ids', activityList);
       
       return (
         <div className="obs-show-main">
@@ -127,7 +134,12 @@ class ObservationShow extends React.Component {
             </section>
 
             <section className="com-id-form">
-              <AddActivityForm currentUser={currentUser}/>
+              <AddActivityForm 
+                addIdentification={this.props.addIdentification}
+                addComment={this.props.addComment} 
+                observation={obs} 
+                currentUser={currentUser}
+              />
             </section>
           </section>
         </div>

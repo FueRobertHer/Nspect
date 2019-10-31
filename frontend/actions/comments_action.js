@@ -10,10 +10,10 @@ export const receiveComments = comments => ({
   comments
 })
 
-// export const receiveComment = comment => ({
-//   type: RECEIVE_COMMENT,
-//   comment
-// })
+export const receiveComment = comment => ({
+  type: RECEIVE_COMMENT,
+  comment
+})
 
 export const removeComment = id => ({
   type: REMOVE_COMMENT,

@@ -11,7 +11,7 @@ class Api::IdentificationsController < ApplicationController
   end
 
   def create
-    @identification = Identification.new(identification_params)
+    @identification = Identification.new(id_params)
     if @identification.save
       render :show
     else
@@ -44,6 +44,6 @@ class Api::IdentificationsController < ApplicationController
   private
 
   def id_params
-    params.require(:comment).permit(:id, :observation_id, :identifier_id, :guess, :body)
+    params.require(:identification).permit(:id, :observation_id, :identifier_id, :guess, :body)
   end
 end
