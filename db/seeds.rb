@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Comment.delete_all
+Identification.delete_all
 Observation.delete_all
 User.delete_all
 
@@ -157,51 +159,91 @@ user15 = User.create!(
 pic15 = open('https://nspect-pro.s3-us-west-1.amazonaws.com/seed_profile_pics/minakata_kumagusu.jpg')
 user15.profile_pic.attach(io: pic15, filename: 'minakata_kumagusu.jpg')
 
-# ---------------------------------------------------------------------------------------------------------------------------------------------
-# ---------------------------------------------------------------------------------------------------------------------------------------------
-# ---------------------------------------------------------------------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------------------------------------------------
 
 
-Observation.create!(
+obs1 = Observation.create!(
   observer_id: user1.id,
-  lat: 1.1,
+  lat: 10.1,
   lng: 1.1,
   description: "test observation 1"
 )
 
-Observation.create!(
+obs2 = Observation.create!(
   observer_id: user1.id,
-  lat: 2.2,
+  lat: 20.2,
   lng: 2.2,
   description: "test observation 2"
 )
 
-Observation.create!(
+obs3 = Observation.create!(
   observer_id: user1.id,
-  lat: 3.3,
+  lat: 30.3,
   lng: 3.3,
   description: "test observation 3"
 )
 
-
-
-Observation.create!(
+obs4 = Observation.create!(
   observer_id: user2.id,
-  lat: 4.4,
+  lat: 40.4,
   lng: 4.4,
-  description: "test observation 2"
+  description: "test observation 4"
 )
 
-Observation.create!(
+obs5 = Observation.create!(
   observer_id: user2.id,
-  lat: 5.5,
+  lat: 50.5,
   lng: 5.5,
-  description: "test observation 2"
+  description: "test observation 5"
 )
 
-Observation.create!(
+obs6 = Observation.create!(
   observer_id: user2.id,
-  lat: 6.6,
+  lat: 60.6,
   lng: 6.6,
-  description: "test observation 2"
+  description: "test observation 6"
+)
+
+
+# ------------------------------------------------------------------------------------------------------------------------
+
+
+Identification.create!(
+  observation_id: obs1.id,
+  identifier_id: user1.id,
+  guess: 'something 1',
+  body: 'i saw this thing here'
+)
+
+Identification.create!(
+  observation_id: obs2.id,
+  identifier_id: user2.id,
+  guess: 'something 2',
+  body: 'i saw this thing here'
+)
+
+Identification.create!(
+  observation_id: obs3.id,
+  identifier_id: user3.id,
+  guess: 'something 3',
+  body: 'i saw this thing here'
+)
+
+Comment.create!(
+  observation_id: obs4.id,
+  commenter_id: user4.id,
+  body: 'test comment 1'
+)
+
+Comment.create!(
+  observation_id: obs5.id,
+  commenter_id: user5.id,
+  body: 'test comment 2'
+)
+
+Comment.create!(
+  observation_id: obs6.id,
+  commenter_id: user6.id,
+  body: 'test comment 3'
 )

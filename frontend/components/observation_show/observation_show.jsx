@@ -9,11 +9,15 @@ class ObservationShow extends React.Component {
   constructor(props) {
     super(props);
     this.handleDelete = this.handleDelete.bind(this)
+
+    console.log(this.props);
+    
   }
 
   componentDidMount() {
     this.props.fetchObservation(this.props.match.params.observationId);
     this.props.fetchIdentifications();
+    this.props.fetchComments();
   }
 
   handleDelete() {
@@ -25,9 +29,13 @@ class ObservationShow extends React.Component {
     console.log(this.props);
     
     const obs = this.props.observation;
+    const ids = this.props.identifications;
+    const coms = this.props.comments;
+    let currentUser = this.props.currentUser;
+    if (currentUser === undefined) currentUser = { profilePicURL: 'https://nspect-pro.s3-us-west-1.amazonaws.com/default_pic.png' };
 
-    if (obs === undefined) {
-      return ( <div></div> )
+    if (obs === undefined ) {
+      return ( <div></div> );
     } else {
       const mapOptions = {
         center: { lat: obs.lat, lng: obs.lng },
@@ -54,15 +62,17 @@ class ObservationShow extends React.Component {
       const createdAt = obs.created_at ? obs.created_at.split("T")[0] + " at " + obs.created_at.split("T")[1].split(".")[0] : "some time in the past"
       const observedAt = obs.datetime ? obs.datetime.split("T")[0] + " at " + obs.datetime.split("T")[1].split(".")[0] : "some time in the past"
 
-      const activityList = this.props.identifications.map(identification =>
-        <IdentificationItem key={identification.id} identification={identification} />
+      const activityList = ids.filter(identification => identification.observation_id === obs.id)
+        .map(identification => 
+          <IdentificationItem key={identification.id} identification={identification} />
       )
       
       return (
         <div className="obs-show-main">
 
           <section className="obs-show-title">
-            {/* <span className="obs-title">highest rated identification here</span> */}
+            <span className="obs-title">highest rated identification here</span>
+            {(obs.observer_id === currentUser.id) ? editLinks : <span></span>}
           </section>
 
           <section className="obs-pic-map">
@@ -75,7 +85,6 @@ class ObservationShow extends React.Component {
                 <Link className="observer-link" to={`/people/${obs.observer_id}`} >
                   {obs.username}
                 </Link>
-                {(obs.observer_id === this.props.currentUser) ? editLinks : <span></span> }
               </div>
 
               <div className="obs-map border center">
@@ -118,7 +127,7 @@ class ObservationShow extends React.Component {
             </section>
 
             <section className="com-id-form">
-              <AddActivityForm currentUser={this.props.currentUser} activity="identify"/>
+              <AddActivityForm currentUser={currentUser}/>
             </section>
           </section>
         </div>

@@ -1,0 +1,167 @@
+=> [[32m#<User:0x000055d0daefca80[0m
+  id: [1;34m38[0m,
+  username: [31m[1;31m"[0m[31mGas[1;31m"[0m[31m[0m,
+  email: [31m[1;31m"[0m[31mcharles@darwin.io[1;31m"[0m[31m[0m,
+  password_digest:
+   [31m[1;31m"[0m[31m$2a$12$Dj4RIFKJOPhVqrLUAQNYZOLivh6iZjxpfdhRFjGBQ.u6MOtfseOgq[1;31m"[0m[31m[0m,
+  session_token: [31m[1;31m"[0m[31munpVJSAvpSPQ9Xc7yENUYQ[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mWed[0m, [1;34m30[0m [1;34;4mOct[0m [1;34m2019[0m [1;34m22[0m:[1;34m59[0m:[1;34m26[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mWed[0m, [1;34m30[0m [1;34;4mOct[0m [1;34m2019[0m [1;34m22[0m:[1;34m59[0m:[1;34m27[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description:
+   [31m[1;31m"[0m[31mI developed the theory of evolution by natural selection. Pidgeons are amazing![1;31m"[0m[31m[0m,
+  name: [31m[1;31m"[0m[31mCharles Darwin[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<User:0x000055d0daefc6c0[0m
+  id: [1;34m39[0m,
+  username: [31m[1;31m"[0m[31mLinnaeus[1;31m"[0m[31m[0m,
+  email: [31m[1;31m"[0m[31mcarl@linnaeus.io[1;31m"[0m[31m[0m,
+  password_digest:
+   [31m[1;31m"[0m[31m$2a$12$eDM6YMxRIXCH/ndYGm1BoeJUL/mnLpBF8/1vmd4RkMb7jfxrV0fam[1;31m"[0m[31m[0m,
+  session_token: [31m[1;31m"[0m[31mdKV4_dabMPs3T5rkgmsKOA[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mWed[0m, [1;34m30[0m [1;34;4mOct[0m [1;34m2019[0m [1;34m22[0m:[1;34m59[0m:[1;34m27[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mWed[0m, [1;34m30[0m [1;34;4mOct[0m [1;34m2019[0m [1;34m22[0m:[1;34m59[0m:[1;34m27[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31mBinomial nomenclature. Life can be categorized[1;31m"[0m[31m[0m,
+  name: [31m[1;31m"[0m[31mCarl Linnaeus[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<User:0x000055d0daefc350[0m
+  id: [1;34m40[0m,
+  username: [31m[1;31m"[0m[31mCarrie[1;31m"[0m[31m[0m,
+  email: [31m[1;31m"[0m[31mcaroline@dormon.io[1;31m"[0m[31m[0m,
+  password_digest:
+   [31m[1;31m"[0m[31m$2a$12$EcOt7Gb3HhQPeBVLDAMAye92VlMxukFp5NVTZetPKCaDRCRDGePHu[1;31m"[0m[31m[0m,
+  session_token: [31m[1;31m"[0m[31mfj7DLejBwzSlue3DeVVNZw[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mWed[0m, [1;34m30[0m [1;34;4mOct[0m [1;34m2019[0m [1;34m22[0m:[1;34m59[0m:[1;34m28[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mWed[0m, [1;34m30[0m [1;34;4mOct[0m [1;34m2019[0m [1;34m22[0m:[1;34m59[0m:[1;34m28[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31mFirst female United State Forestry Service employee[1;31m"[0m[31m[0m,
+  name: [31m[1;31m"[0m[31mCaroline Dormon[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<User:0x000055d0daefc080[0m
+  id: [1;34m41[0m,
+  username: [31m[1;31m"[0m[31mmills[1;31m"[0m[31m[0m,
+  email: [31m[1;31m"[0m[31menos@mills.io[1;31m"[0m[31m[0m,
+  password_digest:
+   [31m[1;31m"[0m[31m$2a$12$6nnzj7lYRFXZ0SCbp3.Kr.toFU1sShyGaI89rgM4vVqaO.NDJDyQC[1;31m"[0m[31m[0m,
+  session_token: [31m[1;31m"[0m[31m7nU5hPkXLf3k91gZOxEH5g[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mWed[0m, [1;34m30[0m [1;34;4mOct[0m [1;34m2019[0m [1;34m22[0m:[1;34m59[0m:[1;34m28[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mWed[0m, [1;34m30[0m [1;34;4mOct[0m [1;34m2019[0m [1;34m22[0m:[1;34m59[0m:[1;34m29[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31m[1;31m"[0m[31m[0m,
+  name: [31m[1;31m"[0m[31mEnos Mills[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<User:0x000055d0daeefc18[0m
+  id: [1;34m42[0m,
+  username: [31m[1;31m"[0m[31mflorence[1;31m"[0m[31m[0m,
+  email: [31m[1;31m"[0m[31mflorence@merriam.io[1;31m"[0m[31m[0m,
+  password_digest:
+   [31m[1;31m"[0m[31m$2a$12$TDhQpJt9n4DOLCl0BZ4lD.llNQr55xRpDJ5.FKcWRxX2Pw/CQ2Rym[1;31m"[0m[31m[0m,
+  session_token: [31m[1;31m"[0m[31mu07sO9iGNRgD20bZVUjedw[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mWed[0m, [1;34m30[0m [1;34;4mOct[0m [1;34m2019[0m [1;34m22[0m:[1;34m59[0m:[1;34m29[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mWed[0m, [1;34m30[0m [1;34;4mOct[0m [1;34m2019[0m [1;34m22[0m:[1;34m59[0m:[1;34m29[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31mProtection for the birds[1;31m"[0m[31m[0m,
+  name: [31m[1;31m"[0m[31mFlorence Augusta Merriam Bailey[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<User:0x000055d0daeef420[0m
+  id: [1;34m43[0m,
+  username: [31m[1;31m"[0m[31mheritage[1;31m"[0m[31m[0m,
+  email: [31m[1;31m"[0m[31mfreeman@tilden.io[1;31m"[0m[31m[0m,
+  password_digest:
+   [31m[1;31m"[0m[31m$2a$12$M9bVONHVwqaw5rTaNYV5Bu5Lx8O26O/qmZJm0hzOn5B9LVZPSWGrO[1;31m"[0m[31m[0m,
+  session_token: [31m[1;31m"[0m[31mg37nUpOWc1eO7KOtkGJdtQ[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mWed[0m, [1;34m30[0m [1;34;4mOct[0m [1;34m2019[0m [1;34m22[0m:[1;34m59[0m:[1;34m30[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mWed[0m, [1;34m30[0m [1;34;4mOct[0m [1;34m2019[0m [1;34m22[0m:[1;34m59[0m:[1;34m30[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31mNational Park service and interp[1;31m"[0m[31m[0m,
+  name: [31m[1;31m"[0m[31mFreeman Tilden[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<User:0x000055d0daeef218[0m
+  id: [1;34m44[0m,
+  username: [31m[1;31m"[0m[31maudubon[1;31m"[0m[31m[0m,
+  email: [31m[1;31m"[0m[31mjohnjames@audubon.io[1;31m"[0m[31m[0m,
+  password_digest:
+   [31m[1;31m"[0m[31m$2a$12$t1obfEPv/FsfbyQyuBnEfeeFnl/GZ7PKAsNLrqsvNtdH1xI7EO52y[1;31m"[0m[31m[0m,
+  session_token: [31m[1;31m"[0m[31m4rGJK0Er4CcM8ojQj9PqWw[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mWed[0m, [1;34m30[0m [1;34;4mOct[0m [1;34m2019[0m [1;34m22[0m:[1;34m59[0m:[1;34m30[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mWed[0m, [1;34m30[0m [1;34;4mOct[0m [1;34m2019[0m [1;34m22[0m:[1;34m59[0m:[1;34m31[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31mBirds of America[1;31m"[0m[31m[0m,
+  name: [31m[1;31m"[0m[31mJohn James Audubon[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<User:0x000055d0daeef060[0m
+  id: [1;34m45[0m,
+  username: [31m[1;31m"[0m[31mMountainJohn[1;31m"[0m[31m[0m,
+  email: [31m[1;31m"[0m[31mjohn@muir.io[1;31m"[0m[31m[0m,
+  password_digest:
+   [31m[1;31m"[0m[31m$2a$12$xCjl5mkY63RSCnKH7ARe8.vszYU2q.3mP6TnXJTVWAkayrGTo6SY.[1;31m"[0m[31m[0m,
+  session_token: [31m[1;31m"[0m[31mq_BE5W1qZPiTus1evi61UA[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mWed[0m, [1;34m30[0m [1;34;4mOct[0m [1;34m2019[0m [1;34m22[0m:[1;34m59[0m:[1;34m31[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mWed[0m, [1;34m30[0m [1;34;4mOct[0m [1;34m2019[0m [1;34m22[0m:[1;34m59[0m:[1;34m32[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31mYosemite[1;31m"[0m[31m[0m,
+  name: [31m[1;31m"[0m[31mJohn Muir[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<User:0x000055d0daeeedb8[0m
+  id: [1;34m46[0m,
+  username: [31m[1;31m"[0m[31mJohnnyAppleseed[1;31m"[0m[31m[0m,
+  email: [31m[1;31m"[0m[31mjohn@chapman.io[1;31m"[0m[31m[0m,
+  password_digest:
+   [31m[1;31m"[0m[31m$2a$12$AERNUqu66ascxdttrkRMtOctsrpSRPZyz0fIxvM4ltXXpiq0T7mHG[1;31m"[0m[31m[0m,
+  session_token: [31m[1;31m"[0m[31mlHnsQqjisZkFWshqz-Yg6g[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mWed[0m, [1;34m30[0m [1;34;4mOct[0m [1;34m2019[0m [1;34m22[0m:[1;34m59[0m:[1;34m32[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mWed[0m, [1;34m30[0m [1;34;4mOct[0m [1;34m2019[0m [1;34m22[0m:[1;34m59[0m:[1;34m32[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31mApples for all![1;31m"[0m[31m[0m,
+  name: [31m[1;31m"[0m[31mJohn Chapman[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<User:0x000055d0daeeeb88[0m
+  id: [1;34m47[0m,
+  username: [31m[1;31m"[0m[31mSilentSpring[1;31m"[0m[31m[0m,
+  email: [31m[1;31m"[0m[31mrachel@carson.io[1;31m"[0m[31m[0m,
+  password_digest:
+   [31m[1;31m"[0m[31m$2a$12$L5hVQ5Go8WZ8shyamP0dyu/khe2AaBQSQX.8YzlcP4xgfshoUBBqi[1;31m"[0m[31m[0m,
+  session_token: [31m[1;31m"[0m[31mXjFWB3e4FbgG7VraIyK4IQ[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mWed[0m, [1;34m30[0m [1;34;4mOct[0m [1;34m2019[0m [1;34m22[0m:[1;34m59[0m:[1;34m33[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mWed[0m, [1;34m30[0m [1;34;4mOct[0m [1;34m2019[0m [1;34m22[0m:[1;34m59[0m:[1;34m33[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31mMarine bio and silent spring. DDT is bad.[1;31m"[0m[31m[0m,
+  name: [31m[1;31m"[0m[31mRachel Carson[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<User:0x000055d0daeee930[0m
+  id: [1;34m48[0m,
+  username: [31m[1;31m"[0m[31mCrocHunter[1;31m"[0m[31m[0m,
+  email: [31m[1;31m"[0m[31msteve@irwon.io[1;31m"[0m[31m[0m,
+  password_digest:
+   [31m[1;31m"[0m[31m$2a$12$AyQnQXyM3pVDS4XDPiWlkehLVNfgbXDNTahr4gFeP5yoqFYRBK8LG[1;31m"[0m[31m[0m,
+  session_token: [31m[1;31m"[0m[31mF2103OftxiVG_6PoIgjgSQ[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mWed[0m, [1;34m30[0m [1;34;4mOct[0m [1;34m2019[0m [1;34m22[0m:[1;34m59[0m:[1;34m34[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mWed[0m, [1;34m30[0m [1;34;4mOct[0m [1;34m2019[0m [1;34m22[0m:[1;34m59[0m:[1;34m34[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31mThe one and only Crocodile Hunter![1;31m"[0m[31m[0m,
+  name: [31m[1;31m"[0m[31mSteve Irwin[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<User:0x000055d0daeee700[0m
+  id: [1;34m49[0m,
+  username: [31m[1;31m"[0m[31mhumboldt[1;31m"[0m[31m[0m,
+  email: [31m[1;31m"[0m[31malexander@humboldt.io[1;31m"[0m[31m[0m,
+  password_digest:
+   [31m[1;31m"[0m[31m$2a$12$VO4Z.Fb/GikbpT0/pM5YH.ZaOv6Nhhiehu06ulYweUGQMjbyZoRvy[1;31m"[0m[31m[0m,
+  session_token: [31m[1;31m"[0m[31mojYO68Re0B5V3iJfY36_Mg[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mWed[0m, [1;34m30[0m [1;34;4mOct[0m [1;34m2019[0m [1;34m22[0m:[1;34m59[0m:[1;34m34[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mWed[0m, [1;34m30[0m [1;34;4mOct[0m [1;34m2019[0m [1;34m22[0m:[1;34m59[0m:[1;34m35[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31mPlant travels to South America[1;31m"[0m[31m[0m,
+  name: [31m[1;31m"[0m[31mAlexander von Humboldt[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<User:0x000055d0daeee4f8[0m
+  id: [1;34m50[0m,
+  username: [31m[1;31m"[0m[31mslime[1;31m"[0m[31m[0m,
+  email: [31m[1;31m"[0m[31mkumagusu@minakata.io[1;31m"[0m[31m[0m,
+  password_digest:
+   [31m[1;31m"[0m[31m$2a$12$5jUFc8dLmvI0Aoi7vJIpK.cgD9yu/4SfjyT7RDY3jLm3y3eKG5fG.[1;31m"[0m[31m[0m,
+  session_token: [31m[1;31m"[0m[31mELXAO904SQMdX8M_AjyQbQ[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mWed[0m, [1;34m30[0m [1;34;4mOct[0m [1;34m2019[0m [1;34m22[0m:[1;34m59[0m:[1;34m35[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mWed[0m, [1;34m30[0m [1;34;4mOct[0m [1;34m2019[0m [1;34m22[0m:[1;34m59[0m:[1;34m35[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31mSlime molds are awesome![1;31m"[0m[31m[0m,
+  name: [31m[1;31m"[0m[31mMinakata Kumagusu[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<User:0x000055d0daeee2c8[0m
+  id: [1;34m36[0m,
+  username: [31m[1;31m"[0m[31mDemoUser[1;31m"[0m[31m[0m,
+  email: [31m[1;31m"[0m[31mdemo@user.io[1;31m"[0m[31m[0m,
+  password_digest:
+   [31m[1;31m"[0m[31m$2a$12$64YWEMvYDlfJ23JVr8.mduDr4ENm3/IEoVvKUg4AmO7dSGMr7vqXK[1;31m"[0m[31m[0m,
+  session_token: [31m[1;31m"[0m[31mILDdbL-Q8V-dR_VEKkrwhQ[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mWed[0m, [1;34m30[0m [1;34;4mOct[0m [1;34m2019[0m [1;34m22[0m:[1;34m59[0m:[1;34m25[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mWed[0m, [1;34m30[0m [1;34;4mOct[0m [1;34m2019[0m [1;34m23[0m:[1;34m48[0m:[1;34m32[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31mI'm the Demo account! Feel free to look around and have fun![1;31m"[0m[31m[0m,
+  name: [31m[1;31m"[0m[31mDemo[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<User:0x000055d0daeee188[0m
+  id: [1;34m37[0m,
+  username: [31m[1;31m"[0m[31mFue[1;31m"[0m[31m[0m,
+  email: [31m[1;31m"[0m[31mfue@testmail.io[1;31m"[0m[31m[0m,
+  password_digest:
+   [31m[1;31m"[0m[31m$2a$12$9oNQ/gyYPypVEynYILTzb.VB9NsUkqmDkax2HAL4y8EdJptqiTapq[1;31m"[0m[31m[0m,
+  session_token: [31m[1;31m"[0m[31m5AnRpfbl3AFdApcN5VAqPQ[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mWed[0m, [1;34m30[0m [1;34;4mOct[0m [1;34m2019[0m [1;34m22[0m:[1;34m59[0m:[1;34m25[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mWed[0m, [1;34m30[0m [1;34;4mOct[0m [1;34m2019[0m [1;34m23[0m:[1;34m48[0m:[1;34m38[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description:
+   [31m[1;31m"[0m[31mI'm the developer of this iNaturalist clone! More functions to come![1;31m"[0m[31m[0m,
+  name: [31m[1;31m"[0m[31mFue Robert Her[1;31m"[0m[31m[0m[32m>[0m]

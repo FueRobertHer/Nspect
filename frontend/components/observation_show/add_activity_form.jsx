@@ -4,10 +4,11 @@ import { NavLink } from 'react-router-dom';
 class AddActivityForm extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {activity: this.props.activity};
-    this.state.activity = 'identify';
+    this.state = {};
+    this.state.activity = 'comment';
 
     this.toggleActive = this.toggleActive.bind(this);
+    this.handelSubmit = this.handelSubmit.bind(this);
   }
 
   toggleActive(e) {
@@ -17,13 +18,18 @@ class AddActivityForm extends React.Component {
     } else {
       this.setState({activity: 'identify'})
     }
+  }
 
-    console.log(this.state);
+  handelSubmit(e) {
+    e.preventDefault();
+
+    console.log(this.props);
     
   }
 
   render() {
-    const currentUser = this.props.currentUser || { profilePicURL: 'https://nspect-pro.s3-us-west-1.amazonaws.com/default_pic.png'};
+    let currentUser = this.props.currentUser;
+    if (currentUser === undefined) currentUser = { profilePicURL: 'https://nspect-pro.s3-us-west-1.amazonaws.com/default_pic.png' };
     const pic = currentUser.profilePicURL
 
     const addIdentification = () => (
@@ -33,18 +39,21 @@ class AddActivityForm extends React.Component {
         </div>
 
         <div className="activity-right">
-          <div className="activity-right-header border">
-            <span className="activity-select" onClick={this.toggleActive} >Comment</span>
-            <span className="activity-select tab-header" onClick={this.toggleActive} >Suggest an Identification</span>
-          </div>
+          <form onSubmit={this.handelSubmit}>
+            <div className="activity-right-header border">
+              <span className="activity-select" onClick={this.toggleActive} >Comment</span>
+              <span className="activity-select tab-header" onClick={this.toggleActive} >Suggest an Identification</span>
+            </div>
 
-          <div className="activity-right-body border">
-            <form className="form-style">
-              <input type="text" placeholder="Species name" className="form-input" />
-              <textarea placeholder="Tell us why..." className="form-input textarea"></textarea>
-            </form>
-          </div>
+            <div className="activity-right-body border form-style">
+                <input type="text" placeholder="Species name" className="form-input" />
+                <textarea placeholder="Tell us why..." className="form-input textarea"></textarea>
+            </div>
+
+            <input className="done-btn" type="submit" value="Done"/>
+          </form>
         </div>
+
       </div>
     );
 
@@ -55,18 +64,18 @@ class AddActivityForm extends React.Component {
         </div>
 
         <div className="activity-right">
-          <div className="activity-right-header border">
-            <span className="activity-select tab-header" onClick={this.toggleActive} >Comment</span>
-            <span className="activity-select" onClick={this.toggleActive} >Suggest an Identification</span>
-          </div>
+          <form onSubmit={this.handelSubmit}>
+            <div className="activity-right-header border">
+              <span className="activity-select tab-header" onClick={this.toggleActive} >Comment</span>
+              <span className="activity-select" onClick={this.toggleActive} >Suggest an Identification</span>
+            </div>
 
-          <div className="activity-right-body border">
-            <form className="form-style">
-              <textarea placeholder="Leave a comment" className="form-input textarea comment"></textarea>
-            </form>
-            {/* <p className="guess">{identification.guess}</p>
-            <p className="activity-body">{identification.body}</p> */}
-          </div>
+            <div className="activity-right-body border form-style">
+                <textarea placeholder="Leave a comment" className="form-input textarea comment"></textarea>
+            </div>
+            
+            <input className="done-btn" type="submit" value="Done" />
+          </form>
         </div>
       </div>
     )
