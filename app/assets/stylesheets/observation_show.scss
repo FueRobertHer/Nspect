@@ -33,6 +33,10 @@
   border: 1px solid #DDDDDD;
 }
 
+.obs-pic {
+  border-right: none;
+}
+
 .obs-info {
   min-width: 300px;
   height: 420px;
@@ -51,6 +55,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: none;
 }
 
 .obs-detail {
@@ -158,12 +163,18 @@
 }
 
 .activity-right-header {
-  display: block;
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
   background-color: rgba(116, 173, 0, 0.05);
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   margin-bottom: -1px;
   z-index: 1;
+  b {
+    padding: 5px 0;
+    display: inline-block;
+  }
 }
 
 .activity-select {
@@ -243,4 +254,8 @@
   margin-top: 10px;
   padding: 5px;
   color: inherit;
+}
+
+.act-delete {
+  border-radius: 3px;
 }

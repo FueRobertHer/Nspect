@@ -61,16 +61,31 @@ class ObservationShow extends React.Component {
       const observedAt = obs.datetime ? obs.datetime.split("T")[0] + " at " + obs.datetime.split("T")[1].split(".")[0] : "some time in the past"
       
       const filteredComments = coms.filter(activity => activity.observation_id === obs.id)
+      const comments = filteredComments
         .map(activity =>
-          <ActivityItem key={activity.id + 'com'} activity={activity} itemType="com" />
+          <ActivityItem 
+            key={activity.id + 'com'} 
+            activity={activity} itemType="com" 
+            currentUser={this.props.currentUser} 
+            deleteIdentification={this.props.deleteIdentification}
+            deleteComment={this.props.deleteComment}
+          />
         )
       
       const filteredIds = ids.filter(activity => activity.observation_id === obs.id)
+      const identifications = filteredIds
         .map(activity => 
-          <ActivityItem key={activity.id + 'id'} activity={activity} itemType="id"/>
+          <ActivityItem 
+            key={activity.id + 'id'} 
+            activity={activity} 
+            itemType="id" 
+            currentUser={this.props.currentUser}
+            deleteIdentification={this.props.deleteIdentification}
+            deleteComment={this.props.deleteComment}
+          />
       )
 
-      const activityList = filteredIds.concat(filteredComments).sort(function(a, b) { 
+      const activityList = identifications.concat(comments).sort(function(a, b) { 
         const actA = a.props.activity.created_at;
         const actB = b.props.activity.created_at;
         if (actA < actB) {
@@ -82,8 +97,10 @@ class ObservationShow extends React.Component {
         }
       })
 
-      console.log('act', activityList);
-      // debugger
+      const highestRatedIds = () => {
+        filteredIds
+
+      }
       
       return (
         <div className="obs-show-main">
