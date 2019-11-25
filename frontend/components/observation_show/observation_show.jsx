@@ -98,15 +98,25 @@ class ObservationShow extends React.Component {
       })
 
       const highestRatedIds = () => {
-        filteredIds
+        const count = (arr) => {
+          const hash = {};
+          arr.forEach(id => {
+            hash[id.guess] ? hash[id.guess] += 1 : hash[id.guess] = 0;
+          });
 
+          const idSorted = Object.keys(hash).sort(function (a, b) { return hash[a] - hash[b] });
+          
+          return idSorted[0] 
+        }
+
+        return count(filteredIds);
       }
 
       return (
         <div className="obs-show-main">
 
           <section className="obs-show-title">
-            <span className="obs-title">highest rated identification here</span>
+            <span className="obs-title">{highestRatedIds()}</span>
             {(obs.observer_id === currentUser.id) ? editLinks : <span></span>}
           </section>
 

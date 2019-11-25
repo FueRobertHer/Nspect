@@ -52,11 +52,17 @@ class ActivityItem extends React.Component {
     )
     : null
 
+    const comBody_ = () => {
+      if (this.props.currentUser !== undefined) {
+        (this.props.activity.commenter_id === this.props.currentUser.id) ? deleteBtn : null
+      }
+    }
+
     const comBody = () => (
       <div className="activity-right">
         <div className="activity-right-header border">
           <p><b>{activity.username}</b> commented</p>
-          {(this.props.activity.commenter_id === this.props.currentUser.id && this.props.currentUser !== undefined) ? deleteBtn : null}
+          {comBody_()}
         </div>
 
         <div className="activity-right-body border">
@@ -65,11 +71,17 @@ class ActivityItem extends React.Component {
       </div>
     )
 
+    const idBody_ = () => {
+      if (this.props.currentUser !== undefined) {
+        (this.props.activity.identifier_id === this.props.currentUser.id) ? deleteBtn : null
+      }
+    }
+
     const idBody = () => (
       <div className="activity-right">
         <div className="activity-right-header border">
           <p><b>{activity.username}</b> suggested an ID</p>
-          {(this.props.activity.identifier_id === this.props.currentUser.id && this.props.currentUser !== undefined) ? deleteBtn : null}          
+          {idBody_()}          
         </div>
 
         <div className="activity-right-body border">

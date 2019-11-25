@@ -40,4 +40,10 @@ class Observation < ApplicationRecord
       .where("lng < ?", bounds[:northEast][:lng])
   end
 
+  def highestRatedIds
+    def count(obj)
+      obj
+    end
+  end
+
 end
