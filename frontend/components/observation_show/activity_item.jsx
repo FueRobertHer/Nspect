@@ -3,16 +3,26 @@ import React from 'react';
 class ActivityItem extends React.Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
     this.handleDelete = this.handleDelete.bind(this)
+    this.handleAgree = this.handleAgree.bind(this)
   }
 
   handleDelete() {
     if (this.props.itemType === "com") {
       this.props.deleteComment(this.props.activity.id)
+        .then(() => location.reload())
     } else if (this.props.itemType === "id") {
       this.props.deleteIdentification(this.props.activity.id)
+        .then(() => location.reload())
     }
+  }
+
+  handleAgree(e) {
+    this.props.addIdentification({
+      observation_id: this.props.activity.observation_id,
+      identifier_id: this.props.currentUser.id,
+      guess: e.target.parentElement.parentElement.parentElement.children[1].children[0].innerText
+    }).then(() => location.reload())
   }
 
   render() {
@@ -29,11 +39,24 @@ class ActivityItem extends React.Component {
       </div>
     )
 
+    const agreeBtn = (this.props.currentUser !== undefined)
+    ? (
+      <div>
+        <span
+          onClick={this.handleAgree}
+          className="delete-button act-delete"
+        >
+          Agree
+        </span>
+      </div>
+    )
+    : null
+
     const comBody = () => (
       <div className="activity-right">
         <div className="activity-right-header border">
           <p><b>{activity.username}</b> commented</p>
-          {(this.props.activity.commenter_id === this.props.currentUser.id) ? deleteBtn : null}
+          {(this.props.activity.commenter_id === this.props.currentUser.id && this.props.currentUser !== undefined) ? deleteBtn : null}
         </div>
 
         <div className="activity-right-body border">
@@ -46,7 +69,7 @@ class ActivityItem extends React.Component {
       <div className="activity-right">
         <div className="activity-right-header border">
           <p><b>{activity.username}</b> suggested an ID</p>
-          
+          {(this.props.activity.identifier_id === this.props.currentUser.id && this.props.currentUser !== undefined) ? deleteBtn : null}          
         </div>
 
         <div className="activity-right-body border">

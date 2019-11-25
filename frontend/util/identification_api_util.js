@@ -19,6 +19,6 @@ export const fetchIdentifications = data => (
 export const deleteIdentification = id => (
   $.ajax({
     method: 'delete',
-    url: `/api/identification/${id}`,
+    url: `/api/identifications/${id}`,
   })
 )

@@ -9,7 +9,6 @@ class ObservationShow extends React.Component {
   constructor(props) {
     super(props);
     this.handleDelete = this.handleDelete.bind(this)
-
   }
 
   componentDidMount() {
@@ -23,9 +22,11 @@ class ObservationShow extends React.Component {
     this.props.history.push('/')
   }
 
+  componentDidUpdate() {
+    this.render()
+  }
+
   render() {
-    console.log(this.props);
-    
     const obs = this.props.observation;
     const ids = this.props.identifications;
     const coms = this.props.comments;
@@ -67,7 +68,6 @@ class ObservationShow extends React.Component {
             key={activity.id + 'com'} 
             activity={activity} itemType="com" 
             currentUser={this.props.currentUser} 
-            deleteIdentification={this.props.deleteIdentification}
             deleteComment={this.props.deleteComment}
           />
         )
@@ -80,8 +80,8 @@ class ObservationShow extends React.Component {
             activity={activity} 
             itemType="id" 
             currentUser={this.props.currentUser}
+            addIdentification={this.props.addIdentification}
             deleteIdentification={this.props.deleteIdentification}
-            deleteComment={this.props.deleteComment}
           />
       )
 
@@ -101,7 +101,7 @@ class ObservationShow extends React.Component {
         filteredIds
 
       }
-      
+
       return (
         <div className="obs-show-main">
 

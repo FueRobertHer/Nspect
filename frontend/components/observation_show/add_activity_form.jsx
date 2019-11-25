@@ -30,12 +30,14 @@ class AddActivityForm extends React.Component {
         guess: this.state.guess,
         body: this.state.body
       })
+        .then(() => location.reload())
     } else if (this.state.activity === 'comment') {
       this.props.addComment({
         commenter_id: this.props.currentUser.id,
         observation_id: this.props.observation.id,
         body: this.state.body        
       })
+        .then(() => location.reload())
     }
   }
 
