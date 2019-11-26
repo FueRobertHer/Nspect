@@ -21,6 +21,14 @@ class UserShow extends React.Component {
       const description = user.description.includes(" is a Nspector")
         ? <p className="user-description">{user.username} {user.description}</p>
         : <p className="user-description">{user.description}</p>
+
+      const editButton = () => {
+        const edit = (<span className="edit-profile-button">Edit profile</span>)
+
+        if (this.props.currentUser !== undefined) {
+          return (user.id === this.props.currentUser ? edit : null)
+        } 
+      }
       return (
         <div className="user-show-container top-margin">
           <section className="user-section user-profile-sidebar">
@@ -30,7 +38,7 @@ class UserShow extends React.Component {
               </section>
             </div>
 
-            <span className="edit-profile-button">Edit profile</span>
+            {editButton()}
 
             <ul className="user-sidebar-nav">
               <li className="user-sidebar-nav-item">

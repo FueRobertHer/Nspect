@@ -98,6 +98,8 @@ class ObservationShow extends React.Component {
       })
 
       const highestRatedIds = () => {
+        let id;
+
         const count = (arr) => {
           const hash = {};
           arr.forEach(id => {
@@ -109,7 +111,9 @@ class ObservationShow extends React.Component {
           return idSorted[0] 
         }
 
-        return count(filteredIds);
+        id = count(filteredIds) || 'unknown';
+
+        return id;
       }
 
       return (

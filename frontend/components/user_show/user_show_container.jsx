@@ -5,8 +5,10 @@ import { Link } from 'react-router-dom';
 
 import UserShow from './user_show';
 
-const mapSTP = ({ entities: { users: {user} } }) => ({
-  user
+const mapSTP = ({ session, entities: { users: {user} } }) => ({
+  user,
+  // currentUser: users[session.id]
+  currentUser: session.id
 })
 
 

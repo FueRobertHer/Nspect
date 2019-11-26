@@ -54,7 +54,7 @@ class ActivityItem extends React.Component {
 
     const comBody_ = () => {
       if (this.props.currentUser !== undefined) {
-        (this.props.activity.commenter_id === this.props.currentUser.id) ? deleteBtn : null
+        return (this.props.activity.commenter_id === this.props.currentUser.id) ? deleteBtn : null
       }
     }
 
@@ -73,7 +73,7 @@ class ActivityItem extends React.Component {
 
     const idBody_ = () => {
       if (this.props.currentUser !== undefined) {
-        (this.props.activity.identifier_id === this.props.currentUser.id) ? deleteBtn : null
+        return (this.props.activity.identifier_id === this.props.currentUser.id) ? deleteBtn : null
       }
     }
 
