@@ -103,11 +103,11 @@ class ObservationShow extends React.Component {
         const count = (arr) => {
           const hash = {};
           arr.forEach(id => {
-            hash[id.guess] ? hash[id.guess] += 1 : hash[id.guess] = 0;
+            if (hash[id.guess] == null) hash[id.guess] = 0 
+            hash[id.guess] += 1
           });
 
-          const idSorted = Object.keys(hash).sort(function (a, b) { return hash[a] - hash[b] });
-          
+          const idSorted = Object.keys(hash).sort((a, b) => ( hash[b] - hash[a] ));
           return idSorted[0] 
         }
 

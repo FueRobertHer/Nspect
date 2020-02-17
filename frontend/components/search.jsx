@@ -8,7 +8,7 @@ const mapOptions = {
   zoom: 2
 };
 
-const Search = ({ observations, fetchObservations, updateFilter }) => (
+const Search = ({ observations, fetchObservations, updateFilter, updateObservation }) => (
   <div>
     <div className="obs-index-head">
       <h1 className="obs-index-title">Observations of the World</h1>
@@ -19,9 +19,11 @@ const Search = ({ observations, fetchObservations, updateFilter }) => (
         observations={observations} 
         updateFilter={updateFilter} 
         mapOptions={mapOptions}
+        updateObservation={updateObservation}
       />
     </div>
-    
+    {/* observations={observations.filter(obs => (obs.topIdentification === filter))} */}
+
     {/* <ObservationIndex 
       observations={observations} 
       fetchObservations={fetchObservations} 
