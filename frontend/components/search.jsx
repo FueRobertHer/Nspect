@@ -8,27 +8,40 @@ const mapOptions = {
   zoom: 2
 };
 
-const Search = ({ observations, fetchObservations, updateFilter }) => (
-  <div>
-    <div className="obs-index-head">
-      <h1 className="obs-index-title">Observations of the World</h1>
-    </div>
+const filterObs = (observations, taxa) => {
+  if (!taxa) return observations
+  return observations.filter( obs => (
+    obs.top_identification.toLowerCase() === taxa
+  ))
+}
 
-    <div className="search-map">
-      <ObservationMap 
+const Search = ({ observations, fetchObservations, updateFilter, taxa }) => {
+
+  const filteredObs = filterObs(observations, taxa)
+  console.log(taxa)
+
+  return (
+    <div>
+      <div className="obs-index-head">
+        <h1 className="obs-index-title">Observations of the World</h1>
+      </div>
+
+      <div className="search-map">
+        <ObservationMap 
+          observations={filteredObs} 
+          updateFilter={updateFilter} 
+          mapOptions={mapOptions}
+        />
+      </div>
+      {/* observations={observations.filter(obs => (obs.topIdentification === filter))} */}
+
+      {/* <ObservationIndex 
         observations={observations} 
-        updateFilter={updateFilter} 
-        mapOptions={mapOptions}
-      />
+        fetchObservations={fetchObservations} 
+        updateFilter={updateFilter}
+      /> */}
     </div>
-    {/* observations={observations.filter(obs => (obs.topIdentification === filter))} */}
-
-    {/* <ObservationIndex 
-      observations={observations} 
-      fetchObservations={fetchObservations} 
-      updateFilter={updateFilter}
-    /> */}
-  </div>
-)
+  )
+}
 
 export default Search;

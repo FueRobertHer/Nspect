@@ -41,6 +41,7 @@ class SessionForm extends React.Component {
       const demoUsername = "DemoUser";
       const demoPassword = "password";
       // ghost(demoEmail, "email")();
+      
       this.props.history.push('/home');
       setTimeout(ghost(demoUsername, "username")(), 500);
       setTimeout(ghost(demoPassword, "password")(), 500);

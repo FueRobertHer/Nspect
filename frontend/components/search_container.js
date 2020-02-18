@@ -4,8 +4,9 @@ import { fetchObservations } from '../actions/observations_actions';
 import { updateFilter } from '../actions/filter_actions';
 
 
-const mapSTP = ({ entities: {observations} }) => ({
+const mapSTP = ({ entities: {observations}, ui: {filters: {taxa}} }) => ({
   observations: Object.values(observations),
+  taxa
 })
 
 const mapDTP = dispatch => ({
