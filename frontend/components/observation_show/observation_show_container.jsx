@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchObservation, deleteObservation } from '../../actions/observations_actions';
+import { fetchObservation, deleteObservation, updateObservation } from '../../actions/observations_actions';
 import { addIdentification, fetchIdentifications, deleteIdentification } from '../../actions/identifications_actions';
 import { addComment, fetchComments, deleteComment } from '../../actions/comments_action';
 import { Link } from 'react-router-dom';
@@ -18,6 +18,7 @@ const mapSTP = ({session, entities: {observations: {observation}, identification
 const mapDTP = dispatch => ({
   fetchObservation: id => dispatch(fetchObservation(id)),
   deleteObservation: id => dispatch(deleteObservation(id)),
+  updateObservation: observation => dispatch(updateObservation(observation)),
   addIdentification: data => dispatch(addIdentification(data)),
   fetchIdentifications: () => dispatch(fetchIdentifications()),
   deleteIdentification: id => dispatch(deleteIdentification(id)),

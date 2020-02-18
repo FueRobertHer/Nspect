@@ -32,7 +32,7 @@ class EditObservationForm extends React.Component {
       // obs.image.purge
       obs.append('observation[image]', this.state.image);
     }
-
+    
     this.props.updateObservation(obs)
       .then(() => this.props.history.goBack());
   };

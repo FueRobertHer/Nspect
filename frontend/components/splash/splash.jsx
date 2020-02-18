@@ -35,7 +35,6 @@ class Splash extends React.Component {
     this.imgPos++
     if (this.imgPos === this.imgSrcs.length) this.imgPos = 0;
     this.setPicture();  
-    // console.log(this.imgPos);
   }
 
   prevSlide() {

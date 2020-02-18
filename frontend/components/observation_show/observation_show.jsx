@@ -9,12 +9,24 @@ class ObservationShow extends React.Component {
   constructor(props) {
     super(props);
     this.handleDelete = this.handleDelete.bind(this)
+    this.obs = new FormData()
+    // this.state = this.props.observation
   }
 
   componentDidMount() {
     this.props.fetchObservation(this.props.match.params.observationId);
     this.props.fetchIdentifications();
     this.props.fetchComments();
+  }
+
+  componentWillUnmount() {
+    this.obs.append('observation[id]', this.props.match.params.observationId);
+    // this.obs.append('observation[observer_id]', this.props.observation.observer_id);
+    // this.obs.append('observation[description]', this.props.observation.description);
+    // this.obs.append('observation[datetime]', this.props.observation.datetime);
+    // this.obs.append('observation[lat]', this.props.observation.lat);
+    // this.obs.append('observation[lng]', this.props.observation.lng);
+    this.props.updateObservation(this.obs)
   }
 
   handleDelete() {
@@ -111,8 +123,8 @@ class ObservationShow extends React.Component {
           return idSorted[0] 
         }
 
-        id = count(filteredIds) || 'unknown';
-
+        id = count(filteredIds) || 'life';
+        this.obs.append('observation[top_identification]', id)
         return id;
       }
 
@@ -181,6 +193,7 @@ class ObservationShow extends React.Component {
                 addComment={this.props.addComment} 
                 observation={obs} 
                 currentUser={currentUser}
+                // updateObservation={this.props.updateObservation}
               />
             </section>
           </section>

@@ -11,6 +11,10 @@ class AddActivityForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    // this.props.updateObservation(this.props.observation)
+  }
+
   toggleActive(e) {
     const tab = e.target
     if (tab.innerHTML === "Comment") {
