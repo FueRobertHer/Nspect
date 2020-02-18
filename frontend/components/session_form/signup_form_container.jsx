@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { signup, clearErrors } from '../../actions/session_actions';
+import { login, signup, clearErrors } from '../../actions/session_actions';
 import { Link } from 'react-router-dom';
 import SessionForm from './session_form';
 
@@ -14,6 +14,7 @@ const mapSTP = ({ errors }, ownProps) => ({
 const mapDTP = (dispatch) => ({
   processForm: user => dispatch(signup(user)),
   clearErrors: () => dispatch(clearErrors()),
+  login: user => dispatch(login(user)),
 });
 
 export default connect(

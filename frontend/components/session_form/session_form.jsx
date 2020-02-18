@@ -31,20 +31,15 @@ class SessionForm extends React.Component {
         setTimeout(ghost(string.slice(1), field), 90);
       }
     }
+
+    const demoUsername = "DemoUser";
+    const demoPassword = "password";
+
     if (this.loginForm()) {
-      const demoUsername = "DemoUser"; 
-      const demoPassword = "password";
       ghost(demoUsername, "username")();
       ghost(demoPassword, "password")();
     } else {
-      // const demoEmail = "New@demo.io"
-      const demoUsername = "DemoUser";
-      const demoPassword = "password";
-      // ghost(demoEmail, "email")();
-      
-      this.props.history.push('/home');
-      setTimeout(ghost(demoUsername, "username")(), 500);
-      setTimeout(ghost(demoPassword, "password")(), 500);
+      this.props.login({username: 'DemoUser', password: 'password'})
     }
     setTimeout(this.login, 1200);
   }
