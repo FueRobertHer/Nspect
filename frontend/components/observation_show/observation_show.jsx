@@ -81,6 +81,7 @@ class ObservationShow extends React.Component {
             activity={activity} itemType="com" 
             currentUser={this.props.currentUser} 
             deleteComment={this.props.deleteComment}
+            fetchComments={this.props.fetchComments}
           />
         )
       
@@ -94,6 +95,7 @@ class ObservationShow extends React.Component {
             currentUser={this.props.currentUser}
             addIdentification={this.props.addIdentification}
             deleteIdentification={this.props.deleteIdentification}
+            fetchIdentifications={this.props.fetchIdentifications}
           />
       )
 
@@ -110,8 +112,6 @@ class ObservationShow extends React.Component {
       })
 
       const highestRatedIds = () => {
-        let id;
-
         const count = (arr) => {
           const hash = {};
           arr.forEach(id => {
@@ -123,7 +123,7 @@ class ObservationShow extends React.Component {
           return idSorted[0] 
         }
 
-        id = count(filteredIds) || 'life';
+        let id = count(filteredIds) || 'Life';
         this.obs.append('observation[top_identification]', id)
         return id;
       }
@@ -193,6 +193,8 @@ class ObservationShow extends React.Component {
                 addComment={this.props.addComment} 
                 observation={obs} 
                 currentUser={currentUser}
+                fetchIdentifications={this.props.fetchIdentifications}
+                fetchComments={this.props.fetchComments}
                 // updateObservation={this.props.updateObservation}
               />
             </section>

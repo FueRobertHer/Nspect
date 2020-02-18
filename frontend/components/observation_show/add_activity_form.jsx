@@ -27,6 +27,8 @@ class AddActivityForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
+    $(":input[class*='form-input']").val("")
+
     if (this.state.activity === 'identify') {
       this.props.addIdentification({
         identifier_id: this.props.currentUser.id,
@@ -34,18 +36,34 @@ class AddActivityForm extends React.Component {
         guess: this.state.guess,
         body: this.state.body
       })
-        .then(() => location.reload())
+        .then(() => this.props.fetchIdentifications())
+        .then(() => $(form-input))
     } else if (this.state.activity === 'comment') {
       this.props.addComment({
         commenter_id: this.props.currentUser.id,
         observation_id: this.props.observation.id,
         body: this.state.body        
       })
-        .then(() => location.reload())
+        .then(() => this.props.fetchComments())
+
     }
   }
 
   update(field) {
+    function capitalize(name) {
+      let res = ''
+      for (let i = 0; i < name.length; i++) {
+        i === 0
+          ? res += name[i].toUpperCase()
+          : res += name[i].toLowerCase()
+      }
+      return res
+    }
+
+    if (field === 'guess') {
+      return e => this.setState({ [field]: capitalize(e.target.value) })
+    }
+    
     return e => this.setState({
       [field]: e.target.value
     });

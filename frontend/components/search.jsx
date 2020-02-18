@@ -10,9 +10,10 @@ const mapOptions = {
 
 const filterObs = (observations, taxa) => {
   if (!taxa) return observations
-  return observations.filter( obs => (
-    obs.top_identification.toLowerCase() === taxa
-  ))
+  return observations.filter( obs => {
+    let id = obs.top_identification || ''
+    return id.toLowerCase() === taxa
+  })
 }
 
 const Search = ({ observations, fetchObservations, updateFilter, taxa }) => {

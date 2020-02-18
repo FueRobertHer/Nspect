@@ -10,10 +10,10 @@ class ActivityItem extends React.Component {
   handleDelete() {
     if (this.props.itemType === "com") {
       this.props.deleteComment(this.props.activity.id)
-        .then(() => location.reload())
+        .then(() => this.props.fetchComments())
     } else if (this.props.itemType === "id") {
       this.props.deleteIdentification(this.props.activity.id)
-        .then(() => location.reload())
+        .then(() => this.props.fetchIdentifications())
     }
   }
 
