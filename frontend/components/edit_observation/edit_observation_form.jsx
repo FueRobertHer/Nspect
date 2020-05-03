@@ -109,12 +109,6 @@ class EditObservationForm extends React.Component {
               </div>
 
               <input 
-                type="text" 
-                placeholder="Species name"
-                className="obs-field"
-                disabled
-              />
-              <input 
                 onChange={this.update('datetime')}
                 type="datetime-local" 
                 max={new Date()}

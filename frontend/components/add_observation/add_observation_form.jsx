@@ -1,7 +1,5 @@
 import React from 'react';
-// import ObservationMap from '../observation_map/observation_map';
 import LocationMap from './add_location_map';
-
 import { withRouter } from 'react-router';
 
 const mapOptions = {
@@ -64,8 +62,8 @@ class AddObservationForm extends React.Component {
     this.setState({lat:coords.lat, lng:coords.lng})
     const loc1 = document.getElementById('map-location1');
     const loc2 = document.getElementById('map-location2');
-    loc1.value = `${coords.lat.toString().slice(0, 10)}  ${coords.lng.toString().slice(0, 10)}`;
-    loc2.value = `${coords.lat.toString().slice(0, 10)}  ${coords.lng.toString().slice(0, 10)}`;
+    loc1.value = `lat: ${coords.lat.toString().slice(0, 10)}   lng: ${coords.lng.toString().slice(0, 10)}`;
+    loc2.value = `lat: ${coords.lat.toString().slice(0, 10)}   lng: ${coords.lng.toString().slice(0, 10)}`;
   }
 
   toggleModal() {

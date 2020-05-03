@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { withRouter } from 'react-router-dom';
 
-// import MarkerManager from '../../util/marker_manager';
+import MarkerManager from '../../util/marker_manager';
 
 const getCoordsObj = latLng => ({
   lat: latLng.lat(),
@@ -17,10 +17,9 @@ class LocationMap extends React.Component {
 
   componentDidMount() {
     const map = this.refs.map;
-
     this.map = new google.maps.Map(map, this.mapOptions);
-    // this.map = new google.maps.Map(mapDOMNode, mapOptions);
-    // this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
+    this.MarkerManager = new MarkerManager(this.map);
+    this.oldMarker = this.MarkerManager.setNewMarker(this.mapOptions.center)
     this.registerListeners();
   }
 
@@ -28,18 +27,12 @@ class LocationMap extends React.Component {
     google.maps.event.addListener(this.map, 'click', (event) => {
       const coords = getCoordsObj(event.latLng);
       this.props.handleClick(coords);
+      this.MarkerManager.resetMarker(this.oldMarker)
+      this.oldMarker = this.MarkerManager.setNewMarker(coords)
     });
   }
 
-  // handleClick(coords) {
-  //   this.props.history.push({
-  //     // pathname: 'observations/upload',
-  //     search: `lat=${coords.lat}&lng=${coords.lng}`
-  //   });
-  // }
-
   render() {
-
     return (
       <div id="map-container" ref="map">
         map

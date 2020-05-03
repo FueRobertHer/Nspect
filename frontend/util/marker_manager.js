@@ -31,6 +31,23 @@ export default class MarkerManager {
     this.markers[obsMarker.observationId] = obsMarker;
   }
 
+  setNewMarker(latLng) {
+    let marker = new google.maps.Marker({
+      map: this.map,
+      position: latLng,
+      draggable: false,
+      id: 'new'
+    });
+
+    this.markers.new = marker;
+    return marker
+  }
+
+  resetMarker(marker) {
+    this.markers[marker.id].setMap(null);
+    delete this.markers[marker.id];
+  }
+
   removeMarker(marker) {
     this.markers[marker.observationId].setMap(null);
     delete this.markers[marker.observationId];
