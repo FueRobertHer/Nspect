@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import Home from './home';
 
 const mapSTP = ({session, entities: {observations}}) => ({
-  observations : Object.values(observations).filter( observation => observation.observer_id === session.id)
+  observations : Object.values(observations).filter(observation => observation.observer_id === session.id).reverse()
 })
 
 
