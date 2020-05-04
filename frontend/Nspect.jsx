@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/Root';
 
-import { fetchUsers, fetchUser } from './actions/users_actions';
-import { fetchObservations, fetchObservation } from './actions/observations_actions';
-import { fetchIdentifications } from './actions/identifications_actions';
+// import { fetchUsers, fetchUser } from './actions/users_actions';
+// import { fetchObservations, fetchObservation } from './actions/observations_actions';
+// import { fetchIdentifications } from './actions/identifications_actions';
  
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -22,15 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     store = configureStore();
   }
-
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
-  
-  window.fetchUser = fetchUser;
-  window.fetchObservations = fetchObservations;
-  window.fetchObservation = fetchObservation;
-  window.fetchIdentifications = fetchIdentifications;
-
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root)
 });

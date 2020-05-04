@@ -119,7 +119,7 @@ class AddObservationForm extends React.Component {
               placeholder="Location"
               className="obs-field"
               id="map-location1"
-              autocomplete="off"
+              autoComplete="off"
             />
             <textarea 
               onChange={this.update('description')}

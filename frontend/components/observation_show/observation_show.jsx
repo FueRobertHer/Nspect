@@ -5,12 +5,27 @@ import ObservationMap from '../observation_map/observation_map';
 import ActivityItem from './activity_item';
 import AddActivityForm from './add_activity_form';
 
+function parseDateTime(datetime) {
+  if (!datetime) return "some time in the past"
+  let [date, time] = datetime.split("T")
+  time = time.split(".")[0]
+  return date + " at " + time 
+}
+
+function filterToObs(activities, obs) {
+  const keep = []
+  if (!obs || activities.length <= 0) return keep;
+  activities.filter(act => {
+    if (act.observation_id === obs.id) keep.push(act)
+  });
+  return keep
+};
+
 class ObservationShow extends React.Component {
   constructor(props) {
     super(props);
     this.handleDelete = this.handleDelete.bind(this)
     this.obs = new FormData()
-    // this.state = this.props.observation
   }
 
   componentDidMount() {
@@ -34,19 +49,35 @@ class ObservationShow extends React.Component {
     this.props.history.push('/')
   }
 
-  componentDidUpdate() {
-    this.render()
-  }
+  
 
   render() {
     const obs = this.props.observation;
-    const ids = this.props.identifications;
-    const coms = this.props.comments;
+    const ids = filterToObs(this.props.identifications, obs);
+    const coms = filterToObs(this.props.comments, obs);
     let currentUser = this.props.currentUser;
+
+    function findTopGuess(ids) {
+      const hash = {};
+      let topGuess = null
+      ids.forEach(id => {
+        if (hash[id.guess] === null) hash[id.guess] = 0
+        hash[id.guess] += 1
+        if (!topGuess || hash[id.guess] > hash[topGuess]) topGuess = id.guess
+      });
+
+      return topGuess
+    }
+
+    function highestRatedIds() {
+      let id = findTopGuess(ids) || 'Life';
+      return id;
+    }
+
     if (currentUser === undefined) currentUser = { profilePicURL: 'https://nspect-pro.s3-us-west-1.amazonaws.com/default_pic.png' };
 
     if (obs === undefined ) {
-      return ( <div></div> );
+      return ( <div className="loader"></div> );
     } else {
       const mapOptions = {
         center: { lat: obs.lat, lng: obs.lng },
@@ -70,23 +101,22 @@ class ObservationShow extends React.Component {
         </div>
       )
 
-      const createdAt = obs.created_at ? obs.created_at.split("T")[0] + " at " + obs.created_at.split("T")[1].split(".")[0] : "some time in the past"
-      const observedAt = obs.datetime ? obs.datetime.split("T")[0] + " at " + obs.datetime.split("T")[1].split(".")[0] : "some time in the past"
+      const observedAt = parseDateTime(obs.datetime)
+      const createdAt = parseDateTime(obs.created_at)
       
-      const filteredComments = coms.filter(activity => activity.observation_id === obs.id)
-      const comments = filteredComments
+      const comments = coms
         .map(activity =>
           <ActivityItem 
             key={activity.id + 'com'} 
-            activity={activity} itemType="com" 
+            activity={activity} 
+            itemType="com" 
             currentUser={this.props.currentUser} 
             deleteComment={this.props.deleteComment}
             fetchComments={this.props.fetchComments}
           />
         )
-      
-      const filteredIds = ids.filter(activity => activity.observation_id === obs.id)
-      const identifications = filteredIds
+
+      const identifications = ids
         .map(activity => 
           <ActivityItem 
             key={activity.id + 'id'} 
@@ -97,7 +127,7 @@ class ObservationShow extends React.Component {
             deleteIdentification={this.props.deleteIdentification}
             fetchIdentifications={this.props.fetchIdentifications}
           />
-      )
+        )
 
       const activityList = identifications.concat(comments).sort(function(a, b) { 
         const actA = a.props.activity.created_at;
@@ -110,23 +140,6 @@ class ObservationShow extends React.Component {
           return 0;
         }
       })
-
-      const highestRatedIds = () => {
-        const count = (arr) => {
-          const hash = {};
-          arr.forEach(id => {
-            if (hash[id.guess] == null) hash[id.guess] = 0 
-            hash[id.guess] += 1
-          });
-
-          const idSorted = Object.keys(hash).sort((a, b) => ( hash[b] - hash[a] ));
-          return idSorted[0] 
-        }
-
-        let id = count(filteredIds) || 'Life';
-        this.obs.append('observation[top_identification]', id)
-        return id;
-      }
 
       return (
         <div className="obs-show-main">
