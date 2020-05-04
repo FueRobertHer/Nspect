@@ -38,7 +38,9 @@ class AddObservationForm extends React.Component {
     }
 
     this.props.addObservation(obs)
-      .then(() => this.props.history.push('/home'));
+      .then((obs) => {
+        this.props.history.push('/observations/' + obs.observation.id)
+      });
   };
 
   update(field) {
@@ -117,6 +119,7 @@ class AddObservationForm extends React.Component {
               placeholder="Location"
               className="obs-field"
               id="map-location1"
+              autocomplete="off"
             />
             <textarea 
               onChange={this.update('description')}
