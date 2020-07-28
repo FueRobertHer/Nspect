@@ -1,12 +1,15 @@
 # [Nspect](https://n-spect.herokuapp.com/#/)
 
-An app Academy full stack project: iNaturalist clone
+Full stack project: iNaturalist clone
 
 ## Overview
 
 Nspect is social media and citizen science website where users can upload, view, and interact with each other's observations of plants, animals or any other living organism through comments and a agree disagree system. It was built utlizing a Rails backend with a React/Redux frontend.
 
-This project was created within an approximately 10 day timeframe, but will have additional features added in the future.
+The majority of this project was created within an approximately 10 day timeframe.
+Additional features have and will be added in the future.
+Hosted with Heroku with limited dyno hours. Best time to view the live site is at the start of every month.
+If the site is down, the most likely explaination is that the the amount of free dyno hours have been used up. 
 
 ## Backend Technologies
 
