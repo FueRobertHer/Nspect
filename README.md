@@ -51,14 +51,25 @@ Clicking on the location field will open up a modal that contains a map. Clickin
 
 The user also has the option to add a description to the observation before submitting it. After submitting thier observation they will be sent to the home page which holds all of their observations.
 
-If a user goes their their own observation's page they will have access to an edit and delete button. Pressing the delete button will delete that observation and send the user back to their home page. Pressing the edit button will take the user to a similar form as pressing the upload button however the form will have the data slots prefilled with it's previous information. After submitting an edit the user will be sent back to the observation's page where they can see their changes.
+If a user goes to own of their own observation's page they will have access to an edit and delete button. Pressing the delete button will delete that observation and send the user back to their home page. Pressing the edit button will take the user to an edit form, similar in look at an upload observation form. The edit form will have the data slots prefilled with it's previous information. After submitting an edit the user will be sent back to the observation's page where they can see their changes.
+
+### Add Identification/Comments
+
+For each observation, users can add identifications or comments. Both identifications and comments have a body where users can write their thoughts, however only the identification contains an addition field where users can suggest the species of the organism observed.
+
+Identifications are used to contribute to the identiy of the observation. Comments will not alter the identity of the observation and are used to contribute only to the discussion of the observation. 
+
+### Identity of Observation
+
+At the top of each observation page will be a name of the community agreed species. The name that has the most identifications will be the community agreed species. If there are no identifications for the observation, the observation will be named "Life". At least one identification is necessary for the observation to be listed as something other than "Life". If there are multiple identifications have have equal number of counts, the community agreed species will default to the identification made first out of the possible top identifications.
+
+### Search
+
+A search bar is located in the nav bar. This search bar is used to filter observations by top identifications and navigate the user to the page that contains a map of the world showing all observations matching the filter in the search bar. The filter is default to none and can be reset by searching with no filter.
 
 ## Upcomming Features
 
-- Users can add an identification to each observation (including their own). Users may make more than one identification per observation but only the latest observation counts (one valid identification per user).
-  - Identifications can include a text body explaining their identification.
+- Users may make more than one identification per observation but only the latest observation counts (one valid identification per user).
 - Logged in users can agree or disagree with identifications (Agreeing to an indentification submits the same identification to that observation. Submitting a different identification is disagreeing).
-  - Each observation's displayed identification is the highest agreed identification.
-- Logged in users can also comment on observations.
 - Users can use the search bar at the top of the screen to filter all the observations by location, username, or taxa
 - Users will have access to edit their information through their profile page (including profile picture, username, name, description, and more).
