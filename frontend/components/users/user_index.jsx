@@ -1,52 +1,41 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import UserIndexItem from './user_index_item';
 
-class UserIndex extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      users: null
-    }
-    // console.log(props)
+const shuffle = (arr) => {
+  let copy = [...arr];
+  for (let i = copy.length - 1; i > 0; i--) {
+    let rand = Math.floor(Math.random() * (i + 1));
+    let temp = copy[i];
+    copy[i] = copy[rand];
+    copy[rand] = temp;
   }
+  return copy;
+}
 
-  componentDidMount() {
-    this.props.fetchUsers()
-      .then(users => this.setState(users))
-  };
+const UserIndex = ({users, fetchUsers}) => {
 
-  shuffle(arr) {
-    let j, x, i;
-    for (i = arr.length - 1; i > 0; i--) {
-      j = Math.floor(Math.random() * (i + 1));
-      x = arr[i];
-      arr[i] = arr[j];
-      arr[j] = x;
-    }
-    return arr;
-  }
- 
-  render() {
-    console.log(this.state)
-    const usersList = this.shuffle(this.props.users).map( user =>
-        <UserIndexItem key={user.id} user={user} />
-    )
+  useEffect(() => {
+    fetchUsers();
+  }, [])
 
-    return (
-      <div className="user-index">
-        <section className="space-between">
-          <h2 className="title">The People of Nspect</h2>
+  const usersList = shuffle(users).map( user =>
+    <UserIndexItem key={user.id} user={user} />
+  )
 
-        </section>
+  return (
+    <div className="user-index">
+      <section className="space-between">
+        <h2 className="title">The People of Nspect</h2>
 
-        <div className="user-index ">
-          <ul className="user-list">
-            {usersList} 
-          </ul>
-        </div>
+      </section>
+
+      <div className="user-index ">
+        <ul className="user-list">
+          {usersList} 
+        </ul>
       </div>
-    )
-  }
+    </div>
+  )
 }
 
 export default UserIndex;

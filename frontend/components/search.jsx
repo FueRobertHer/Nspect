@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ObservationMap from './observation_map/observation_map';
 import ObservationIndex from './observations/observations_index'
 
@@ -18,11 +18,14 @@ const filterObs = (observations, taxa) => {
 
 const Search = ({ observations, fetchObservations, updateFilter, taxa }) => {
 
+  useEffect(() => {
+    fetchObservations();
+  }, [])
+
   const filteredObs = filterObs(observations, taxa)
-  console.log(taxa)
 
   return (
-    <div>
+    <>
       <div className="obs-index-head">
         <h1 className="obs-index-title">Observations of the World</h1>
       </div>
@@ -34,14 +37,7 @@ const Search = ({ observations, fetchObservations, updateFilter, taxa }) => {
           mapOptions={mapOptions}
         />
       </div>
-      {/* observations={observations.filter(obs => (obs.topIdentification === filter))} */}
-
-      {/* <ObservationIndex 
-        observations={observations} 
-        fetchObservations={fetchObservations} 
-        updateFilter={updateFilter}
-      /> */}
-    </div>
+    </>
   )
 }
 
