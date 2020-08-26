@@ -4,31 +4,25 @@ import { addIdentification, fetchIdentifications, deleteIdentification } from '.
 import { addComment, fetchComments, deleteComment } from '../../actions/comments_action';
 import ObservationShow from './observation_show';
 
-function filterToObs(activities, obs) {
-  console.log(obs)
-  if (!obs || activities.length <= 0) return [];
-  return activities.filter(act => {
-    act.observation_id === obs.id;
-  });
-};
-
-const mapSTP = ({session, entities: {observations: {observation}, identifications, comments, users} }) => ({
+const mapSTP = ({session, entities: { observations, identifications, comments, users} }, ownProps) => ({
+  observationId: ownProps.match.params.observationId,
   currentUser: users[session.id],
-  observation,
-  identifications: Object.values(identifications),
-  comments: Object.values(comments),
+  observation: observations[ownProps.match.params.observationId],
+  identifications: identifications,
+  comments: comments,
+  match: ownProps.match,
+  history: ownProps.history
 })
-
 
 const mapDTP = dispatch => ({
   fetchObservation: id => dispatch(fetchObservation(id)),
   deleteObservation: id => dispatch(deleteObservation(id)),
   updateObservation: observation => dispatch(updateObservation(observation)),
   addIdentification: data => dispatch(addIdentification(data)),
-  fetchIdentifications: () => dispatch(fetchIdentifications()),
+  fetchIdentifications: obsId => dispatch(fetchIdentifications(obsId)),
   deleteIdentification: id => dispatch(deleteIdentification(id)),
   addComment: data => dispatch(addComment(data)),
-  fetchComments: () => dispatch(fetchComments()),
+  fetchComments: obsId => dispatch(fetchComments(obsId)),
   deleteComment: id => dispatch(deleteComment(id))
 })
 

@@ -36,16 +36,12 @@ class AddActivityForm extends React.Component {
         guess: this.state.guess,
         body: this.state.body
       })
-        .then(() => this.props.fetchIdentifications())
-        .then(() => $(form-input))
     } else if (this.state.activity === 'comment') {
       this.props.addComment({
         commenter_id: this.props.currentUser.id,
         observation_id: this.props.observation.id,
         body: this.state.body        
       })
-        .then(() => this.props.fetchComments())
-
     }
   }
 
@@ -72,7 +68,7 @@ class AddActivityForm extends React.Component {
   render() {
 
     let currentUser = this.props.currentUser;
-    if (currentUser === undefined) currentUser = { profilePicURL: 'https://nspect-pro.s3-us-west-1.amazonaws.com/default_pic.png' };
+    if (currentUser === undefined) currentUser = { profilePicURL: 'https://nspect-pro.s3-us-com-1.amazonaws.com/default_pic.png' };
     const pic = currentUser.profilePicURL
 
     const addIdentification = () => (

@@ -8,13 +8,7 @@ class ActivityItem extends React.Component {
   }
 
   handleDelete() {
-    if (this.props.itemType === "com") {
-      this.props.deleteComment(this.props.activity.id)
-        .then(() => this.props.fetchComments())
-    } else if (this.props.itemType === "id") {
-      this.props.deleteIdentification(this.props.activity.id)
-        .then(() => this.props.fetchIdentifications())
-    }
+    this.props.delete(this.props.activity.id)
   }
 
   handleAgree(e) {
