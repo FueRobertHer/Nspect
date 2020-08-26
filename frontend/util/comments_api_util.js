@@ -8,11 +8,13 @@ export const addComment = comment => (
   })
 )
 
-export const fetchComments = data => (
+export const fetchComments = obsId => (
   $.ajax({
     method: 'get',
-    url: '/api/comments',
-    data
+    url: `/api/comments/`,
+    data: {
+      obsId
+    }
   })
 )
 
@@ -22,3 +24,13 @@ export const deleteComment = id => (
     url: `/api/comments/${id}`,
   })
 )
+
+// export const updateComment = comment => (
+//   $.ajax({
+//     method: 'patch',
+//     url: 'api/comments',
+//     data: {
+//       comment
+//     }
+//   })
+// )

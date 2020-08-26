@@ -39,18 +39,3 @@ export const deleteObservation = id => (
     url: `/api/observations/${id}`
   })
 )
-
-export const addComment = comment => (
-  $.ajax({
-    method: 'post',
-    url: '/api/comment/',
-    data: { comment }
-  })
-)
-
-export const destoryComment = id => (
-  $.ajax({
-    method: 'delete',
-    url: `/api/comment/${id}`,
-  })
-)

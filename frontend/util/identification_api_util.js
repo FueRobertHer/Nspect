@@ -8,11 +8,13 @@ export const addIdentification = identification => (
   })
 )
 
-export const fetchIdentifications = data => (
+export const fetchIdentifications = obsId => (
   $.ajax({
     method: 'get',
-    url: '/api/identifications',
-    data
+    url: `/api/identifications/`,
+    data: {
+      obsId
+    }
   })
 )
 
