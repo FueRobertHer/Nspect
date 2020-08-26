@@ -1,7 +1,13 @@
 class Api::ObservationsController < ApplicationController
 
   def index
-    observations = bounds ? Observation.in_bounds(bounds) : Observation.all
+    if bounds
+      observations = Observation.in_bounds(bounds)
+    elsif user_id
+      observations = Observation.by_user(user_id)
+    else
+      observations = Observation.all
+    end
 
     @observations = observations
     render :index
@@ -51,4 +57,9 @@ class Api::ObservationsController < ApplicationController
   def bounds
     params[:bounds]
   end
+
+  def user_id
+    params[:userId]
+  end
+
 end

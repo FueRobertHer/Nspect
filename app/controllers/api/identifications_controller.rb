@@ -1,7 +1,8 @@
 class Api::IdentificationsController < ApplicationController
 
   def index
-    @identifications = Identification.all
+    identifications = obs_id ? Identification.in_observation(obs_id) : Identification.all
+    @identifications = identifications
     render :index
   end
 
@@ -44,6 +45,10 @@ class Api::IdentificationsController < ApplicationController
   private
 
   def id_params
-    params.require(:identification).permit(:id, :observation_id, :identifier_id, :guess, :body)
+    params.require(:identification).permit(:id, :observation_id, :identifier_id, :guess, :body, :obsId)
+  end
+
+  def obs_id
+    params[:obsId]
   end
 end

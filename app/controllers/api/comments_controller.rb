@@ -1,7 +1,8 @@
 class Api::CommentsController < ApplicationController
 
   def index
-    @comments = Comment.all
+    comments = obs_id ? Comment.in_observation(obs_id) : Comment.all
+    @comments = comments
     render :index
   end
 
@@ -44,6 +45,10 @@ class Api::CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:id, :observation_id, :commenter_id, :body)
+    params.require(:comment).permit(:id, :observation_id, :commenter_id, :body, :obsId)
+  end
+
+  def obs_id
+    params[:obsId]
   end
 end

@@ -40,6 +40,10 @@ class Observation < ApplicationRecord
       .where("lng < ?", bounds[:northEast][:lng])
   end
 
+  def self.by_user(user_id)
+    self.where(`user_id = '#{user_id}'`)
+  end
+
   # def highestRatedId
   #   def count(obj)
   #     obj.keys
