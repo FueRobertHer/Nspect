@@ -15,8 +15,9 @@ export const receiveComment = comment => ({
   comment
 })
 
-export const removeComment = id => ({
+export const removeComment = comment => ({
   type: REMOVE_COMMENT,
+  comment
 })
 
 export const receiveCommentErrors = errors => ({
@@ -27,7 +28,7 @@ export const receiveCommentErrors = errors => ({
 export const addComment = comment => dispatch => APIComment.addComment(comment)
   .then(comment => dispatch(receiveComment(comment)))
 
-export const fetchComments = () => dispatch => APIComment.fetchComments()
+export const fetchComments = (obsId) => dispatch => APIComment.fetchComments(obsId)
   .then(comments => dispatch(receiveComments(comments)))
 
 // export const fetchComment = commentId => dispatch => APIComment.fetchComment(commentId)
@@ -37,4 +38,4 @@ export const fetchComments = () => dispatch => APIComment.fetchComments()
 //   .then(comment => dispatch(receiveComment(comment)))
 
 export const deleteComment = commentId => dispatch => APIComment.deleteComment(commentId)
-  .then(comment => dispatch(removeComment(commentId)))
+  .then(comment => dispatch(removeComment(comment)))

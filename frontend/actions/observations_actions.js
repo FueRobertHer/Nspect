@@ -16,8 +16,9 @@ export const receiveObservation = observation => ({
   observation
 })
 
-export const removeObservation = id => ({
+export const removeObservation = observation => ({
   type: REMOVE_OBSERVATION,
+  observation
 })
 
 export const receiveObsErrors = errors => ({
@@ -39,4 +40,4 @@ export const updateObservation = observation => dispatch => APIObs.updateObserva
   .then( observation => dispatch(receiveObservation(observation)))
 
 export const deleteObservation = observationId => dispatch => APIObs.deleteObservation(observationId)
-  .then( observation => dispatch(removeObservation(observationId)))
+  .then( observation => dispatch(removeObservation(observation)))

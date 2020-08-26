@@ -15,8 +15,9 @@ export const receiveIdentification = identification => ({
   identification
 })
 
-export const removeIdentification = id => ({
+export const removeIdentification = identification => ({
   type: REMOVE_IDENTIFICATION,
+  identification
 })
 
 export const receiveIdErrors = errors => ({
@@ -27,7 +28,7 @@ export const receiveIdErrors = errors => ({
 export const addIdentification = identification => dispatch => APIId.addIdentification(identification)
   .then(identification => dispatch(receiveIdentification(identification)))
 
-export const fetchIdentifications = () => dispatch => APIId.fetchIdentifications()
+export const fetchIdentifications = (obsId) => dispatch => APIId.fetchIdentifications(obsId)
   .then(identifications => dispatch(receiveIdentifications(identifications)))
 
 // export const fetchIdentification = identificationId => dispatch => APIId.fetchIdentification(identificationId)
@@ -37,4 +38,4 @@ export const fetchIdentifications = () => dispatch => APIId.fetchIdentifications
 //   .then(identification => dispatch(receiveIdentification(identification)))
 
 export const deleteIdentification = identificationId => dispatch => APIId.deleteIdentification(identificationId)
-  .then(identification => dispatch(removeIdentification(identificationId)))
+  .then(identification => dispatch(removeIdentification(identification)))
