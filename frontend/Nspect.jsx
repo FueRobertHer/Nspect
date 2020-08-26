@@ -1,15 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import configureStore from './store/store';
+import storePersistorMaker from './store/store';
 import Root from './components/Root';
 
-// import { fetchUsers, fetchUser } from './actions/users_actions';
-// import { fetchObservations, fetchObservation } from './actions/observations_actions';
-// import { fetchIdentifications } from './actions/identifications_actions';
- 
-
 document.addEventListener("DOMContentLoaded", () => {
-  let store;
+  let storePersistor;
   if (window.currentUser) {
     const preloadedState = {
       entities: {
@@ -17,11 +12,14 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       session: { id: window.currentUser.id }
     };
-    store = configureStore(preloadedState);
+    storePersistor = storePersistorMaker(preloadedState);
     delete window.currentUser;
   } else {
-    store = configureStore();
+    storePersistor = storePersistorMaker();
   }
+  let store = storePersistor.store;
+  let persistor = storePersistor.persistor
+  window.store = store;
   const root = document.getElementById('root');
-  ReactDOM.render(<Root store={store} />, root)
+  ReactDOM.render(<Root store={store} persistor={persistor} />, root)
 });

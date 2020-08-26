@@ -36,7 +36,7 @@ const App = ({ location }) => (
 
       </Switch>
     </header>
-
+    
     <Switch>
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
@@ -50,7 +50,6 @@ const App = ({ location }) => (
       <HomeRoute exact path="/" component={SplashContainer} />    
       <Route path="/" component={NotFound} />
     </Switch>
-
 
     {exclusionArray.indexOf(location.pathname) < 0 && <FooterContainer />}
   </div>
