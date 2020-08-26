@@ -24,7 +24,7 @@ class LocationMap extends React.Component {
   registerListeners() {
     google.maps.event.addListener(this.map, 'click', (event) => {
       const coords = getCoordsObj(event.latLng);
-      this.props.handleClick(coords);
+      this.props.placeMarker(coords);
       if (this.oldMarker) this.MarkerManager.resetMarker(this.oldMarker)
       this.oldMarker = this.MarkerManager.setNewMarker(coords)
     });

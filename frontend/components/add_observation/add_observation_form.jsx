@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import LocationMap from './add_location_map';
 import { withRouter } from 'react-router';
 
@@ -7,148 +7,154 @@ const mapOptions = {
   zoom: 3
 };
 
-class AddObservationForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      observer_id: this.props.currentUser.id,
-      lat: null,
-      lng: null,
-      datetime: new Date(),
-      description: '',
-      image: null,
-      imageURL: null,
-    }
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleFile = this.handleFile.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+const AddObservationForm = ({currentUser, addObservation, addIdentification, history}) => {
+
+  const [observation, setObservation] = useState({
+    observer_id: currentUser.id,
+    datetime: new Date(),
+    lat: null,
+    lng: null,
+    description: null,
+    image: null,
+    imageURL: null,
+  });
+  const [latLng, setLatLng] = useState('');
+  const [guess, setGuess] = useState('');
+  const modalRef = useRef(null);
+
+  const update = field => e => {
+    setObservation(Object.assign({}, observation, {[field]: e.target.value}))
   }
 
-  handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const obs = new FormData();
-    obs.append('observation[observer_id]', this.state.observer_id);
-    obs.append('observation[description]', this.state.description);
-    obs.append('observation[datetime]', this.state.datetime);
-    obs.append('observation[lat]', this.state.lat);
-    obs.append('observation[lng]', this.state.lng);
+    const obsForm = new FormData();
+    obsForm.append('observation[observer_id]', observation.observer_id);
+    obsForm.append('observation[description]', observation.description);
+    obsForm.append('observation[datetime]', observation.datetime);
+    obsForm.append('observation[lat]', observation.lat);
+    obsForm.append('observation[lng]', observation.lng);
+    if (observation.image) obs.append('observation[image]', observation.image);
 
-    if (this.state.image) {
-      obs.append('observation[image]', this.state.image);
-    }
-
-    this.props.addObservation(obs)
-      .then((obs) => {
-        this.props.history.push('/observations/' + obs.observation.id)
-      });
+    addObservation(obsForm).then(data => 
+      addIdentification({
+        identifier_id: currentUser.id,
+        guess,
+        observation_id: data.observation.id
+      })).then(data => {
+        console.log(data)
+        history.push(`/observations/${data.identification.observation_id}`)
+      })
   };
 
-  update(field) {
-    return e => this.setState({
-      [field]: e.target.value
-    });                                                                                      
-  }
-
-  handleFile(e) {
+  const handleFile = (e) => {
     const file = e.currentTarget.files[0];
     const fileReader = new FileReader();
     fileReader.onloadend = () => {
-      this.setState({ image: file, imageURL: fileReader.result });
+      setObservation(Object.assign({}, observation, {image: file, imageURL: fileReader.result}));
     };
+    // window.file = file
     if (file) {
       fileReader.readAsDataURL(file);
     }
   }
 
-  handleClick(coords) {
-    this.setState({lat:coords.lat, lng:coords.lng})
-    const loc1 = document.getElementById('map-location1');
-    const loc2 = document.getElementById('map-location2');
-    loc1.value = `lat: ${coords.lat.toString().slice(0, 10)}   lng: ${coords.lng.toString().slice(0, 10)}`;
-    loc2.value = `lat: ${coords.lat.toString().slice(0, 10)}   lng: ${coords.lng.toString().slice(0, 10)}`;
+  const placeMarker = (coords) => {
+    setObservation(Object.assign({}, observation, {lat: coords.lat, lng: coords.lng}));
+    const lat = coords.lat.toString().slice(0, 10);
+    const lng = coords.lng.toString().slice(0, 10);
+    setLatLng(`lat: ${lat}   lng: ${lng}`);
   }
 
-  toggleModal() {
-    const modal = document.getElementById('map-modal');
-    modal.classList.toggle("hidden")
+  const toggleModal = () => {
+    console.log(modalRef.curent)
+    modalRef.current.classList.toggle("hidden")
   }
+  
+  const preview = observation.imageURL 
+    ? <img className="preview-img" src={observation.imageURL} /> 
+    : <img className="preview-no-img" />;
 
-  render() {   
-    const preview = this.state.imageURL 
-      ? <img className="preview-img" src={this.state.imageURL} /> 
-      : <img className="preview-no-img" />;
-    
-    return (
-      <div className="add-obs-modal">
-        <div className="add-obs-form-container">
-          <h1>Add an Observation</h1>
-          <form 
-            onSubmit={this.handleSubmit}
-            className="add-obs-form">
-            
-            <div className="preview-img-container">
-              {preview}
-              <section className="add-img-form">
-                <input 
-                  type="file" 
-                  className="new-obs-pic-button"
-                  onChange={this.handleFile.bind(this)} 
-                  name="file" 
-                  id="file"
-                />
-                <label htmlFor="file" className="add-img-button center">Add an Image</label>
-              </section>
-            </div>
-
-            <input 
-              type="text" 
-              placeholder="Species name"
-              className="obs-field"
-              disabled
-            />
-            <input 
-              onChange={this.update('datetime')}
-              type="datetime-local" 
-              max={new Date()}
-              placeholder="Date"
-              className="obs-field"
-            />
-            <input 
-              onClick={this.toggleModal}
-              type="text" 
-              placeholder="Location"
-              className="obs-field"
-              id="map-location1"
-              autoComplete="off"
-            />
-            <textarea 
-              onChange={this.update('description')}
-              placeholder="Description" 
-              className="obs-field textarea"
-            />
-
-            <button className="submit-obs-button">submit observation</button>
-          </form>
-        </div>
-        <div id="map-modal" className="center hidden" >
-          <div className="map-size-limit center" >
-            <LocationMap 
-              mapOptions={mapOptions}
-              handleClick={this.handleClick}
-            />
-            <input
-              type="text"
-              placeholder="Location"
-              disabled
-              className="obs-field"
-              id="map-location2"
-            />
-            <span className="close" onClick={this.toggleModal}>close</span>
-          </div> 
-        </div>
+  const locationMapModal = (
+    <div ref={modalRef} id="map-modal" className="center hidden" >
+      <div className="map-size-limit center" >
+        <LocationMap
+          mapOptions={mapOptions}
+          placeMarker={placeMarker}
+        />
+        <input
+          type="text"
+          placeholder="Location"
+          value={latLng}
+          readOnly
+          className="obs-field"
+          id="map-location2"
+        />
+        <span className="close" onClick={toggleModal}>close</span>
       </div>
-    )
-  }
+    </div>
+  )
+    
+  return (
+    <div className="add-obs-modal">
+      <div className="add-obs-form-container">
+        <h1>Add an Observation</h1>
+        <form 
+          onSubmit={handleSubmit}
+          className="add-obs-form"
+        >
+          
+          <div className="preview-img-container">
+            {preview}
+            <section className="add-img-form">
+              <input 
+                type="file" 
+                className="new-obs-pic-button"
+                onChange={handleFile} 
+                name="file" 
+                id="file"
+              />
+              <label htmlFor="file" className="add-img-button center">Add an Image</label>
+            </section>
+          </div>
+
+          <input 
+            type="text" 
+            placeholder="Species name"
+            className="obs-field"
+            value={guess}
+            onChange={(e) => setGuess(e.target.value)}
+          />
+          <input 
+            onChange={update('datetime')}
+            type="datetime-local" 
+            max={new Date()}
+            className="obs-field"
+          />
+          <input 
+            onClick={toggleModal}
+            type="text" 
+            placeholder="Location"
+            value={latLng}
+            readOnly
+            className="obs-field"
+            id="map-location1"
+            autoComplete="off"
+          />
+          <textarea 
+            onChange={update('description')}
+            placeholder="Description" 
+            className="obs-field textarea"
+          />
+
+          <button className="submit-obs-button">submit observation</button>
+        </form>
+      </div>
+
+      {locationMapModal}
+    </div>
+  )
 }
+
 
 export default withRouter(AddObservationForm);
