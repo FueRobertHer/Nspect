@@ -5,12 +5,17 @@ import ObservationMap from '../observation_map/observation_map';
 import ActivityItem from './activity_item';
 import AddActivityForm from './add_activity_form';
 
+const datetimeOptions = { 
+  year: 'numeric', month: 'short', day: 'numeric',
+  hour: 'numeric', minute: 'numeric', 
+  timeZoneName: 'short'
+}
+
 
 const parseDateTime = (datetime) => {
   if (!datetime) return "some time in the past";
-  let [date, time] = datetime.split("T");
-  time = time.split(".")[0];
-  return `${date} at ${time}`;
+  let dateString = new Date(datetime).toLocaleString([], datetimeOptions);
+  return dateString;
 }
 
 const findTopGuess = (identifications) => {
@@ -53,6 +58,13 @@ const ObservationShow = ({ observation, identifications, comments, currentUser, 
     deleteObservation(match.params.observationId).then(_ => {
       history.push('/');
     })
+  }
+
+  const stillFetching = () => {
+    if (!observation) return true;
+    const ids = observation.identifications.map(key => identifications[key]);
+    const coms = observation.comments.map(key => comments[key]);
+    
   }
 
   // return fragment until all fetch finishes
